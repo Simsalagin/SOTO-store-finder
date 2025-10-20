@@ -222,19 +222,32 @@
             maxZoom: 19
         }).addTo(map);
 
-        // Custom icon for denn's Biomarkt
+        // Custom icons for each chain
         const dennsIcon = L.icon({
-            iconUrl: 'data:image/svg+xml;base64,' + btoa(`
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 36" width="30" height="45">
-                    <path fill="#66bb6a" stroke="#43a047" stroke-width="1.5"
-                          d="M12 0C7.03 0 3 4.03 3 9c0 7.5 9 18 9 18s9-10.5 9-18c0-4.97-4.03-9-9-9z"/>
-                    <circle cx="12" cy="9" r="4" fill="white"/>
-                </svg>
-            `),
-            iconSize: [30, 45],
-            iconAnchor: [15, 45],
-            popupAnchor: [0, -45]
+            iconUrl: 'images/denns-marker.svg',
+            iconSize: [40, 50],
+            iconAnchor: [20, 50],
+            popupAnchor: [0, -50]
         });
+
+        const alnaturaIcon = L.icon({
+            iconUrl: 'images/alnatura-marker.svg',
+            iconSize: [40, 50],
+            iconAnchor: [20, 50],
+            popupAnchor: [0, -50]
+        });
+
+        // Function to get icon based on chain
+        function getChainIcon(chainId) {
+            switch(chainId) {
+                case 'denns':
+                    return dennsIcon;
+                case 'alnatura':
+                    return alnaturaIcon;
+                default:
+                    return dennsIcon; // fallback
+            }
+        }
 
         // Create marker cluster group
         const markers = L.markerClusterGroup({
@@ -322,10 +335,11 @@
 
                     popupContent += '</div>';
 
-                    // Create marker
+                    // Create marker with chain-specific icon
+                    const chainIcon = getChainIcon(props.chain_id);
                     const marker = L.marker(
                         [feature.geometry.coordinates[1], feature.geometry.coordinates[0]],
-                        { icon: dennsIcon }
+                        { icon: chainIcon }
                     ).bindPopup(popupContent);
 
                     markers.addLayer(marker);

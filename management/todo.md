@@ -3,7 +3,7 @@
 
 [x] Öffnungszeiten
 
-[] Verschiedene Logos nutzen
+[x] Verschiedene Logos nutzen
 Ich möchte, dass auf der Karte die verschiedenen Ketten durch die Nutzung derer Logos klar unterscheidbar sind. Sprich der Alnatura Pin sollte das Alnatura Logo beinhalten und der denns pin das denns logo
 
 # Stores
