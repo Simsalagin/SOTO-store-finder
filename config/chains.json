@@ -1,0 +1,61 @@
+{
+  "chains": [
+    {
+      "id": "denns",
+      "name": "denn's Biomarkt",
+      "website": "https://www.denns-biomarkt.de",
+      "scraper_type": "all_stores",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "id": "alnatura",
+      "name": "Alnatura",
+      "website": "https://www.alnatura.de",
+      "scraper_type": "all_stores",
+      "priority": 2,
+      "active": true
+    },
+    {
+      "id": "tegut",
+      "name": "tegut",
+      "website": "https://www.tegut.com",
+      "scraper_type": "all_stores",
+      "priority": 3,
+      "active": true
+    },
+    {
+      "id": "biocompany",
+      "name": "Bio Company",
+      "website": "https://www.biocompany.de",
+      "scraper_type": "all_stores",
+      "priority": 4,
+      "active": true
+    },
+    {
+      "id": "vollcorner",
+      "name": "Vollcorner",
+      "website": "https://www.vollcorner.de",
+      "scraper_type": "all_stores",
+      "priority": 5,
+      "active": true
+    },
+    {
+      "id": "globus",
+      "name": "Globus",
+      "website": "https://www.globus.de",
+      "scraper_type": "all_stores",
+      "priority": 6,
+      "active": true
+    },
+    {
+      "id": "rewe",
+      "name": "REWE",
+      "website": "https://www.rewe.de",
+      "scraper_type": "product_check",
+      "brand": "SOTO",
+      "priority": 99,
+      "active": false
+    }
+  ]
+}
