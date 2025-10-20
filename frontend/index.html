@@ -257,73 +257,71 @@
             maxZoom: 19
         }).addTo(map);
 
-        // User location tracking
+        // User location tracking using Leaflet native locate()
         let userLocationMarker = null;
-        let userLocation = null;
+        let accuracyCircle = null;
 
-        // Function to get and show user location
+        // Handle location found event
+        map.on('locationfound', function(e) {
+            const locateBtn = document.getElementById('locateBtn');
+            const radius = e.accuracy / 2;
+
+            // Remove old markers if they exist
+            if (userLocationMarker) {
+                map.removeLayer(userLocationMarker);
+            }
+            if (accuracyCircle) {
+                map.removeLayer(accuracyCircle);
+            }
+
+            // Add accuracy circle
+            accuracyCircle = L.circle(e.latlng, {
+                radius: radius,
+                fillColor: '#3388ff',
+                color: '#3388ff',
+                weight: 1,
+                opacity: 0.4,
+                fillOpacity: 0.15
+            }).addTo(map);
+
+            // Add user location marker
+            userLocationMarker = L.circleMarker(e.latlng, {
+                radius: 10,
+                fillColor: '#3388ff',
+                color: '#fff',
+                weight: 3,
+                opacity: 1,
+                fillOpacity: 1
+            }).addTo(map);
+
+            userLocationMarker.bindPopup('📍 Ihr Standort<br>Genauigkeit: ' + Math.round(radius) + ' Meter').openPopup();
+
+            // Center map on user location
+            map.setView(e.latlng, 13);
+
+            locateBtn.classList.remove('active');
+        });
+
+        // Handle location error event
+        map.on('locationerror', function(e) {
+            const locateBtn = document.getElementById('locateBtn');
+            locateBtn.classList.remove('active');
+            alert('Standort konnte nicht ermittelt werden.\n' + e.message);
+        });
+
+        // Function to trigger location
         function locateUser() {
             const locateBtn = document.getElementById('locateBtn');
+            locateBtn.classList.add('active');
 
-            if (navigator.geolocation) {
-                locateBtn.classList.add('active');
-
-                navigator.geolocation.getCurrentPosition(
-                    // Success
-                    function(position) {
-                        const lat = position.coords.latitude;
-                        const lon = position.coords.longitude;
-
-                        userLocation = {lat, lon};
-
-                        // Remove old marker if exists
-                        if (userLocationMarker) {
-                            map.removeLayer(userLocationMarker);
-                        }
-
-                        // Add user location marker
-                        userLocationMarker = L.circleMarker([lat, lon], {
-                            radius: 10,
-                            fillColor: '#3388ff',
-                            color: '#fff',
-                            weight: 3,
-                            opacity: 1,
-                            fillOpacity: 0.8
-                        }).addTo(map);
-
-                        // Add pulsing circle animation
-                        const pulseCircle = L.circle([lat, lon], {
-                            radius: 50,
-                            fillColor: '#3388ff',
-                            color: '#3388ff',
-                            weight: 1,
-                            opacity: 0.5,
-                            fillOpacity: 0.1
-                        }).addTo(map);
-
-                        userLocationMarker.bindPopup('📍 Ihr Standort').openPopup();
-
-                        // Center map on user location
-                        map.setView([lat, lon], 13);
-
-                        locateBtn.classList.remove('active');
-                    },
-                    // Error
-                    function(error) {
-                        console.error('Geolocation error:', error);
-                        locateBtn.classList.remove('active');
-                        alert('Standort konnte nicht ermittelt werden. Bitte überprüfen Sie Ihre Standortfreigabe.');
-                    },
-                    // Options
-                    {
-                        enableHighAccuracy: true,
-                        timeout: 10000,
-                        maximumAge: 60000
-                    }
-                );
-            } else {
-                alert('Geolocation wird von Ihrem Browser nicht unterstützt.');
-            }
+            // Use Leaflet's native locate method
+            map.locate({
+                setView: false, // We'll set the view in locationfound event
+                maxZoom: 13,
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 30000
+            });
         }
 
         // Add click handler for locate button
