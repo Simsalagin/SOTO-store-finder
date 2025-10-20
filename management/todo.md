@@ -1,5 +1,5 @@
 # Anzeigen
-[] Auto-zoom: Als Nutzer möchte ich die Karte direkt voreingestellt haben, damit ich Filialen in meiner nähe sehe. Dafür entweder meinen Standort benützen. Wenn dieser nicht freigegeben wird, nutze was verfügbar ist (z.B. IP adresse) um so gut es geht den Kartenausschnitt zu wählen
+[x] Auto-zoom: Als Nutzer möchte ich die Karte direkt voreingestellt haben, damit ich Filialen in meiner nähe sehe. Dafür entweder meinen Standort benützen. Wenn dieser nicht freigegeben wird, nutze was verfügbar ist (z.B. IP adresse) um so gut es geht den Kartenausschnitt zu wählen
 
 [x] Öffnungszeiten
 
