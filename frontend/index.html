@@ -177,6 +177,40 @@
             border-radius: 4px;
             font-size: 11px;
         }
+
+        /* Location button */
+        .locate-button {
+            position: absolute;
+            top: 80px;
+            right: 10px;
+            z-index: 1000;
+            background: white;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            width: 34px;
+            height: 34px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            transition: all 0.2s;
+        }
+
+        .locate-button:hover {
+            background: #f4f4f4;
+        }
+
+        .locate-button:active {
+            background: #e0e0e0;
+        }
+
+        .locate-button.active {
+            background: #3388ff;
+            color: white;
+            border-color: #3388ff;
+        }
     </style>
 </head>
 <body>
@@ -203,6 +237,7 @@
     </div>
 
     <div id="map"></div>
+    <button class="locate-button" id="locateBtn" title="Meinen Standort anzeigen">📍</button>
 
     <!-- Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
@@ -222,67 +257,91 @@
             maxZoom: 19
         }).addTo(map);
 
-        // Auto-zoom to user location
-        let userLocationSet = false;
+        // User location tracking
+        let userLocationMarker = null;
+        let userLocation = null;
 
-        // Try geolocation API first
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                // Success callback
-                function(position) {
-                    const userLat = position.coords.latitude;
-                    const userLon = position.coords.longitude;
+        // Function to get and show user location
+        function locateUser() {
+            const locateBtn = document.getElementById('locateBtn');
 
-                    // Check if user is roughly in Germany/Europe (47-55°N, 5-15°E)
-                    if (userLat >= 47 && userLat <= 55 && userLon >= 5 && userLon <= 15) {
-                        map.setView([userLat, userLon], 11);
-                        userLocationSet = true;
+            if (navigator.geolocation) {
+                locateBtn.classList.add('active');
 
-                        // Add a small marker for user location
-                        L.circleMarker([userLat, userLon], {
-                            radius: 8,
+                navigator.geolocation.getCurrentPosition(
+                    // Success
+                    function(position) {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+
+                        userLocation = {lat, lon};
+
+                        // Remove old marker if exists
+                        if (userLocationMarker) {
+                            map.removeLayer(userLocationMarker);
+                        }
+
+                        // Add user location marker
+                        userLocationMarker = L.circleMarker([lat, lon], {
+                            radius: 10,
                             fillColor: '#3388ff',
                             color: '#fff',
-                            weight: 2,
+                            weight: 3,
                             opacity: 1,
                             fillOpacity: 0.8
-                        }).addTo(map).bindPopup('Ihr Standort');
+                        }).addTo(map);
+
+                        // Add pulsing circle animation
+                        const pulseCircle = L.circle([lat, lon], {
+                            radius: 50,
+                            fillColor: '#3388ff',
+                            color: '#3388ff',
+                            weight: 1,
+                            opacity: 0.5,
+                            fillOpacity: 0.1
+                        }).addTo(map);
+
+                        userLocationMarker.bindPopup('📍 Ihr Standort').openPopup();
+
+                        // Center map on user location
+                        map.setView([lat, lon], 13);
+
+                        locateBtn.classList.remove('active');
+                    },
+                    // Error
+                    function(error) {
+                        console.error('Geolocation error:', error);
+                        locateBtn.classList.remove('active');
+                        alert('Standort konnte nicht ermittelt werden. Bitte überprüfen Sie Ihre Standortfreigabe.');
+                    },
+                    // Options
+                    {
+                        enableHighAccuracy: true,
+                        timeout: 10000,
+                        maximumAge: 60000
                     }
-                },
-                // Error callback - try IP-based fallback
-                function(error) {
-                    console.log('Geolocation denied or failed, trying IP-based location...');
-                    tryIpBasedLocation();
-                },
-                // Options
-                {
-                    enableHighAccuracy: false,
-                    timeout: 5000,
-                    maximumAge: 300000 // 5 minutes cache
+                );
+            } else {
+                alert('Geolocation wird von Ihrem Browser nicht unterstützt.');
+            }
+        }
+
+        // Add click handler for locate button
+        document.getElementById('locateBtn').addEventListener('click', locateUser);
+
+        // Try to get initial location via IP (non-intrusive)
+        fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                if (data.latitude && data.longitude && data.country_code === 'DE') {
+                    // Only adjust initial view, don't add marker or zoom too much
+                    map.setView([data.latitude, data.longitude], 9);
+                    console.log('Initial location set via IP:', data.city);
                 }
-            );
-        } else {
-            // Geolocation not supported, try IP-based fallback
-            tryIpBasedLocation();
-        }
-
-        // IP-based location fallback
-        function tryIpBasedLocation() {
-            if (userLocationSet) return;
-
-            fetch('https://ipapi.co/json/')
-                .then(response => response.json())
-                .then(data => {
-                    if (data.latitude && data.longitude && data.country_code === 'DE') {
-                        map.setView([data.latitude, data.longitude], 10);
-                        userLocationSet = true;
-                        console.log('Location set via IP:', data.city);
-                    }
-                })
-                .catch(error => {
-                    console.log('IP-based location failed, using default Germany view');
-                });
-        }
+            })
+            .catch(error => {
+                console.log('IP-based location failed, using default Germany view');
+            });
 
         // Custom icons for each chain
         const dennsIcon = L.icon({
