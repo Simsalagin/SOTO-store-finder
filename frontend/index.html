@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOTO Store Finder - denn's Biomarkt</title>
+    <title>SOTO Store Finder</title>
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -265,36 +265,40 @@
                             </div>
                     `;
 
-                    if (props.phone) {
-                        popupContent += `
-                            <div class="popup-section">
-                                <strong>📞 Telefon</strong>
-                                <p><a href="tel:${props.phone}">${props.phone}</a></p>
-                            </div>
-                        `;
-                    }
-
+                    // Opening hours
                     if (props.opening_hours) {
-                        const days = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
-                        const today = days[new Date().getDay() === 0 ? 6 : new Date().getDay() - 1];
+                        // Check if it's text format (Alnatura) or structured (denn's)
+                        if (props.opening_hours.text) {
+                            // Simple text format
+                            popupContent += `
+                                <div class="popup-section">
+                                    <strong>🕐 Öffnungszeiten</strong>
+                                    <p>${props.opening_hours.text}</p>
+                                </div>
+                            `;
+                        } else {
+                            // Structured format (denn's)
+                            const days = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
+                            const today = days[new Date().getDay() === 0 ? 6 : new Date().getDay() - 1];
 
-                        let hoursHtml = '<div class="popup-section"><strong>🕐 Öffnungszeiten</strong><div class="popup-hours">';
+                            let hoursHtml = '<div class="popup-section"><strong>🕐 Öffnungszeiten</strong><div class="popup-hours">';
 
-                        days.forEach(day => {
-                            if (props.opening_hours[day]) {
-                                const hours = props.opening_hours[day];
-                                const isTodayClass = day === today ? 'style="font-weight: 700;"' : '';
-                                hoursHtml += `
-                                    <div class="popup-hours-item" ${isTodayClass}>
-                                        <span class="popup-hours-day">${day}</span>
+                            days.forEach(day => {
+                                if (props.opening_hours[day]) {
+                                    const hours = props.opening_hours[day];
+                                    const isTodayClass = day === today ? 'style="font-weight: 700;"' : '';
+                                    hoursHtml += `
+                                        <div class="popup-hours-item" ${isTodayClass}>
+                                            <span class="popup-hours-day">${day}</span>
                                         <span class="popup-hours-time">${hours.open_from} - ${hours.open_until}</span>
                                     </div>
                                 `;
                             }
-                        });
+                            });
 
-                        hoursHtml += '</div></div>';
-                        popupContent += hoursHtml;
+                            hoursHtml += '</div></div>';
+                            popupContent += hoursHtml;
+                        }
                     }
 
                     if (props.services && props.services.length > 0) {
