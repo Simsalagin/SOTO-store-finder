@@ -44,6 +44,7 @@ htmlcov/
 *.db
 *.sqlite
 *.sqlite3
+*_backup.db
 
 # Environment variables
 .env
@@ -53,11 +54,16 @@ htmlcov/
 data/cache/
 data/raw/
 data/processed/
+*.csv
+*.html
 
 # Logs
 *.log
 logs/*.log
 !logs/.gitkeep
+
+# Backup files
+*.backup
 
 # OS
 .DS_Store

@@ -1,8 +1,11 @@
 """Scraper for denn's Biomarkt stores."""
 
+import logging
 import requests
 from typing import List, Optional, Dict
 from .base import BaseScraper, Store
+
+logger = logging.getLogger(__name__)
 
 
 class DennsScraper(BaseScraper):
@@ -82,7 +85,7 @@ class DennsScraper(BaseScraper):
             return store
 
         except Exception as e:
-            print(f"Error parsing market {market.get('marketId', 'unknown')}: {e}")
+            logger.error(f"Error parsing market {market.get('marketId', 'unknown')}: {e}")
             return None
 
     def _parse_coordinate(self, value: Optional[str]) -> Optional[float]:

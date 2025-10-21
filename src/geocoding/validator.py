@@ -1,11 +1,14 @@
 """Coordinate validation using reverse geocoding and distance checks."""
 
 import time
+import logging
 from typing import Optional, Tuple, Dict
 from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
 from geopy.exc import GeocoderTimedOut, GeocoderServiceError
 import os
+
+logger = logging.getLogger(__name__)
 
 
 class CoordinateValidator:
@@ -241,7 +244,7 @@ class CoordinateValidator:
             return None
 
         except (GeocoderTimedOut, GeocoderServiceError) as e:
-            print(f"Reverse geocoding error for ({latitude}, {longitude}): {e}")
+            logger.warning(f"Reverse geocoding error for ({latitude}, {longitude}): {e}")
             return None
 
     def _cities_match(self, city1: str, city2: str) -> bool:

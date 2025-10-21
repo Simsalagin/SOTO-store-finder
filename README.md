@@ -8,52 +8,69 @@ Entwicklung einer interaktiven Karte, die alle Filialen anzeigt, in denen SOTO-P
 
 ## 📊 Status
 
-**MVP abgeschlossen** - denn's Biomarkt Integration
-- ✅ 590 denn's Biomarkt Filialen in Deutschland
+**Implementierte Ketten:**
+- ✅ **denn's Biomarkt** - 590 Filialen
+- ✅ **Alnatura** - 150 Filialen
+- ✅ **tegut** - 314 Filialen
+
+**Total: 1,054 validierte Filialen**
+
+**In Entwicklung:**
+- 🔄 Bio Company
+- 🔄 Vollcorner
+- 🔄 Globus
+
+**Features:**
 - ✅ Automatische Koordinaten-Validierung
 - ✅ Interaktive Karte mit Leaflet.js
-- ✅ SQLite-Datenbank
-
-**In Planung:**
-- Alnatura
-- tegut
-- Bio Company
-- Vollcorner
-- Globus
-- REWE (mit Produktverfügbarkeits-Check)
+- ✅ SQLite-Datenbank mit ORM
+- ✅ REST API Server
+- ✅ GeoJSON Export
+- ✅ Konfigurationsbasiertes Chain-Management
+- ✅ GitHub Pages Deployment
 
 ## 🏗️ Projektstruktur
 
 ```
 SOTO-store-finder/
-├── config/                 # Konfigurationsdateien
-│   └── chains.json        # Definition der Supermarktketten
-├── data/                   # Datenbank und Cache
-│   └── stores.db          # SQLite Datenbank
-├── frontend/               # Web-Visualisierung
-│   ├── index.html         # Interaktive Karte
-│   └── stores.geojson     # GeoJSON Export
-├── logs/                   # Log-Dateien
-├── scripts/                # Utility-Scripts
-│   ├── update_stores.py   # Haupt-Update-Script
-│   └── fix_coordinates.py # Koordinaten-Reparatur
-├── src/                    # Source Code
-│   ├── scrapers/          # Scraper für verschiedene Ketten
-│   │   ├── base.py        # Basis-Scraper-Klasse
-│   │   └── denns.py       # denn's Biomarkt Scraper
-│   ├── geocoding/         # Geocoding & Validierung
-│   │   ├── geocoder.py    # OpenStreetMap Geocoding
-│   │   └── validator.py   # Koordinaten-Validierung
-│   ├── storage/           # Datenbank-Layer
-│   │   └── database.py    # SQLite ORM
-│   └── export/            # Export-Funktionen
-│       └── geojson.py     # GeoJSON Export
-├── tests/                  # Test-Scripts
-│   ├── test_denns.py      # denn's Scraper Tests
-│   └── test_validation.py # Validierungs-Tests
-├── requirements.txt        # Python Dependencies
-├── .env.example           # Umgebungsvariablen Template
-└── README.md              # Diese Datei
+├── .github/workflows/
+│   └── deploy.yml          # GitHub Pages CI/CD
+├── api/                     # REST API Server
+│   ├── server.py           # HTTP Server für Store-Daten
+│   └── export_geojson.py   # GeoJSON Export-Utility
+├── config/                  # Konfigurationsdateien
+│   └── chains.json         # Definition der Supermarktketten
+├── data/                    # Datenbank und Cache
+│   └── stores.db           # SQLite Datenbank
+├── frontend/                # Web-Visualisierung
+│   ├── .nojekyll           # GitHub Pages Config
+│   ├── index.html          # Interaktive Karte
+│   ├── stores.geojson      # GeoJSON Export
+│   └── images/             # Logos und Marker-Icons
+├── logs/                    # Log-Dateien
+├── scripts/                 # Utility-Scripts
+│   ├── update_stores.py    # Haupt-Update-Script
+│   └── fix_coordinates.py  # Koordinaten-Reparatur
+├── src/                     # Source Code
+│   ├── scrapers/           # Scraper für verschiedene Ketten
+│   │   ├── base.py         # Basis-Scraper-Klasse
+│   │   ├── denns.py        # denn's Biomarkt Scraper
+│   │   ├── alnatura.py     # Alnatura Scraper
+│   │   └── tegut.py        # tegut Scraper
+│   ├── geocoding/          # Geocoding & Validierung
+│   │   ├── geocoder.py     # OpenStreetMap Geocoding
+│   │   └── validator.py    # Koordinaten-Validierung
+│   ├── storage/            # Datenbank-Layer
+│   │   └── database.py     # SQLAlchemy ORM
+│   └── export/             # Export-Funktionen
+│       └── geojson.py      # GeoJSON Export
+├── tests/                   # Test-Scripts
+│   ├── test_denns.py       # denn's Scraper Tests
+│   ├── test_alnatura.py    # Alnatura Scraper Tests
+│   └── test_validation.py  # Validierungs-Tests
+├── requirements.txt         # Python Dependencies
+├── .env.example            # Umgebungsvariablen Template
+└── README.md               # Diese Datei
 ```
 
 ## 🚀 Installation
@@ -99,19 +116,32 @@ python scripts/update_stores.py
 ```
 
 Dieser Befehl:
-- Scrapt alle konfigurierten Ketten
+- Lädt aktive Ketten aus `config/chains.json`
+- Scrapt automatisch alle konfigurierten Ketten
 - Validiert automatisch alle Koordinaten
 - Speichert Daten in SQLite
-- Loggt alle Aktivitäten
+- Zeigt detaillierte Statistiken
+
+### API Server starten
+
+```bash
+python api/server.py
+```
+
+Verfügbare Endpoints:
+- `http://localhost:8001/api/stores` - Alle Stores als JSON
+- `http://localhost:8001/api/stores/geojson` - GeoJSON Format
 
 ### Karte anzeigen
 
+**Lokal:**
 ```bash
 cd frontend
 python -m http.server 8000
 ```
+Öffne: http://localhost:8000
 
-Öffne im Browser: http://localhost:8000
+**Live:** https://simsalagin.github.io/SOTO-store-finder/
 
 ### GeoJSON neu generieren
 
@@ -121,7 +151,7 @@ from src.export.geojson import GeoJSONExporter
 
 db = Database()
 exporter = GeoJSONExporter(db)
-exporter.export_stores(chain_id='denns', output_file='frontend/stores.geojson')
+exporter.export_stores(output_file='frontend/stores.geojson')
 ```
 
 ## 🔍 Koordinaten-Validierung
@@ -132,59 +162,50 @@ Das System validiert automatisch alle Koordinaten durch:
 Erkennt (0,0) Koordinaten ("Null Island")
 
 ### 2. Ländergrenzen-Prüfung
-Stellt sicher, dass Koordinaten in Deutschland liegen
+Stellt sicher, dass Koordinaten in Deutschland liegen (47.27-55.06°N, 5.87-15.04°E)
 
 ### 3. Reverse Geocoding
 Fragt OpenStreetMap nach der Adresse an den Koordinaten
 
 ### 4. Plausibilitätsprüfung
 - Vergleicht Postleitzahl
-- Vergleicht Stadt
+- Vergleicht Stadt (Fuzzy-Matching)
 - Berechnet Distanz (max. 50km erlaubt)
 
 ### 5. Automatische Korrektur
 Bei ungültigen Koordinaten wird die Adresse neu geocoded
 
-### Beispiel
-
-```python
-from src.geocoding.validator import CoordinateValidator
-
-validator = CoordinateValidator()
-result = validator.validate_coordinates(
-    latitude=52.587174,
-    longitude=13.389093,
-    street='Friedrich-Engels-Str. 92',
-    postal_code='13156',
-    city='Berlin',
-    country_code='DE'
-)
-
-print(f"Valid: {result['valid']}")
-print(f"Confidence: {result['confidence']}")
-print(f"Issues: {result['issues']}")
-```
-
 ## 🗺️ Datenquellen
 
 ### denn's Biomarkt
-- **Quelle:** https://www.biomarkt.de/page-data/marktindex/page-data.json
-- **Typ:** JSON API
-- **Daten:** 590 Filialen in Deutschland
-- **Verfügbare Infos:** Adresse, Koordinaten, Öffnungszeiten, Services, Telefon
+- **Quelle:** JSON API
+- **Typ:** Strukturierte Daten
+- **Daten:** 590 Filialen
+- **Infos:** Adresse, Koordinaten, Öffnungszeiten, Services
+
+### Alnatura
+- **Quelle:** Website Scraping
+- **Typ:** HTML Parsing
+- **Daten:** 150 Filialen
+
+### tegut
+- **Quelle:** Website Scraping mit JSON-LD
+- **Typ:** HTML + Strukturierte Daten
+- **Daten:** 314 Filialen
+- **Infos:** Adresse, Koordinaten, Öffnungszeiten
 
 ### Geocoding/Validierung
 - **Service:** OpenStreetMap Nominatim
 - **Rate Limit:** 1 Request/Sekunde
 - **Kostenlos:** Ja
-- **User Agent:** Konfigurierbar via .env
+- **User Agent:** Konfigurierbar via `.env`
 
 ## 📊 Datenbank-Schema
 
 ```sql
 CREATE TABLE stores (
     id TEXT PRIMARY KEY,              -- Format: {chain_id}_{store_id}
-    chain_id TEXT NOT NULL,           -- z.B. 'denns'
+    chain_id TEXT NOT NULL,           -- z.B. 'denns', 'alnatura', 'tegut'
     store_id TEXT NOT NULL,           -- Original-ID der Kette
     name TEXT NOT NULL,
     street TEXT NOT NULL,
@@ -204,50 +225,52 @@ CREATE TABLE stores (
 );
 ```
 
+**Indizes:**
+- `idx_chain_city` - Schnelle Suche nach Kette + Stadt
+- `idx_country` - Länderfilterung
+- `idx_location` - Geografische Suche
+
 ## 🔄 Workflow
 
-### Manuelles Update
+### Automatisches Update (empfohlen)
 
 ```bash
-# 1. Stores scrapen und validieren
+# Alle aktiven Ketten aktualisieren
 python scripts/update_stores.py
 
-# 2. GeoJSON exportieren
-python -c "
-from src.storage.database import Database
-from src.export.geojson import GeoJSONExporter
-db = Database()
-exporter = GeoJSONExporter(db)
-exporter.export_stores(output_file='frontend/stores.geojson')
-"
+# GeoJSON automatisch exportieren
+python api/export_geojson.py
 
-# 3. Karte im Browser öffnen
-cd frontend && python -m http.server 8000
+# Karte ist live auf GitHub Pages
 ```
 
-### Automatisiertes Update (geplant)
+### Manuelles Chain-Management
 
-Zukünftig via Cron/Scheduler:
-- Wöchentlich: Alle Stores aktualisieren
-- Change Detection: Neue/geschlossene Filialen erkennen
-- Export: Automatischer GeoJSON-Export
-
-## 🛠️ Entwicklung
+**Kette aktivieren/deaktivieren** in `config/chains.json`:
+```json
+{
+  "id": "tegut",
+  "name": "tegut",
+  "active": true,  // <- auf false setzen zum Deaktivieren
+  "priority": 3
+}
+```
 
 ### Neue Kette hinzufügen
 
-1. **Konfiguration in `config/chains.json`**
+1. **In `config/chains.json` registrieren:**
 ```json
 {
   "id": "neue_kette",
   "name": "Neue Kette",
   "website": "https://example.com",
   "scraper_type": "all_stores",
+  "priority": 7,
   "active": true
 }
 ```
 
-2. **Scraper implementieren in `src/scrapers/neue_kette.py`**
+2. **Scraper implementieren in `src/scrapers/neue_kette.py`:**
 ```python
 from .base import BaseScraper, Store
 
@@ -256,11 +279,22 @@ class NeueKetteScraper(BaseScraper):
         super().__init__(chain_id="neue_kette", chain_name="Neue Kette")
 
     def scrape(self) -> List[Store]:
-        # Implementierung
+        # Implementierung hier
         pass
 ```
 
-3. **In `scripts/update_stores.py` registrieren**
+3. **In `scripts/update_stores.py` registrieren:**
+```python
+scraper_map = {
+    'neue_kette': 'src.scrapers.neue_kette.NeueKetteScraper',
+}
+```
+
+4. **Logo/Marker hinzufügen:**
+- `frontend/images/neue_kette-logo.svg`
+- `frontend/images/neue_kette-marker.svg`
+
+## 🛠️ Entwicklung
 
 ### Tests ausführen
 
@@ -268,11 +302,21 @@ class NeueKetteScraper(BaseScraper):
 # Alle Tests
 pytest tests/
 
+# Mit Coverage
+pytest --cov=src tests/
+
 # Einzelner Test
 python tests/test_denns.py
+```
 
-# Validierung testen
-python tests/test_validation.py
+### Code Quality
+
+```bash
+# Linting mit ruff
+ruff check src/
+
+# Type Checking mit mypy
+mypy src/
 ```
 
 ### Logging
@@ -293,7 +337,7 @@ LOG_LEVEL=DEBUG
 
 ### Koordinaten-Validierung
 - Immer aktiviert beim Scraping
-- Kann für Tests deaktiviert werden: `validate_coordinates=False`
+- Kann für Tests deaktiviert werden
 - Logs zeigen alle Korrekturen
 
 ### Datenbank-Updates
@@ -313,9 +357,49 @@ Error: GeocoderTimedOut
 **Automatisch gelöst:** Validator erkennt und korrigiert dies
 
 ### Karte zeigt keine Marker
-1. GeoJSON neu generieren
+1. GeoJSON neu generieren: `python api/export_geojson.py`
 2. Browser-Cache leeren
 3. Console auf Fehler prüfen
+
+### Import Error beim Update
+**Problem:** Scraper nicht gefunden
+**Lösung:** Prüfe, ob der Scraper in `src/scrapers/` existiert und korrekt in `update_stores.py` registriert ist
+
+## 🚀 Deployment
+
+### GitHub Pages (automatisch)
+
+Push auf `main` branch löst automatisch aus:
+1. GitHub Actions Workflow
+2. Build & Deploy zu GitHub Pages
+3. Live unter: https://simsalagin.github.io/SOTO-store-finder/
+
+### Manuelle Aktualisierung
+
+```bash
+# 1. Stores aktualisieren
+python scripts/update_stores.py
+
+# 2. GeoJSON exportieren
+python api/export_geojson.py
+
+# 3. Committen und pushen
+git add frontend/stores.geojson data/stores.db
+git commit -m "Update store data"
+git push origin main
+```
+
+## 📦 Dependencies
+
+- **beautifulsoup4** 4.12.3 - HTML Parsing
+- **requests** 2.32.3 - HTTP Requests
+- **lxml** 5.3.0 - XML/HTML Parser
+- **geopy** 2.4.1 - Geocoding
+- **sqlalchemy** 2.0.36 - ORM
+- **pandas** 2.2.3 - Data Processing
+- **pytest** 8.3.4 - Testing
+- **ruff** 0.8.4 - Linting
+- **mypy** 1.13.0 - Type Checking
 
 ## 📄 Lizenz
 
@@ -326,6 +410,23 @@ Error: GeocoderTimedOut
 [Kontakt hier einfügen]
 
 ## 🗓️ Changelog
+
+### v0.3.0 - Refactoring & Best Practices (2025-10-21)
+- ♻️ Refactored tegut scraper to use BaseScraper architecture
+- 🔧 Made chains.json functional - dynamic scraper loading
+- 📝 Standardized logging across all modules
+- 📦 Updated dependencies to latest stable versions
+- 🔒 Fixed API server schema issues
+- 🧹 Cleaned up temporary files and old code
+- 📚 Improved .gitignore coverage
+- 🚀 Enhanced README with current project state
+
+### v0.2.0 - Multi-Chain Support (2025-10-20)
+- ✅ Added Alnatura scraper (150 stores)
+- ✅ Added tegut scraper (314 stores)
+- ✅ Total: 1,054 stores across 3 chains
+- ✅ Added GitHub Pages deployment
+- ✅ Added chain-specific logos and markers
 
 ### v0.1.0 - MVP (2025-10-20)
 - ✅ denn's Biomarkt Scraper
