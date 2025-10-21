@@ -276,11 +276,9 @@ Track which stores are new, updated, or closed.
 Track these metrics as the project grows:
 
 - **Code Coverage:** Target 80%+
-- **Scraping Success Rate:** Target 95%+
-- **Geocoding Accuracy:** Target 98%+
-- **Total Stores:** Goal 2,000+
+- **Scraping Success Rate:** Target 100%
+- **Geocoding Accuracy:** Target 100%
 - **Update Frequency:** Weekly minimum
-- **Response Time:** API < 500ms
 
 ---
 
