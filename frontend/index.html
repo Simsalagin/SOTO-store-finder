@@ -18,6 +18,17 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
 
     <style>
+        :root {
+            --soto-green-primary: #6B9F3E;
+            --soto-green-dark: #4F7B2E;
+            --soto-green-light: #8AB860;
+            --soto-gold: #C9A961;
+            --soto-cream: #FAF8F3;
+            --soto-brown: #5D4E37;
+            --soto-text-dark: #2C2C2C;
+            --soto-text-light: #6B6B6B;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -25,64 +36,90 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #f5f5f5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--soto-cream);
+            color: var(--soto-text-dark);
         }
 
         .header {
-            background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
+            background: linear-gradient(135deg, var(--soto-green-primary) 0%, var(--soto-green-dark) 100%);
             color: white;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 24px 32px;
+            box-shadow: 0 4px 12px rgba(107, 159, 62, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
         .header h1 {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 5px;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+            position: relative;
+            z-index: 1;
         }
 
         .header p {
-            font-size: 14px;
-            opacity: 0.9;
+            font-size: 15px;
+            opacity: 0.95;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
         }
 
         .stats {
             background: white;
-            padding: 15px 20px;
+            padding: 18px 32px;
             display: flex;
-            gap: 30px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            gap: 40px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            border-bottom: 2px solid var(--soto-cream);
         }
 
         .stat {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .stat-icon {
-            width: 40px;
-            height: 40px;
-            background: #66bb6a;
-            border-radius: 8px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--soto-green-primary) 0%, var(--soto-green-light) 100%);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 20px;
+            font-size: 22px;
+            box-shadow: 0 2px 8px rgba(107, 159, 62, 0.2);
         }
 
         .stat-info h3 {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
-            color: #333;
+            color: var(--soto-green-dark);
+            letter-spacing: -0.5px;
         }
 
         .stat-info p {
-            font-size: 12px;
-            color: #666;
+            font-size: 13px;
+            color: var(--soto-text-light);
             margin-top: 2px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         #map {
@@ -91,94 +128,105 @@
         }
 
         .leaflet-popup-content-wrapper {
-            border-radius: 12px;
-            box-shadow: 0 3px 14px rgba(0,0,0,0.2);
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(107, 159, 62, 0.15);
+            border: 1px solid var(--soto-cream);
         }
 
         .popup-content {
-            min-width: 250px;
+            min-width: 260px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         .popup-header {
-            font-size: 16px;
-            font-weight: 600;
-            color: #43a047;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #66bb6a;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--soto-green-dark);
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--soto-green-primary);
+            letter-spacing: -0.3px;
         }
 
         .popup-section {
-            margin: 10px 0;
+            margin: 12px 0;
         }
 
         .popup-section strong {
             display: block;
-            color: #666;
+            color: var(--soto-text-light);
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+            font-weight: 600;
         }
 
         .popup-section p {
-            color: #333;
+            color: var(--soto-text-dark);
             font-size: 14px;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .popup-hours {
-            background: #f5f5f5;
-            padding: 8px;
-            border-radius: 6px;
-            margin-top: 5px;
+            background: var(--soto-cream);
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-top: 6px;
+            border: 1px solid rgba(107, 159, 62, 0.1);
         }
 
         .popup-hours-item {
             display: flex;
             justify-content: space-between;
             font-size: 12px;
-            padding: 3px 0;
+            padding: 4px 0;
         }
 
         .popup-hours-day {
-            color: #666;
+            color: var(--soto-text-light);
+            font-weight: 500;
         }
 
         .popup-hours-time {
-            color: #333;
-            font-weight: 500;
+            color: var(--soto-green-dark);
+            font-weight: 600;
         }
 
         .popup-link {
             display: inline-block;
-            margin-top: 10px;
-            padding: 8px 16px;
-            background: #66bb6a;
+            margin-top: 12px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--soto-green-primary) 0%, var(--soto-green-dark) 100%);
             color: white;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 13px;
-            transition: background 0.2s;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(107, 159, 62, 0.25);
         }
 
         .popup-link:hover {
-            background: #43a047;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(107, 159, 62, 0.35);
         }
 
         .services-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 5px;
-            margin-top: 5px;
+            gap: 6px;
+            margin-top: 6px;
         }
 
         .service-tag {
-            background: #e8f5e9;
-            color: #2e7d32;
-            padding: 4px 8px;
-            border-radius: 4px;
+            background: linear-gradient(135deg, #F0F7E9 0%, #E8F3DC 100%);
+            color: var(--soto-green-dark);
+            padding: 5px 10px;
+            border-radius: 6px;
             font-size: 11px;
+            font-weight: 600;
+            border: 1px solid rgba(107, 159, 62, 0.15);
         }
 
         .locate-button {
@@ -187,25 +235,27 @@
             right: 10px;
             z-index: 1000;
             background: white;
-            border: 2px solid rgba(0,0,0,0.2);
-            border-radius: 4px;
-            width: 34px;
-            height: 34px;
+            border: 2px solid var(--soto-green-primary);
+            border-radius: 10px;
+            width: 44px;
+            height: 44px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-            transition: background 0.3s;
+            font-size: 20px;
+            box-shadow: 0 3px 10px rgba(107, 159, 62, 0.25);
+            transition: all 0.3s ease;
         }
 
         .locate-button:hover {
-            background: #f4f4f4;
+            background: var(--soto-green-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(107, 159, 62, 0.35);
         }
 
         .locate-button:active {
-            background: #e0e0e0;
+            transform: translateY(0);
         }
 
         .locate-button.loading {
@@ -215,44 +265,55 @@
         @keyframes pulse {
             0%, 100% {
                 opacity: 1;
+                border-color: var(--soto-green-primary);
             }
             50% {
-                opacity: 0.5;
+                opacity: 0.6;
+                border-color: var(--soto-green-light);
             }
         }
 
         .error-message {
             position: absolute;
-            top: 120px;
+            top: 135px;
             right: 10px;
             z-index: 1000;
-            background: #f44336;
+            background: linear-gradient(135deg, #E85D4C 0%, #D44334 100%);
             color: white;
-            padding: 12px 16px;
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            max-width: 300px;
+            padding: 14px 18px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(228, 93, 76, 0.3);
+            max-width: 320px;
             font-size: 13px;
-            line-height: 1.4;
+            line-height: 1.5;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .error-message button {
             background: white;
-            color: #f44336;
+            color: #D44334;
             border: none;
-            padding: 4px 8px;
-            margin-top: 8px;
-            border-radius: 3px;
+            padding: 6px 12px;
+            margin-top: 10px;
+            border-radius: 6px;
             cursor: pointer;
             font-size: 11px;
-            font-weight: bold;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            transition: all 0.2s ease;
+        }
+
+        .error-message button:hover {
+            background: var(--soto-cream);
+            transform: translateY(-1px);
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>🌱 SOTO Produkte finden </h1>
-        <p>Finde SOTO Produkte in deiner Nähe</p>
+        <h1>🌿 SOTO Store Finder</h1>
+        <p>Natürlich. Einfach. Bio. – Finde SOTO Produkte in deiner Nähe</p>
     </div>
 
     <div class="stats">

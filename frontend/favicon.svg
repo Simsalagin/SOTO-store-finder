@@ -1,26 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- Background circle -->
-  <circle cx="50" cy="50" r="48" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <!-- SOTO Brand Colors -->
+  <defs>
+    <linearGradient id="sotoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6B9F3E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4F7B2E;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sotoAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C9A961;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8954D;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle with SOTO green gradient -->
+  <circle cx="50" cy="50" r="48" fill="url(#sotoBg)" stroke="#4F7B2E" stroke-width="2"/>
+
+  <!-- Organic leaf decoration (top left) -->
+  <path d="M 20 25 Q 18 20 23 18 Q 28 16 30 21 Q 28 26 23 24 Q 20 22 20 25 Z"
+        fill="#8AB860" opacity="0.3"/>
 
   <!-- Store/shop icon -->
-  <g fill="white">
-    <!-- Roof -->
-    <polygon points="30,35 50,25 70,35" />
+  <g fill="#FAF8F3">
+    <!-- Roof with organic curve -->
+    <path d="M 30 35 L 50 25 L 70 35 L 68 36 L 50 27 L 32 36 Z" />
 
     <!-- Building body -->
-    <rect x="32" y="35" width="36" height="35" />
+    <rect x="32" y="35" width="36" height="35" rx="1"/>
 
-    <!-- Door -->
-    <rect x="44" y="50" width="12" height="20" fill="#27ae60" />
+    <!-- Door with rounded top -->
+    <rect x="44" y="50" width="12" height="20" rx="1" fill="#4F7B2E" />
 
     <!-- Windows -->
-    <rect x="36" y="40" width="8" height="6" fill="#27ae60" />
-    <rect x="56" y="40" width="8" height="6" fill="#27ae60" />
+    <rect x="36" y="40" width="8" height="6" rx="1" fill="#4F7B2E" />
+    <rect x="56" y="40" width="8" height="6" rx="1" fill="#4F7B2E" />
   </g>
 
-  <!-- Location pin marker overlay -->
-  <g transform="translate(65, 25)">
-    <circle cx="0" cy="0" r="12" fill="#e74c3c" stroke="white" stroke-width="2"/>
-    <circle cx="0" cy="0" r="4" fill="white"/>
+  <!-- Location pin marker with SOTO gold accent -->
+  <g transform="translate(68, 22)">
+    <circle cx="0" cy="0" r="13" fill="url(#sotoAccent)" stroke="white" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="5" fill="white"/>
   </g>
+
+  <!-- Small organic accent (bottom right) -->
+  <circle cx="78" cy="78" r="4" fill="#8AB860" opacity="0.25"/>
 </svg>
