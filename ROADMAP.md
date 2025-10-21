@@ -23,9 +23,9 @@ Implement scrapers for the remaining chains defined in `config/chains.json`:
   - Website structure needs analysis
   - Create `src/scrapers/biocompany.py`
 
-- [ ] **Vollcorner** (vollcorner.de)
-  - Estimated stores: ~30-40
-  - Create `src/scrapers/vollcorner.py`
+- [x] **Vollcorner** (vollcorner.de)
+  - ✅ Implemented: 21 stores
+  - Created `src/scrapers/vollcorner.py`
 
 - [ ] **Globus** (globus.de)
   - Large chain, ~50+ stores

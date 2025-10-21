@@ -12,12 +12,12 @@ Entwicklung einer interaktiven Karte, die alle Filialen anzeigt, in denen SOTO-P
 - ✅ **denn's Biomarkt** - 590 Filialen
 - ✅ **Alnatura** - 150 Filialen
 - ✅ **tegut** - 314 Filialen
+- ✅ **VollCorner** - 21 Filialen
 
-**Total: 1,054 validierte Filialen**
+**Total: 1,075 validierte Filialen**
 
 **In Entwicklung:**
 - 🔄 Bio Company
-- 🔄 Vollcorner
 - 🔄 Globus
 
 **Features:**
