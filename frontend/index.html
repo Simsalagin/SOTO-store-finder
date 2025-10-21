@@ -180,7 +180,17 @@
             display: flex;
             justify-content: space-between;
             font-size: 12px;
-            padding: 4px 0;
+            padding: 6px 8px;
+            margin: 2px 0;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .popup-hours-item.today {
+            background: linear-gradient(135deg, var(--soto-green-primary) 0%, var(--soto-green-dark) 100%);
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(107, 159, 62, 0.3);
         }
 
         .popup-hours-day {
@@ -188,9 +198,19 @@
             font-weight: 500;
         }
 
+        .popup-hours-item.today .popup-hours-day {
+            color: white;
+            font-weight: 700;
+        }
+
         .popup-hours-time {
             color: var(--soto-green-dark);
             font-weight: 600;
+        }
+
+        .popup-hours-item.today .popup-hours-time {
+            color: white;
+            font-weight: 700;
         }
 
 
@@ -415,7 +435,7 @@
 
                             days.forEach(day => {
                                 const isToday = day === today;
-                                const isTodayClass = isToday ? 'style="font-weight: 700;"' : '';
+                                const todayClass = isToday ? 'today' : '';
 
                                 let displayTime;
                                 if (day === 'Sonntag' && (isMoSa || isMoFr)) {
@@ -427,7 +447,7 @@
                                 }
 
                                 hoursHtml += `
-                                    <div class="popup-hours-item" ${isTodayClass}>
+                                    <div class="popup-hours-item ${todayClass}">
                                         <span class="popup-hours-day">${day}</span>
                                         <span class="popup-hours-time">${displayTime}</span>
                                     </div>
@@ -437,7 +457,7 @@
                             // Structured format - show all days, "geschlossen" for missing
                             days.forEach(day => {
                                 const isToday = day === today;
-                                const isTodayClass = isToday ? 'style="font-weight: 700;"' : '';
+                                const todayClass = isToday ? 'today' : '';
 
                                 let timeText;
                                 if (props.opening_hours[day]) {
@@ -448,7 +468,7 @@
                                 }
 
                                 hoursHtml += `
-                                    <div class="popup-hours-item" ${isTodayClass}>
+                                    <div class="popup-hours-item ${todayClass}">
                                         <span class="popup-hours-day">${day}</span>
                                         <span class="popup-hours-time">${timeText}</span>
                                     </div>
