@@ -392,16 +392,44 @@
 
                         let hoursHtml = '<div class="popup-section"><strong>🕐 Öffnungszeiten</strong><div class="popup-hours">';
 
-                        // Check if it's text format (Alnatura) - convert to structured display
+                        // Check if it's text format (Alnatura) - parse and convert to structured display
                         if (props.opening_hours.text) {
-                            // For text format, show all days with the same text or "geschlossen"
+                            const text = props.opening_hours.text;
+
+                            // Parse the text to extract time and day range
+                            // Common patterns: "Mo-Sa 8-20 Uhr", "Mo-Fr 9-18 Uhr", etc.
+                            const timeMatch = text.match(/(\d{1,2})[:\-]?(\d{0,2})\s*[-–]\s*(\d{1,2})[:\-]?(\d{0,2})/);
+                            let timeText = text; // fallback to full text
+
+                            if (timeMatch) {
+                                const openHour = timeMatch[1].padStart(2, '0');
+                                const openMin = (timeMatch[2] || '00').padStart(2, '0');
+                                const closeHour = timeMatch[3].padStart(2, '0');
+                                const closeMin = (timeMatch[4] || '00').padStart(2, '0');
+                                timeText = `${openHour}:${openMin} - ${closeHour}:${closeMin}`;
+                            }
+
+                            // Detect which days are open based on text pattern
+                            const isMoSa = /Mo-Sa/i.test(text);
+                            const isMoFr = /Mo-Fr/i.test(text);
+
                             days.forEach(day => {
                                 const isToday = day === today;
                                 const isTodayClass = isToday ? 'style="font-weight: 700;"' : '';
+
+                                let displayTime;
+                                if (day === 'Sonntag' && (isMoSa || isMoFr)) {
+                                    displayTime = 'geschlossen';
+                                } else if (day === 'Samstag' && isMoFr) {
+                                    displayTime = 'geschlossen';
+                                } else {
+                                    displayTime = timeText;
+                                }
+
                                 hoursHtml += `
                                     <div class="popup-hours-item" ${isTodayClass}>
                                         <span class="popup-hours-day">${day}</span>
-                                        <span class="popup-hours-time">${props.opening_hours.text}</span>
+                                        <span class="popup-hours-time">${displayTime}</span>
                                     </div>
                                 `;
                             });
