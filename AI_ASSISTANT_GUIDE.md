@@ -358,6 +358,218 @@ logger.debug(f"Result: {validation}")
 
 ---
 
+## 🌿 Git Workflow & Branch Strategy
+
+### CRITICAL: Feature Branch Workflow (MANDATORY)
+
+**⚠️ NEVER commit directly to `main` for new features!**
+
+All new features, scrapers, and non-trivial changes MUST:
+1. Be developed on a feature branch
+2. Be tested thoroughly on the branch
+3. Receive human approval before merging to main
+4. Update all relevant documentation before merge
+
+### Creating a Feature Branch
+
+```bash
+# For new features
+git checkout -b feature/add-biocompany-scraper
+
+# For bug fixes
+git checkout -b fix/geocoding-timeout
+
+# For refactoring
+git checkout -b refactor/async-scraping
+
+# For documentation
+git checkout -b docs/update-installation-guide
+```
+
+**Branch naming convention:**
+- `feature/*` - New features or scrapers
+- `fix/*` - Bug fixes
+- `refactor/*` - Code improvements without functionality changes
+- `docs/*` - Documentation updates
+- `test/*` - Adding or updating tests
+
+### Development Workflow
+
+1. **Create feature branch from main:**
+   ```bash
+   git checkout main
+   git pull origin main
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **Develop and test on branch:**
+   ```bash
+   # Make changes
+   # Run tests
+   pytest tests/
+   ruff check src/
+   mypy src/
+   python scripts/update_stores.py  # Integration test
+   ```
+
+3. **Commit regularly with clear messages:**
+   ```bash
+   git add -A
+   git commit -m "Add Bio Company scraper with coordinate validation"
+   git push origin feature/your-feature-name
+   ```
+
+4. **Before requesting merge - Update documentation:**
+   - [ ] Update README.md if user-facing changes
+   - [ ] Update QUICK_START.md if workflow changes
+   - [ ] Update requirements.txt if dependencies added
+   - [ ] Update ROADMAP.md (mark completed items)
+   - [ ] Update AI_ASSISTANT_GUIDE.md if patterns changed
+
+5. **Create pull request:**
+   ```bash
+   # Use GitHub UI or gh CLI
+   gh pr create --title "Add Bio Company scraper" \
+                --body "Implements scraper for Bio Company chain with full validation"
+   ```
+
+6. **Wait for human approval:**
+   - Human reviewer will check code quality
+   - Human reviewer will verify tests pass
+   - Human reviewer will validate documentation updates
+   - Human may request changes
+
+7. **After approval - Merge to main:**
+   ```bash
+   # Human or AI can merge after approval
+   git checkout main
+   git merge feature/your-feature-name
+   git push origin main
+   ```
+
+### Documentation Update Checklist (MANDATORY)
+
+**Before every merge to `main`, check and update if needed:**
+
+#### 1. README.md
+Update if:
+- [ ] New chain added (update status counts)
+- [ ] New feature visible to users
+- [ ] Installation steps changed
+- [ ] New dependencies added
+- [ ] API endpoints changed
+- [ ] Configuration options added
+
+#### 2. QUICK_START.md
+Update if:
+- [ ] Common commands changed
+- [ ] Key principles changed
+- [ ] Project structure changed
+- [ ] Important files list changed
+
+#### 3. requirements.txt
+Update if:
+- [ ] New Python packages added
+- [ ] Package versions upgraded
+- [ ] Dependencies removed
+
+#### 4. ROADMAP.md
+Update if:
+- [ ] Completed a roadmap item (mark with [x])
+- [ ] Discovered new technical debt
+- [ ] Added new feature priorities
+- [ ] Changed success metrics
+
+#### 5. AI_ASSISTANT_GUIDE.md
+Update if:
+- [ ] New coding patterns established
+- [ ] Architecture changed
+- [ ] New common tasks added
+- [ ] Important conventions changed
+
+### Small Fixes & Documentation (Exception)
+
+**Direct commits to `main` are ONLY allowed for:**
+- Typo fixes in documentation
+- README clarifications
+- Comment improvements
+- .gitignore updates
+- Small bug fixes that don't change functionality
+
+**Still require:**
+- Clear commit message
+- Quick sanity check
+- No broken tests
+
+### Pull Request Template
+
+When creating a PR, include:
+
+```markdown
+## Summary
+Brief description of changes
+
+## Type of Change
+- [ ] New feature (feature/*)
+- [ ] Bug fix (fix/*)
+- [ ] Refactoring (refactor/*)
+- [ ] Documentation (docs/*)
+- [ ] Tests (test/*)
+
+## Changes Made
+- Added Bio Company scraper
+- Updated database schema
+- Added 50+ new stores
+
+## Testing Done
+- [ ] Unit tests pass (`pytest tests/`)
+- [ ] Integration test passes (`python scripts/update_stores.py`)
+- [ ] Code quality checks pass (`ruff`, `mypy`)
+- [ ] Manual testing completed
+
+## Documentation Updated
+- [ ] README.md updated
+- [ ] QUICK_START.md updated (if needed)
+- [ ] requirements.txt updated (if needed)
+- [ ] ROADMAP.md updated (if needed)
+- [ ] AI_ASSISTANT_GUIDE.md updated (if needed)
+
+## Checklist
+- [ ] Code follows project conventions
+- [ ] Logging used (not print statements)
+- [ ] Type hints added
+- [ ] Tests added for new functionality
+- [ ] No breaking changes (or documented)
+```
+
+### Important Notes
+
+1. **Human Approval is Required** for:
+   - All feature branches
+   - Any changes that affect functionality
+   - Database schema changes
+   - Dependency updates
+   - Architecture changes
+
+2. **Never bypass review** by:
+   - Committing directly to main
+   - Merging without approval
+   - Skipping documentation updates
+   - Ignoring failed tests
+
+3. **AI Assistants should**:
+   - Always work on feature branches for new work
+   - Ask for human review before merging
+   - Proactively update documentation
+   - Clearly communicate what needs review
+
+4. **Merge Conflicts**:
+   - If conflicts occur, rebase on main
+   - Test thoroughly after resolving
+   - Ask for help if unsure
+
+---
+
 ## 🧪 Testing Standards
 
 ### Always Write Tests For:
@@ -533,6 +745,7 @@ print(result)
 ## 🎯 When Unsure, Follow This Checklist
 
 Before making changes:
+- [ ] Am I on a feature branch (not main)?
 - [ ] Does this follow the existing patterns?
 - [ ] Am I using proper logging (not print)?
 - [ ] Are all functions type-hinted?
@@ -548,8 +761,19 @@ After making changes:
 - [ ] Check types: `mypy src/`
 - [ ] Test scraping: `python scripts/update_stores.py`
 - [ ] Check git status: `git status`
-- [ ] Update ROADMAP.md if implementing a feature
-- [ ] Update README.md if adding user-facing features
+- [ ] Update README.md if user-facing changes
+- [ ] Update QUICK_START.md if workflow changed
+- [ ] Update requirements.txt if dependencies changed
+- [ ] Update ROADMAP.md (mark completed items)
+- [ ] Update AI_ASSISTANT_GUIDE.md if patterns changed
+
+Before merging to main:
+- [ ] All documentation updated (see checklist above)
+- [ ] All tests passing
+- [ ] Code quality checks passing
+- [ ] Pull request created
+- [ ] Human approval received
+- [ ] No merge conflicts
 
 ---
 
@@ -581,8 +805,21 @@ At the start of each session, ask yourself:
 4. ✅ Will I use logging instead of print()?
 5. ✅ Do I understand the validation flow?
 6. ✅ Have I checked ROADMAP.md for context?
+7. ✅ Do I know the feature branch workflow?
+8. ✅ Will I update documentation before merging?
+9. ✅ Do I know I need human approval before merging to main?
 
 If any answer is "no", reread the relevant section above.
+
+### Before Starting New Work:
+
+**Question to ask the human:**
+> "I'm about to work on [feature/fix/refactoring]. Should I create a feature branch, or is this small enough for direct commit to main?"
+
+**Default answer (if unsure):** Create a feature branch.
+
+**After completing work:**
+> "I've completed [feature] on branch [branch-name]. I've updated [list of documentation files]. Ready for your review - would you like me to create a pull request?"
 
 ---
 
