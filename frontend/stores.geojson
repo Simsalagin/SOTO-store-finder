@@ -41238,6 +41238,6600 @@
         "services": null,
         "address": "Bahnhofstraße 32, 58452 Witten"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5308374,
+          48.103214
+        ]
+      },
+      "properties": {
+        "name": "tegut… München | BASIC",
+        "street": "Passauer Straße 183",
+        "city": "München",
+        "postal_code": "81369",
+        "district": "Sendling",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muenchen-sendling-passauer-strasse-183.html",
+        "store_id": "2249",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.6155511,
+          48.1413904
+        ]
+      },
+      "properties": {
+        "name": "tegut… München | BASIC",
+        "street": "Richard-Strauss-Straße 48",
+        "city": "München",
+        "postal_code": "81677",
+        "district": "Bogenhausen",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muenchen-bogenhausen-richard-strauss-strasse-48.html",
+        "store_id": "2109",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5037571,
+          48.139318
+        ]
+      },
+      "properties": {
+        "name": "tegut… München | BASIC",
+        "street": "Agnes-Bernauer-Straße 73",
+        "city": "München",
+        "postal_code": "80687",
+        "district": "Laim",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muenchen-laim-agnes-bernauer-strasse-73.html",
+        "store_id": "2309",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.4906148,
+          48.1651059
+        ]
+      },
+      "properties": {
+        "name": "tegut… München | BASIC",
+        "street": "Amalienburgstraße 2-6",
+        "city": "München",
+        "postal_code": "81247",
+        "district": "Pasing-Obermenzing",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muenchen-pasing-obermenzing-amalienburgstrasse-2-6.html",
+        "store_id": "2369",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5351566,
+          48.1812951
+        ]
+      },
+      "properties": {
+        "name": "tegut… München | BASIC",
+        "street": "Pelkovenstraße 154",
+        "city": "München",
+        "postal_code": "80992",
+        "district": "Moosach",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muenchen-moosach-pelkovenstrasse-154.html",
+        "store_id": "2429",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5736735,
+          48.1661278
+        ]
+      },
+      "properties": {
+        "name": "tegut… München | BASIC",
+        "street": "Belgrad-Straße 59",
+        "city": "München",
+        "postal_code": "80796",
+        "district": "Schwabing-West",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muenchen-schwabing-west-belgrad-strasse-59.html",
+        "store_id": "2399",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.546979,
+          48.1500843
+        ]
+      },
+      "properties": {
+        "name": "tegut… München | BASIC",
+        "street": "Nymphenburger Straße 82",
+        "city": "München",
+        "postal_code": "80636",
+        "district": "Neuhausen-Nymphenburg",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muenchen-neuhausen-nymphenburg-nymphenburger-strasse-82.html",
+        "store_id": "2329",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.68431982,
+          50.1280846
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main | BASIC",
+        "street": "Eckenheimer Landstraße 127",
+        "city": "Frankfurt am Main",
+        "postal_code": "60318",
+        "district": "Nordend-West",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-nordend-west-eckenheimer-landstrasse-127.html",
+        "store_id": "2129",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6954271,
+          50.1200183
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Berger Straße 40-42",
+        "city": "Frankfurt am Main",
+        "postal_code": "60316",
+        "district": "Nordend-Ost",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-nordend-ost-berger-strasse-40-42.html",
+        "store_id": "2079",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.07388675,
+          50.0864834
+        ]
+      },
+      "properties": {
+        "name": "tegut… Alzenau",
+        "street": "Friedberger Gäßchen 5",
+        "city": "Alzenau",
+        "postal_code": "63755",
+        "district": "",
+        "opening_hours": "Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-alzenau-friedberger-gaesschen-5.html",
+        "store_id": "6344",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3053864,
+          50.050935
+        ]
+      },
+      "properties": {
+        "name": "tegut… Schonungen",
+        "street": "Ludwig-Grobe-Straße 3",
+        "city": "Schonungen",
+        "postal_code": "97453",
+        "district": "",
+        "opening_hours": "Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-schonungen-ludwig-grobe-strasse-3.html",
+        "store_id": "6354",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.756572,
+          50.251598
+        ]
+      },
+      "properties": {
+        "name": "tegut… Karben",
+        "street": "Friedhofsweg 2",
+        "city": "Karben",
+        "postal_code": "61184",
+        "district": "Okarben",
+        "opening_hours": "Mo-Fr: 07:30 - 18:30",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-karben-okarben-friedhofsweg-2.html",
+        "store_id": "6274",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.920118,
+          49.828792
+        ]
+      },
+      "properties": {
+        "name": "tegut… Würzburg",
+        "street": "Gadheimer Straße 1a",
+        "city": "Würzburg",
+        "postal_code": "97080",
+        "district": "Oberdürrbach",
+        "opening_hours": "Mo-Fr: 07:30 - 18:30",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-wuerzburg-oberduerrbach-gadheimer-strasse-1a.html",
+        "store_id": "6124",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.804432,
+          49.86332
+        ]
+      },
+      "properties": {
+        "name": "tegut… Leinach",
+        "street": "Rathausstraße 33",
+        "city": "Leinach",
+        "postal_code": "97274",
+        "district": "",
+        "opening_hours": "Mo-Fr: 07:30 - 18:00 | Mo-Fr: 09:00 - 12:30 und 14:00 - 17:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-leinach-rathausstrasse-33.html",
+        "store_id": "6194",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.79174,
+          50.45555
+        ]
+      },
+      "properties": {
+        "name": "tegut… Ebersburg",
+        "street": "Brückenstraße 3",
+        "city": "Ebersburg",
+        "postal_code": "36157",
+        "district": "Schmalnau",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-ebersburg-schmalnau-brueckenstrasse-3.html",
+        "store_id": "3210",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.50962,
+          49.61526
+        ]
+      },
+      "properties": {
+        "name": "tegut… Langenfeld",
+        "street": "Ullstädter Straße 8",
+        "city": "Langenfeld",
+        "postal_code": "91474",
+        "district": "",
+        "opening_hours": "Mo-Fr: 08:00 - 18:30",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-langenfeld-ullstaedter-strasse-8.html",
+        "store_id": "6434",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64582285,
+          49.8487819
+        ]
+      },
+      "properties": {
+        "name": "tegut… Darmstadt",
+        "street": "Heidelberger Straße 217–219",
+        "city": "Darmstadt",
+        "postal_code": "64285",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-darmstadt-heidelberger-strasse-219.html",
+        "store_id": "2858",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6285639,
+          50.1211518
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Rödelheimer Landstraße 23",
+        "city": "Frankfurt am Main",
+        "postal_code": "60487",
+        "district": "Bockenheim",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-bockenheim-joachim-biermann-strasse-5.html",
+        "store_id": "2758",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9739107,
+          50.0498758
+        ]
+      },
+      "properties": {
+        "name": "tegut… Seligenstadt",
+        "street": "Steinheimer Straße 64",
+        "city": "Seligenstadt",
+        "postal_code": "63500",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-seligenstadt-steinheimer-strasse-64.html",
+        "store_id": "2908",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.36387802,
+          49.9817199
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bischofsheim",
+        "street": "Hans-Dorr-Allee 1A",
+        "city": "Bischofsheim",
+        "postal_code": "65474",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bischofsheim-hans-dorr-allee-1a.html",
+        "store_id": "2798",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5858637,
+          48.1670965
+        ]
+      },
+      "properties": {
+        "name": "tegut… München | BASIC",
+        "street": "Rheinstraße 1",
+        "city": "München",
+        "postal_code": "80803",
+        "district": "Schwabing-Freimann",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muenchen-schwabing-freimann-rheinstrasse-1.html",
+        "store_id": "2169",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.249917,
+          50.076917
+        ]
+      },
+      "properties": {
+        "name": "tegut… Wiesbaden",
+        "street": "Frankfurter Straße 17",
+        "city": "Wiesbaden",
+        "postal_code": "65189",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-wiesbaden-kaiserhof-frankfurter-strasse-17.html",
+        "store_id": "2734",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.8956096,
+          48.3702367
+        ]
+      },
+      "properties": {
+        "name": "tegut… Augsburg | BASIC",
+        "street": "Ludwigstraße 2",
+        "city": "Augsburg",
+        "postal_code": "86152",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-augsburg-innenstadt-ludwigstrasse-2.html",
+        "store_id": "2449",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.023402,
+          50.139558
+        ]
+      },
+      "properties": {
+        "name": "tegut… Rodenbach",
+        "street": "Adolf-Reichwein-Straße 13",
+        "city": "Rodenbach",
+        "postal_code": "63517",
+        "district": "Niederrodenbach",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-rodenbach-niederrodenbach-adolf-reichwein-strasse-13.html",
+        "store_id": "2588",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5396677,
+          48.0927088
+        ]
+      },
+      "properties": {
+        "name": "tegut… München",
+        "street": "Wolfratshauser Straße 90",
+        "city": "München",
+        "postal_code": "81379",
+        "district": "Obersendling",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muenchen-obersendling-wolfratshauser-strasse-90.html",
+        "store_id": "2898",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.70737,
+          50.12611
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Berger Straße 195",
+        "city": "Frankfurt am Main",
+        "postal_code": "60385",
+        "district": "Bornheim",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-bornheim-berger-strasse-195.html",
+        "store_id": "3042",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.80251102,
+          50.190134
+        ]
+      },
+      "properties": {
+        "name": "tegut… Niederdorfelden",
+        "street": "Die Landwehr 1",
+        "city": "Niederdorfelden",
+        "postal_code": "61138",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-niederdorfelden-die-landwehr-1.html",
+        "store_id": "2548",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.611278,
+          50.2206706
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Homburg vor der Höhe",
+        "street": "Schaberweg 26 b",
+        "city": "Bad Homburg vor der Höhe",
+        "postal_code": "61348",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-homburg-vor-der-hoehe-bad-homburg-schaberweg-26.html",
+        "store_id": "2718",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1103905,
+          48.843175
+        ]
+      },
+      "properties": {
+        "name": "tegut… Aalen",
+        "street": "Am Tannenwäldle 2",
+        "city": "Aalen",
+        "postal_code": "73431",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-aalen-am-tannenwaeldle-2.html",
+        "store_id": "2598",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.32497472,
+          49.9253294
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bodenheim",
+        "street": "Lange Ruthe 3",
+        "city": "Bodenheim",
+        "postal_code": "55294",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bodenheim-lange-ruthe-3.html",
+        "store_id": "2788",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.68819,
+          50.11407
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Kurt-Schumacher-Straße 30-32",
+        "city": "Frankfurt am Main",
+        "postal_code": "60313",
+        "district": "",
+        "opening_hours": "Mo-Fr: 07:00 - 23:59",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-innenstadt-kurt-schumacher-strasse-30-32.html",
+        "store_id": "2638",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.881689,
+          49.787753
+        ]
+      },
+      "properties": {
+        "name": "tegut… Höchberg",
+        "street": "Waldstraße 4",
+        "city": "Höchberg",
+        "postal_code": "97204",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-hoechberg-waldstrasse-4.html",
+        "store_id": "2698",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.99188,
+          49.568935
+        ]
+      },
+      "properties": {
+        "name": "tegut… Erlangen",
+        "street": "Wladimirstraße 1-3",
+        "city": "Erlangen",
+        "postal_code": "91058",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-erlangen-wladimirstrasse-1-3.html",
+        "store_id": "2678",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.75449,
+          50.10608
+        ]
+      },
+      "properties": {
+        "name": "tegut… Offenbach am Main",
+        "street": "Berliner Straße 178",
+        "city": "Offenbach am Main",
+        "postal_code": "63067",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-offenbach-am-main-berliner-strasse-178.html",
+        "store_id": "2518",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7491751,
+          50.356952
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Nauheim",
+        "street": "Schwalheimer Straße 79",
+        "city": "Bad Nauheim",
+        "postal_code": "61231",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-nauheim-schwalheimer-strasse-79.html",
+        "store_id": "2634",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.12987,
+          48.96643
+        ]
+      },
+      "properties": {
+        "name": "tegut… Ellwangen (Jagst)",
+        "street": "Bahnhofstraße 21",
+        "city": "Ellwangen (Jagst)",
+        "postal_code": "73479",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-ellwangen-jagst-bahnhofstrasse-21.html",
+        "store_id": "2608",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.561734,
+          48.141078
+        ]
+      },
+      "properties": {
+        "name": "tegut… München",
+        "street": "Luitpoldstraße 3",
+        "city": "München",
+        "postal_code": "80335",
+        "district": "Maxvorstadt",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muenchen-maxvorstadt-elisenhof-luitpoldstrasse-3.html",
+        "store_id": "2854",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2611222,
+          50.0015466
+        ]
+      },
+      "properties": {
+        "name": "tegut… Mainz",
+        "street": "Bahnhofstraße 8a",
+        "city": "Mainz",
+        "postal_code": "55116",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-mainz-altstadt-bahnhofstrasse-8a.html",
+        "store_id": "3204",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6801052,
+          50.1170364
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Bleichstraße 57",
+        "city": "Frankfurt am Main",
+        "postal_code": "60313",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 23:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-innenstadt-am-eschenheimer-turm-bleichstrasse-57.html",
+        "store_id": "3104",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.28099114,
+          49.9810495
+        ]
+      },
+      "properties": {
+        "name": "tegut… Mainz",
+        "street": "Annemarie-Renger-Straße 1 o",
+        "city": "Mainz",
+        "postal_code": "55131",
+        "district": "Weisenau",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-mainz-weisenau-annemarie-renger-strasse-1-o.html",
+        "store_id": "2498",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.039678,
+          49.601189
+        ]
+      },
+      "properties": {
+        "name": "tegut… Erlangen",
+        "street": "Lange Zeile 61",
+        "city": "Erlangen",
+        "postal_code": "91054",
+        "district": "Sieglitzhof",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-erlangen-sieglitzhof-lange-zeile-61.html",
+        "store_id": "3234",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.987967,
+          49.463858
+        ]
+      },
+      "properties": {
+        "name": "tegut… Fürth",
+        "street": "Herrnstraße 26",
+        "city": "Fürth",
+        "postal_code": "90763",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-fuerth-herrnstrasse-26.html",
+        "store_id": "2618",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1765673,
+          48.8096764
+        ]
+      },
+      "properties": {
+        "name": "tegut… Stuttgart",
+        "street": "Alarichstraße 4",
+        "city": "Stuttgart",
+        "postal_code": "70469",
+        "district": "Feuerbach",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-stuttgart-feuerbach-alarichstrasse-4.html",
+        "store_id": "3224",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.783007,
+          48.818151
+        ]
+      },
+      "properties": {
+        "name": "tegut… Schwäbisch Gmünd",
+        "street": "An der oberen Halde 64",
+        "city": "Schwäbisch Gmünd",
+        "postal_code": "73527",
+        "district": "Wetzgau",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00 | Mo-Fr: 08:00 - 12:00 und 14:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-schwaebisch-gmuend-wetzgau-an-der-oberen-halde-64.html",
+        "store_id": "2528",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7699274,
+          50.1219393
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Pfortenstraße 3",
+        "city": "Frankfurt am Main",
+        "postal_code": "60386",
+        "district": "Fechenheim",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-fechenheim-pfortenstrasse-3.html",
+        "store_id": "3184",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1783521,
+          48.7694611
+        ]
+      },
+      "properties": {
+        "name": "tegut… Stuttgart",
+        "street": "Heusteigstraße 41",
+        "city": "Stuttgart",
+        "postal_code": "70180",
+        "district": "Lehen",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-stuttgart-lehen-heusteigstrasse-41.html",
+        "store_id": "3194",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6852565,
+          50.1051435
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Walter-Kolb-Straße 13",
+        "city": "Frankfurt am Main",
+        "postal_code": "60594",
+        "district": "Sachsenhausen",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-sachsenhausen-walter-kolb-strasse-13.html",
+        "store_id": "3144",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0236977,
+          50.036485
+        ]
+      },
+      "properties": {
+        "name": "tegut… Mainhausen",
+        "street": "Erwin-Grimm-Ring 1",
+        "city": "Mainhausen",
+        "postal_code": "63533",
+        "district": "Mainflingen",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00 | Mo-Fr: 08:00 - 12:00 und 15:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-mainhausen-mainflingen-erwin-grimm-ring-1.html",
+        "store_id": "3154",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.728884,
+          50.623103
+        ]
+      },
+      "properties": {
+        "name": "tegut… Petersberg",
+        "street": "Josef-Damian-Schmitt-Straße 1a",
+        "city": "Petersberg",
+        "postal_code": "36100",
+        "district": "Marbach",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00 | Mo-Fr: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-petersberg-marbach-josef-damian-schmitt-strasse-1a.html",
+        "store_id": "3164",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.99096,
+          49.47144
+        ]
+      },
+      "properties": {
+        "name": "tegut… Fürth",
+        "street": "Gustav-Schickedanz-Straße 2",
+        "city": "Fürth",
+        "postal_code": "90762",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-fuerth-carre-fuerther-freiheit-gustav-schickedanz-strasse-2.html",
+        "store_id": "2458",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1779844,
+          48.7793418
+        ]
+      },
+      "properties": {
+        "name": "tegut… Stuttgart",
+        "street": "Königstraße 26",
+        "city": "Stuttgart",
+        "postal_code": "70173",
+        "district": "Neue Vorstadt",
+        "opening_hours": "Mo-Sa: 08:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-stuttgart-neue-vorstadt-koenigsbaupassagen-koenigstrasse-26.html",
+        "store_id": "2448",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.569494,
+          49.313835
+        ]
+      },
+      "properties": {
+        "name": "tegut… Ansbach",
+        "street": "Rettistraße 3",
+        "city": "Ansbach",
+        "postal_code": "91522",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-ansbach-rettistrasse-3.html",
+        "store_id": "2428",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.7882264,
+          50.539994
+        ]
+      },
+      "properties": {
+        "name": "tegut… Dipperz",
+        "street": "Gewerbepark 5",
+        "city": "Dipperz",
+        "postal_code": "36160",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00 | Mo-Sa: 08:00 - 21:00 | Mo-Fr: 09:00 - 13:00 und 14:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-dipperz-gewerbepark-5.html",
+        "store_id": "2368",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.626591,
+          50.113806
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Leonardo-da-Vinci-Allee 4-8",
+        "city": "Frankfurt am Main",
+        "postal_code": "60486",
+        "district": "Bockenheim",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-bockenheim-rebstockhoefe-leonardo-da-vinci-allee-4-8.html",
+        "store_id": "2348",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.646127,
+          48.0999318
+        ]
+      },
+      "properties": {
+        "name": "tegut… München",
+        "street": "Thomas-Dehler-Straße 15",
+        "city": "München",
+        "postal_code": "81737",
+        "district": "Neuperlach",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muenchen-neuperlach-perlach-plaza-thomas-dehler-strasse-15.html",
+        "store_id": "2658",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.16992,
+          48.74778
+        ]
+      },
+      "properties": {
+        "name": "tegut… Stuttgart",
+        "street": "Epplestraße 14",
+        "city": "Stuttgart",
+        "postal_code": "70597",
+        "district": "Degerloch",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-stuttgart-degerloch-epplestrasse-14.html",
+        "store_id": "3134",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1817104,
+          48.7908797
+        ]
+      },
+      "properties": {
+        "name": "tegut… Stuttgart",
+        "street": "Mailänder Platz 7",
+        "city": "Stuttgart",
+        "postal_code": "70173",
+        "district": "Europaviertel",
+        "opening_hours": "Mo-Sa: 09:00 - 20:30",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-stuttgart-europaviertel-milaneo-mailaender-platz-7.html",
+        "store_id": "2328",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.52272,
+          50.353036
+        ]
+      },
+      "properties": {
+        "name": "tegut… Schlüchtern",
+        "street": "Breitenbacher Straße 22",
+        "city": "Schlüchtern",
+        "postal_code": "36381",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-schluechtern-breitenbacher-strasse-22.html",
+        "store_id": "2308",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.93397,
+          51.536303
+        ]
+      },
+      "properties": {
+        "name": "tegut… Göttingen",
+        "street": "Weender Straße 75",
+        "city": "Göttingen",
+        "postal_code": "37073",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-goettingen-innenstadt-carre-weender-strasse-75.html",
+        "store_id": "2214",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2817576,
+          50.010827
+        ]
+      },
+      "properties": {
+        "name": "tegut… Laufach",
+        "street": "Hauptstraße 34",
+        "city": "Laufach",
+        "postal_code": "63846",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laufach-hauptstrasse-34.html",
+        "store_id": "3702",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.532151,
+          50.061598
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kelsterbach",
+        "street": "Mörfelder Straße 22",
+        "city": "Kelsterbach",
+        "postal_code": "65451",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kelsterbach-moerfelder-strasse-22.html",
+        "store_id": "2358",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.755155,
+          50.1450833
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Triebstraße 51",
+        "city": "Frankfurt am Main",
+        "postal_code": "60388",
+        "district": "Bergen-Enkheim",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-bergen-enkheim-triebstrasse-51.html",
+        "store_id": "3094",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.961919,
+          50.04427
+        ]
+      },
+      "properties": {
+        "name": "tegut… Seligenstadt",
+        "street": "Frankfurter Straße 96",
+        "city": "Seligenstadt",
+        "postal_code": "63500",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-seligenstadt-frankfurter-strasse-96.html",
+        "store_id": "2964",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.787464,
+          50.01701
+        ]
+      },
+      "properties": {
+        "name": "tegut… Dietzenbach",
+        "street": "Masayaplatz 3",
+        "city": "Dietzenbach",
+        "postal_code": "63128",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-dietzenbach-masayaplatz-3.html",
+        "store_id": "2804",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.627636,
+          49.669662
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bensheim",
+        "street": "Heidelberger Straße 100",
+        "city": "Bensheim",
+        "postal_code": "64625",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bensheim-heidelberger-strasse-100.html",
+        "store_id": "2984",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.804039,
+          51.376688
+        ]
+      },
+      "properties": {
+        "name": "tegut… Witzenhausen",
+        "street": "Mündener Straße 17",
+        "city": "Witzenhausen",
+        "postal_code": "37218",
+        "district": "Gertenbach",
+        "opening_hours": "Mo-Fr: 07:00 - 19:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-witzenhausen-gertenbach-muendener-strasse-17.html",
+        "store_id": "6024",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.96445,
+          49.72284
+        ]
+      },
+      "properties": {
+        "name": "tegut… Würzburg",
+        "street": "Schleifweg 9",
+        "city": "Würzburg",
+        "postal_code": "97084",
+        "district": "Rottenbauer",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-wuerzburg-rottenbauer-schleifweg-9.html",
+        "store_id": "2104",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9320469,
+          49.785185
+        ]
+      },
+      "properties": {
+        "name": "tegut… Würzburg",
+        "street": "Virchowstraße 2",
+        "city": "Würzburg",
+        "postal_code": "97072",
+        "district": "Sanderau",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-wuerzburg-sanderau-virchowstrasse-2.html",
+        "store_id": "2880",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.965016,
+          49.780058
+        ]
+      },
+      "properties": {
+        "name": "tegut… Würzburg",
+        "street": "Zeppelinstraße 122",
+        "city": "Würzburg",
+        "postal_code": "97074",
+        "district": "Frauenland",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-wuerzburg-frauenland-zeppelinstrasse-122.html",
+        "store_id": "2084",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9137718,
+          49.794904
+        ]
+      },
+      "properties": {
+        "name": "tegut… Würzburg",
+        "street": "Frankfurter Straße 18",
+        "city": "Würzburg",
+        "postal_code": "97082",
+        "district": "Zellerau",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-wuerzburg-zellerau-frankfurter-strasse-18.html",
+        "store_id": "2870",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.174449,
+          51.330147
+        ]
+      },
+      "properties": {
+        "name": "tegut… Wolfhagen",
+        "street": "Schützeberger Straße 91",
+        "city": "Wolfhagen",
+        "postal_code": "34466",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-wolfhagen-schuetzeberger-strasse-91.html",
+        "store_id": "2590",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.816573,
+          50.39659
+        ]
+      },
+      "properties": {
+        "name": "tegut… Wölfersheim",
+        "street": "Biedrichstraße 3-9",
+        "city": "Wölfersheim",
+        "postal_code": "61200",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-woelfersheim-biedrichstrasse-3-9.html",
+        "store_id": "2164",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.855973,
+          51.345209
+        ]
+      },
+      "properties": {
+        "name": "tegut… Witzenhausen",
+        "street": "An der Bohlenbrücke",
+        "city": "Witzenhausen",
+        "postal_code": "37213",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00 | Mo-Sa: 08:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-witzenhausen-an-der-bohlenbruecke.html",
+        "store_id": "2470",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2052236,
+          50.0445361
+        ]
+      },
+      "properties": {
+        "name": "tegut… Wiesbaden",
+        "street": "Rheingaustraße 30",
+        "city": "Wiesbaden",
+        "postal_code": "65201",
+        "district": "Schierstein",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-wiesbaden-schierstein-rheingaustrasse-30.html",
+        "store_id": "2514",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2251719,
+          50.077703
+        ]
+      },
+      "properties": {
+        "name": "tegut… Wiesbaden",
+        "street": "Dotzheimerstraße 82",
+        "city": "Wiesbaden",
+        "postal_code": "65197",
+        "district": "Rheingauviertel",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-wiesbaden-rheingauviertel-dotzheimerstrasse-82.html",
+        "store_id": "3082",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.24066897,
+          50.0792763
+        ]
+      },
+      "properties": {
+        "name": "tegut… Wiesbaden",
+        "street": "Luisenstraße 23",
+        "city": "Wiesbaden",
+        "postal_code": "65185",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-wiesbaden-luisenstrasse-23.html",
+        "store_id": "2068",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.593687,
+          49.899569
+        ]
+      },
+      "properties": {
+        "name": "tegut… Weiterstadt",
+        "street": "Max-Planck-Straße 6",
+        "city": "Weiterstadt",
+        "postal_code": "64331",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-weiterstadt-max-planck-strasse-6.html",
+        "store_id": "2614",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5681347,
+          48.1313517
+        ]
+      },
+      "properties": {
+        "name": "tegut… München | BASIC",
+        "street": "Müllerstraße 45",
+        "city": "München",
+        "postal_code": "80469",
+        "district": "Glockenbachviertel",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muenchen-glockenbachviertel-muellerstrasse-45.html",
+        "store_id": "2289",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.466458,
+          51.362912
+        ]
+      },
+      "properties": {
+        "name": "tegut… Vellmar",
+        "street": "Rathausplatz 8 - 11",
+        "city": "Vellmar",
+        "postal_code": "34246",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-vellmar-rathausplatz-8-11.html",
+        "store_id": "2530",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.46957,
+          48.748687
+        ]
+      },
+      "properties": {
+        "name": "tegut… Ingolstadt",
+        "street": "Eriagstraße 11a",
+        "city": "Ingolstadt",
+        "postal_code": "85053",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-ingolstadt-eriagstrasse-11.html",
+        "store_id": "2828",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.020558,
+          50.64603
+        ]
+      },
+      "properties": {
+        "name": "tegut… Tann (Rhön)",
+        "street": "St. Nikolaus Weg 13",
+        "city": "Tann (Rhön)",
+        "postal_code": "36142",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Fr: 09:30 - 17:30",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-tann-rhoen-st-nikolaus-weg-13.html",
+        "store_id": "3660",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.735479,
+          50.656898
+        ]
+      },
+      "properties": {
+        "name": "tegut… Staufenberg",
+        "street": "Porstendorfer Straße 3",
+        "city": "Staufenberg",
+        "postal_code": "35460",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-staufenberg-porstendorfer-strasse-3.html",
+        "store_id": "2044",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.695127,
+          50.0236118
+        ]
+      },
+      "properties": {
+        "name": "tegut… Dreieich",
+        "street": "Frankfurter Straße 70-72",
+        "city": "Dreieich",
+        "postal_code": "63303",
+        "district": "Sprendlingen",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-dreieich-sprendlingen-frankfurter-strasse-70-72.html",
+        "store_id": "3174",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.4455879,
+          50.5628228
+        ]
+      },
+      "properties": {
+        "name": "tegut… Herbstein",
+        "street": "Welzgasse 1",
+        "city": "Herbstein",
+        "postal_code": "36358",
+        "district": "Stockhausen",
+        "opening_hours": "Mo-Fr: 08:00 - 18:30",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-herbstein-stockhausen-welzgasse-1.html",
+        "store_id": "6094",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.563574,
+          50.677551
+        ]
+      },
+      "properties": {
+        "name": "tegut… Schlitz",
+        "street": "Bruchwiesenweg 2",
+        "city": "Schlitz",
+        "postal_code": "36110",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-schlitz-bruchwiesenweg-2.html",
+        "store_id": "2210",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.361997,
+          50.315302
+        ]
+      },
+      "properties": {
+        "name": "tegut… Saal an der Saale",
+        "street": "Hauptstraße 63",
+        "city": "Saal an der Saale",
+        "postal_code": "97633",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-saal-an-der-saale-hauptstrasse-63.html",
+        "store_id": "3842",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.719233,
+          51.00072
+        ]
+      },
+      "properties": {
+        "name": "tegut… Rotenburg an der Fulda",
+        "street": "Braacher Straße 14 - 16",
+        "city": "Rotenburg an der Fulda",
+        "postal_code": "36199",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-rotenburg-an-der-fulda-braacher-strasse-14-16.html",
+        "store_id": "2430",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.031812,
+          50.287588
+        ]
+      },
+      "properties": {
+        "name": "tegut… Rödental",
+        "street": "Kronacher Straße 9",
+        "city": "Rödental",
+        "postal_code": "96472",
+        "district": "Oeslau",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-roedental-oeslau-kronacher-strasse-9.html",
+        "store_id": "2154",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.48628,
+          49.85482
+        ]
+      },
+      "properties": {
+        "name": "tegut… Riedstadt",
+        "street": "Lise-Meitner-Straße 2",
+        "city": "Riedstadt",
+        "postal_code": "64560",
+        "district": "Wolfskehlen",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-riedstadt-wolfskehlen-lise-meitner-strasse-2.html",
+        "store_id": "2584",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.868683,
+          50.490376
+        ]
+      },
+      "properties": {
+        "name": "tegut… Poppenhausen (Wasserkuppe)",
+        "street": "Am Forsthaus 3",
+        "city": "Poppenhausen (Wasserkuppe)",
+        "postal_code": "36163",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 08:00 - 19:30",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-poppenhausen-wasserkuppe-am-forsthaus-3.html",
+        "store_id": "3792",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.69717212,
+          50.5612193
+        ]
+      },
+      "properties": {
+        "name": "tegut… Petersberg",
+        "street": "Edith-Stein-Straße 13",
+        "city": "Petersberg",
+        "postal_code": "36100",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Sa: 07:00 - 13:00 und 14:30 - 19:30",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-petersberg-edith-stein-strasse-13.html",
+        "store_id": "3260",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.519207,
+          50.040061
+        ]
+      },
+      "properties": {
+        "name": "tegut… Partenstein",
+        "street": "Im See 1",
+        "city": "Partenstein",
+        "postal_code": "97846",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-partenstein-im-see-1.html",
+        "store_id": "2204",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.581654,
+          50.202732
+        ]
+      },
+      "properties": {
+        "name": "tegut… Oberursel (Taunus)",
+        "street": "Epinay Platz 1",
+        "city": "Oberursel (Taunus)",
+        "postal_code": "61440",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-oberursel-taunus-epinay-platz-1.html",
+        "store_id": "3024",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.11691,
+          50.21916
+        ]
+      },
+      "properties": {
+        "name": "tegut… Nüdlingen",
+        "street": "Mühlweg 4",
+        "city": "Nüdlingen",
+        "postal_code": "97720",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-nuedlingen-muehlweg-4.html",
+        "store_id": "3192",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.31801,
+          50.16199
+        ]
+      },
+      "properties": {
+        "name": "tegut… Niedernhausen",
+        "street": "Feldbergstraße 1",
+        "city": "Niedernhausen",
+        "postal_code": "65527",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-niedernhausen-feldbergstrasse-1.html",
+        "store_id": "2148",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.61138,
+          50.45309
+        ]
+      },
+      "properties": {
+        "name": "tegut… Neuhof",
+        "street": "Hanauer Straße 1",
+        "city": "Neuhof",
+        "postal_code": "36119",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-neuhof-hanauer-strasse-1.html",
+        "store_id": "2674",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.54187,
+          51.13455
+        ]
+      },
+      "properties": {
+        "name": "tegut… Melsungen",
+        "street": "Kasseler Straße 52",
+        "city": "Melsungen",
+        "postal_code": "34212",
+        "district": "",
+        "opening_hours": "Mo-Do: 07:00 - 21:00 | Mo-Sa: 09:00 - 19:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-melsungen-kasseler-strasse-52.html",
+        "store_id": "2500",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.657497,
+          50.558187
+        ]
+      },
+      "properties": {
+        "name": "tegut… Fulda",
+        "street": "Maberzeller Straße 45",
+        "city": "Fulda",
+        "postal_code": "36041",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-fulda-maberzeller-strasse-45.html",
+        "store_id": "2054",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.275483,
+          51.134407
+        ]
+      },
+      "properties": {
+        "name": "tegut… Fritzlar",
+        "street": "Am Hospital 3",
+        "city": "Fritzlar",
+        "postal_code": "34560",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-fritzlar-am-hospital-3.html",
+        "store_id": "2834",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7619257,
+          50.334119
+        ]
+      },
+      "properties": {
+        "name": "tegut… Friedberg (Hessen)",
+        "street": "Fauerbacher Straße 9",
+        "city": "Friedberg (Hessen)",
+        "postal_code": "61169",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00 | Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-friedberg-hessen-fauerbacher-strasse-9.html",
+        "store_id": "2624",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.10835,
+          50.14696
+        ]
+      },
+      "properties": {
+        "name": "tegut… Freigericht",
+        "street": "Raiffeisenstraße 11",
+        "city": "Freigericht",
+        "postal_code": "63579",
+        "district": "Somborn",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-freigericht-somborn-raiffeisenstrasse-11.html",
+        "store_id": "2030",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.412119,
+          50.4214985
+        ]
+      },
+      "properties": {
+        "name": "tegut… Freiensteinau",
+        "street": "Im Mühlfeld 23",
+        "city": "Freiensteinau",
+        "postal_code": "36399",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-freiensteinau-im-muehlfeld-23.html",
+        "store_id": "3772",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.61009,
+          50.12467
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Radilostraße 17 - 19",
+        "city": "Frankfurt am Main",
+        "postal_code": "60489",
+        "district": "Rödelheim",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-roedelheim-radilostrasse-17-19.html",
+        "store_id": "3072",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.69897,
+          50.13959
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Friedberger Landstraße 408",
+        "city": "Frankfurt am Main",
+        "postal_code": "60389",
+        "district": "Bornheim",
+        "opening_hours": "Mo-Sa: 07:00 - 23:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-bornheim-friedberger-landstrasse-408.html",
+        "store_id": "2814",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.566116,
+          50.422044
+        ]
+      },
+      "properties": {
+        "name": "tegut… Flieden",
+        "street": "Schlüchterner Straße 3 a",
+        "city": "Flieden",
+        "postal_code": "36103",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00 | Mo-Fr: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-flieden-schluechterner-strasse-3-a.html",
+        "store_id": "3720",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1776595,
+          50.648929
+        ]
+      },
+      "properties": {
+        "name": "tegut… Feldatal",
+        "street": "Im Borngarten 2",
+        "city": "Feldatal",
+        "postal_code": "36325",
+        "district": "Kestrich",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Sa: 09:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-feldatal-kestrich-im-borngarten-2.html",
+        "store_id": "3732",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.70963,
+          50.48832
+        ]
+      },
+      "properties": {
+        "name": "tegut… Eichenzell",
+        "street": "Rhönhof 28",
+        "city": "Eichenzell",
+        "postal_code": "36124",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-eichenzell-rhoenhof-28.html",
+        "store_id": "2414",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.993127,
+          49.730068
+        ]
+      },
+      "properties": {
+        "name": "tegut… Eibelstadt",
+        "street": "Würzburger Straße 45",
+        "city": "Eibelstadt",
+        "postal_code": "97246",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-eibelstadt-wuerzburger-strasse-45.html",
+        "store_id": "2940",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.130276,
+          51.161646
+        ]
+      },
+      "properties": {
+        "name": "tegut… Edertal",
+        "street": "Am Kornhaus 2",
+        "city": "Edertal",
+        "postal_code": "34549",
+        "district": "Giflitz",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-edertal-giflitz-am-kornhaus-2.html",
+        "store_id": "2254",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.698929,
+          50.155808
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Gravensteiner Platz 4-6",
+        "city": "Frankfurt am Main",
+        "postal_code": "60435",
+        "district": "Preungesheim",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00 | Mo-Fr: 09:00 - 13:00 und 15:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-preungesheim-gravensteiner-arkaden-gravensteiner-platz-4-6.html",
+        "store_id": "2338",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.77947922,
+          50.0099222
+        ]
+      },
+      "properties": {
+        "name": "tegut… Dietzenbach",
+        "street": "Babenhäuser Straße 31",
+        "city": "Dietzenbach",
+        "postal_code": "63128",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:30 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-dietzenbach-babenhaeuser-strasse-29.html",
+        "store_id": "2168",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.647203,
+          49.883202
+        ]
+      },
+      "properties": {
+        "name": "tegut… Darmstadt",
+        "street": "Kasinostraße 92",
+        "city": "Darmstadt",
+        "postal_code": "64293",
+        "district": "",
+        "opening_hours": "Mo-Do: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-darmstadt-kasinostrasse-92.html",
+        "store_id": "2464",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.65551,
+          49.87186
+        ]
+      },
+      "properties": {
+        "name": "tegut… Darmstadt",
+        "street": "Ludwigstraße 2 - 4",
+        "city": "Darmstadt",
+        "postal_code": "64283",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-darmstadt-ludwigstrasse-2-4.html",
+        "store_id": "3122",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.96181,
+          50.25049
+        ]
+      },
+      "properties": {
+        "name": "tegut… Coburg",
+        "street": "Karchestraße 12",
+        "city": "Coburg",
+        "postal_code": "96450",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-coburg-karchestrasse-12.html",
+        "store_id": "2594",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.969999,
+          50.272631
+        ]
+      },
+      "properties": {
+        "name": "tegut… Coburg",
+        "street": "Neustadter Straße 9b",
+        "city": "Coburg",
+        "postal_code": "96450",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-coburg-neustadter-strasse-9b.html",
+        "store_id": "2134",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.653539,
+          50.152101
+        ]
+      },
+      "properties": {
+        "name": "tegut… Burgsinn",
+        "street": "Birkenweg 14",
+        "city": "Burgsinn",
+        "postal_code": "97775",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Sa: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-burgsinn-birkenweg-14.html",
+        "store_id": "2260",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.92297,
+          50.19381
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bruchköbel",
+        "street": "Heinrich-Böll-Straße 42",
+        "city": "Bruchköbel",
+        "postal_code": "63486",
+        "district": "Niederissigheim",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bruchkoebel-niederissigheim-heinrich-boell-strasse-42.html",
+        "store_id": "2780",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.908918,
+          50.177826
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bruchköbel",
+        "street": "Keltenstraße 18 - 20",
+        "city": "Bruchköbel",
+        "postal_code": "63486",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bruchkoebel-keltenstrasse-18-20.html",
+        "store_id": "2790",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.300404,
+          50.303828
+        ]
+      },
+      "properties": {
+        "name": "tegut… Brachttal",
+        "street": "Fabrikstraße 5",
+        "city": "Brachttal",
+        "postal_code": "63636",
+        "district": "Schlierbach",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-brachttal-schlierbach-fabrikstrasse-5.html",
+        "store_id": "3972",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.327534,
+          50.1601438
+        ]
+      },
+      "properties": {
+        "name": "tegut… Biebergemünd",
+        "street": "Am Pflaster 19",
+        "city": "Biebergemünd",
+        "postal_code": "63599",
+        "district": "Bieber",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-biebergemuend-bieber-am-pflaster-19.html",
+        "store_id": "3782",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.794011,
+          50.970489
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bebra",
+        "street": "Lindenallee 1 - 3",
+        "city": "Bebra",
+        "postal_code": "36179",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bebra-lindenallee-1-3.html",
+        "store_id": "2420",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.399797,
+          51.260665
+        ]
+      },
+      "properties": {
+        "name": "tegut… Baunatal",
+        "street": "Altenbaunaer Straße 14 - 18",
+        "city": "Baunatal",
+        "postal_code": "34225",
+        "district": "Altenritte",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-baunatal-altenritte-altenbaunaer-strasse-14-18.html",
+        "store_id": "2404",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.898621,
+          49.899479
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bamberg",
+        "street": "Ludwigstraße 25",
+        "city": "Bamberg",
+        "postal_code": "96052",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bamberg-ludwigstrasse-25.html",
+        "store_id": "2434",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.176157,
+          51.0551458
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Zwesten",
+        "street": "Zum Kurpark 2",
+        "city": "Bad Zwesten",
+        "postal_code": "34596",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 09:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-zwesten-zum-kurpark-2.html",
+        "store_id": "3012",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.74194,
+          50.19206
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Vilbel",
+        "street": "Friedberger Straße 93",
+        "city": "Bad Vilbel",
+        "postal_code": "61118",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-vilbel-friedberger-strasse-93.html",
+        "store_id": "2374",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.973998,
+          51.26429
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Sooden-Allendorf",
+        "street": "Werrastraße 6",
+        "city": "Bad Sooden-Allendorf",
+        "postal_code": "37242",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-sooden-allendorf-werrastrasse-6.html",
+        "store_id": "2460",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.50419,
+          50.14094
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Soden am Taunus",
+        "street": "Königsteiner Straße 31-33",
+        "city": "Bad Soden am Taunus",
+        "postal_code": "65812",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-soden-am-taunus-koenigsteiner-strasse-31-33.html",
+        "store_id": "2108",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.74009,
+          50.36483
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Nauheim",
+        "street": "Stresemannstraße 3",
+        "city": "Bad Nauheim",
+        "postal_code": "61231",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-nauheim-stresemannstrasse-3.html",
+        "store_id": "2118",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.796008,
+          50.312247
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Brückenau",
+        "street": "Gänsrain 1",
+        "city": "Bad Brückenau",
+        "postal_code": "97769",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 08:00 - 13:00 und 15:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-brueckenau-gaensrain-1.html",
+        "store_id": "2388",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.464705,
+          50.298728
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Königshofen im Grabfeld",
+        "street": "Hindenburgstraße 26",
+        "city": "Bad Königshofen im Grabfeld",
+        "postal_code": "97631",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 09:00 - 18:00 | Mo-Fr: 09:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-koenigshofen-im-grabfeld-hindenburgstrasse-26.html",
+        "store_id": "2174",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0601,
+          50.19035
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Kissingen",
+        "street": "Riedgraben 4 - 6",
+        "city": "Bad Kissingen",
+        "postal_code": "97688",
+        "district": "Garitz",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-kissingen-garitz-riedgraben-4-6.html",
+        "store_id": "2244",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.708585,
+          50.869442
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Hersfeld",
+        "street": "Benno-Schilde-Straße 8",
+        "city": "Bad Hersfeld",
+        "postal_code": "36251",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-hersfeld-benno-schilde-strasse-8.html",
+        "store_id": "2544",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.277689,
+          50.753176
+        ]
+      },
+      "properties": {
+        "name": "tegut… Alsfeld",
+        "street": "An der Au 10",
+        "city": "Alsfeld",
+        "postal_code": "36304",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-alsfeld-an-der-au-10.html",
+        "store_id": "2914",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.97256,
+          50.97484
+        ]
+      },
+      "properties": {
+        "name": "tegut… Gemünden (Wohra)",
+        "street": "Am Weinberg 5 - 7",
+        "city": "Gemünden (Wohra)",
+        "postal_code": "35285",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Fr: 09:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-gemuenden-wohra-am-weinberg-5-7.html",
+        "store_id": "3682",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.677119,
+          50.062942
+        ]
+      },
+      "properties": {
+        "name": "tegut… Gemünden am Main",
+        "street": "Würzburger Straße 75",
+        "city": "Gemünden am Main",
+        "postal_code": "97737",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-gemuenden-am-main-wuerzburger-strasse-75.html",
+        "store_id": "2850",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.161396,
+          50.205561
+        ]
+      },
+      "properties": {
+        "name": "tegut… Gelnhausen",
+        "street": "Leipziger Straße 74",
+        "city": "Gelnhausen",
+        "postal_code": "63571",
+        "district": "Roth",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00 | Mo-Sa: 08:00 - 20:00 | Mo-Fr: 09:00 - 13:00 und 15:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-gelnhausen-roth-leipziger-strasse-74.html",
+        "store_id": "2660",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.68943474,
+          50.5300881
+        ]
+      },
+      "properties": {
+        "name": "tegut… Fulda",
+        "street": "Keltenstraße 20",
+        "city": "Fulda",
+        "postal_code": "36043",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-fulda-kaiserwiesen-keltenstrasse-20.html",
+        "store_id": "2344",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.660997,
+          50.56501
+        ]
+      },
+      "properties": {
+        "name": "tegut… Gießen",
+        "street": "Adolph-Kolping-Straße 9",
+        "city": "Gießen",
+        "postal_code": "35392",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-giessen-schlangenzahl-adolph-kolping-strasse-9.html",
+        "store_id": "2894",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.671664,
+          50.587377
+        ]
+      },
+      "properties": {
+        "name": "tegut… Gießen",
+        "street": "Neustadt 28",
+        "city": "Gießen",
+        "postal_code": "35390",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-giessen-galerie-neustaedter-tor-neustadt-28.html",
+        "store_id": "2564",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.059175,
+          50.384941
+        ]
+      },
+      "properties": {
+        "name": "tegut… Limburg an der Lahn",
+        "street": "Joseph-Schneider-Straße 1",
+        "city": "Limburg an der Lahn",
+        "postal_code": "65549",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-limburg-an-der-lahn-werkstadt-limburg-joseph-schneider-strasse-1.html",
+        "store_id": "2844",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.6023923,
+          49.8443857
+        ]
+      },
+      "properties": {
+        "name": "tegut… Marktheidenfeld",
+        "street": "Luitpoldstraße 17",
+        "city": "Marktheidenfeld",
+        "postal_code": "97828",
+        "district": "",
+        "opening_hours": "Mo-Fr: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-marktheidenfeld-luitpoldstrasse-17.html",
+        "store_id": "2784",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.801164,
+          48.801377
+        ]
+      },
+      "properties": {
+        "name": "tegut… Schwäbisch Gmünd",
+        "street": "Vordere Schmiedgasse 22-28",
+        "city": "Schwäbisch Gmünd",
+        "postal_code": "73525",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:30",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-schwaebisch-gmuend-city-center-vordere-schmiedgasse-22-28.html",
+        "store_id": "2668",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.962713,
+          51.520823
+        ]
+      },
+      "properties": {
+        "name": "tegut… Göttingen",
+        "street": "Alfred-Delp-Weg 7",
+        "city": "Göttingen",
+        "postal_code": "37085",
+        "district": "Geismar",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-goettingen-geismar-zietenterrassen-alfred-delp-weg-7.html",
+        "store_id": "2364",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.882733,
+          51.526977
+        ]
+      },
+      "properties": {
+        "name": "tegut… Göttingen",
+        "street": "Am Kaufpark 1",
+        "city": "Göttingen",
+        "postal_code": "37081",
+        "district": "Grone",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-goettingen-grone-kauf-park-am-kaufpark-1.html",
+        "store_id": "2534",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.940017,
+          51.555419
+        ]
+      },
+      "properties": {
+        "name": "tegut… Göttingen",
+        "street": "An der Lutter 22",
+        "city": "Göttingen",
+        "postal_code": "37075",
+        "district": "Weende",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-goettingen-weende-an-der-lutter-22.html",
+        "store_id": "2714",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.057213,
+          49.904769
+        ]
+      },
+      "properties": {
+        "name": "tegut… Großostheim",
+        "street": "Rudelzauer Straße 14",
+        "city": "Großostheim",
+        "postal_code": "63762",
+        "district": "Pflaumheim",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 08:00 - 12:00 und 15:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-grossostheim-pflaumheim-rudelzauer-strasse-14.html",
+        "store_id": "3752",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.55355,
+          49.87045
+        ]
+      },
+      "properties": {
+        "name": "tegut… Griesheim",
+        "street": "Feldstraße 13",
+        "city": "Griesheim",
+        "postal_code": "64347",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-griesheim-feldstrasse-13.html",
+        "store_id": "2774",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.66711,
+          50.10832
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Kaiserstraße 62-64",
+        "city": "Frankfurt am Main",
+        "postal_code": "60329",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 23:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-bahnhofsviertel-kaiserstrasse-62-64.html",
+        "store_id": "2468",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.181781,
+          49.986682
+        ]
+      },
+      "properties": {
+        "name": "tegut… Mainz",
+        "street": "Katzenberg 13",
+        "city": "Mainz",
+        "postal_code": "55126",
+        "district": "Finthen",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00 | Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-mainz-finthen-katzenberg-13.html",
+        "store_id": "2028",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.3255199,
+          49.98799
+        ]
+      },
+      "properties": {
+        "name": "tegut… Ginsheim-Gustavsburg",
+        "street": "Adam-Opel-Straße 4 - 6",
+        "city": "Ginsheim-Gustavsburg",
+        "postal_code": "65462",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-ginsheim-gustavsburg-adam-opel-strasse-4-6.html",
+        "store_id": "2474",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.820947,
+          49.881392
+        ]
+      },
+      "properties": {
+        "name": "tegut… Groß-Zimmern",
+        "street": "Waldstraße 71 b",
+        "city": "Groß-Zimmern",
+        "postal_code": "64846",
+        "district": "",
+        "opening_hours": "Mo-Do: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-gross-zimmern-waldstrasse-71-b.html",
+        "store_id": "2654",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.90787,
+          50.14871
+        ]
+      },
+      "properties": {
+        "name": "tegut… Hanau",
+        "street": "Heldenbergener Straße 4",
+        "city": "Hanau",
+        "postal_code": "63452",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-hanau-heldenbergener-strasse-4.html",
+        "store_id": "2694",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.391581,
+          51.499938
+        ]
+      },
+      "properties": {
+        "name": "tegut… Hofgeismar",
+        "street": "Industriestraße 17",
+        "city": "Hofgeismar",
+        "postal_code": "34369",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-hofgeismar-industriestrasse-17.html",
+        "store_id": "2550",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.83688,
+          50.58621
+        ]
+      },
+      "properties": {
+        "name": "tegut… Hofbieber",
+        "street": "Langenbieberer Straße 6",
+        "city": "Hofbieber",
+        "postal_code": "36145",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-hofbieber-langenbieberer-strasse-6.html",
+        "store_id": "3490",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.986527,
+          49.817919
+        ]
+      },
+      "properties": {
+        "name": "tegut… Hirschaid",
+        "street": "Bamberger Straße 18",
+        "city": "Hirschaid",
+        "postal_code": "96114",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-hirschaid-bamberger-strasse-18.html",
+        "store_id": "2764",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.497885,
+          51.316606
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kassel",
+        "street": "Königsplatz 61",
+        "city": "Kassel",
+        "postal_code": "34117",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:30 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kassel-city-point-koenigsplatz-61.html",
+        "store_id": "2304",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.44521215,
+          51.3128246
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kassel",
+        "street": "Wilhelmshöher Allee 253",
+        "city": "Kassel",
+        "postal_code": "34131",
+        "district": "Wilhelmshöhe",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kassel-wilhelmshoehe-city-center-wilhelmshoeher-allee-253.html",
+        "store_id": "3080",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.5271924,
+          51.3053611
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kassel",
+        "street": "Leipziger Straße 128",
+        "city": "Kassel",
+        "postal_code": "34123",
+        "district": "Bettenhausen",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kassel-bettenhausen-leipziger-strasse-128.html",
+        "store_id": "2934",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.44526082,
+          51.3141187
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kassel",
+        "street": "Wilhelmshöher Allee 262",
+        "city": "Kassel",
+        "postal_code": "34131",
+        "district": "Wilhelmshöhe",
+        "opening_hours": "Mo-Do: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kassel-wilhelmshoehe-atrium-wilhelmshoeher-allee-262.html",
+        "store_id": "2570",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.472054,
+          51.312046
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kassel",
+        "street": "Wilhelmshöher Allee 91",
+        "city": "Kassel",
+        "postal_code": "34121",
+        "district": "Wehlheiden",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kassel-wehlheiden-wilhelmshoeher-allee-91.html",
+        "store_id": "2394",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.484046,
+          51.3042094
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kassel",
+        "street": "Frankfurter Straße 86",
+        "city": "Kassel",
+        "postal_code": "34121",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kassel-frankfurter-strasse-86.html",
+        "store_id": "3050",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.043006,
+          50.5487648
+        ]
+      },
+      "properties": {
+        "name": "tegut… Katzhütte",
+        "street": "Schwarzburger Straße 14",
+        "city": "Katzhütte",
+        "postal_code": "98746",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 19:00 | Mo-Sa: 08:00 - 19:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-katzhuette-schwarzburger-strasse-14.html",
+        "store_id": "6910",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.45522038,
+          51.3316559
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kassel",
+        "street": "Wolfhager Straße 278",
+        "city": "Kassel",
+        "postal_code": "34128",
+        "district": "Rothenditmold",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kassel-rothenditmold-wolfhager-strasse-278.html",
+        "store_id": "3060",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.44349118,
+          51.3053375
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kassel",
+        "street": "Ludwig-Erhard-Straße 11",
+        "city": "Kassel",
+        "postal_code": "34131",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kassel-marbachshoehe-ludwig-erhard-strasse-11.html",
+        "store_id": "2314",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.557593,
+          51.281035
+        ]
+      },
+      "properties": {
+        "name": "tegut… Lohfelden",
+        "street": "Elisabeth-Selbert-Straße 40",
+        "city": "Lohfelden",
+        "postal_code": "34253",
+        "district": "Ochshausen",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-lohfelden-ochshausen-elisabeth-selbert-strasse-40.html",
+        "store_id": "2944",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.77617,
+          49.96807
+        ]
+      },
+      "properties": {
+        "name": "tegut… Karlstadt",
+        "street": "Bodelschwinghstraße 1",
+        "city": "Karlstadt",
+        "postal_code": "97753",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-karlstadt-bodelschwinghstrasse-1.html",
+        "store_id": "2860",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7558207,
+          50.233482
+        ]
+      },
+      "properties": {
+        "name": "tegut… Karben",
+        "street": "Bahnhofstraße 190 - 196",
+        "city": "Karben",
+        "postal_code": "61184",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-karben-bahnhofstrasse-190-196.html",
+        "store_id": "2604",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.590613,
+          50.80659
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kahla",
+        "street": "Ölwiesenweg 5",
+        "city": "Kahla",
+        "postal_code": "07768",
+        "district": "",
+        "opening_hours": "Mo-Fr: 07:00 - 21:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kahla-oelwiesenweg-5.html",
+        "store_id": "2200",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.5004774,
+          50.4820595
+        ]
+      },
+      "properties": {
+        "name": "tegut… Grabfeld",
+        "street": "Meininger Straße 1a",
+        "city": "Grabfeld",
+        "postal_code": "98631",
+        "district": "Juechsen",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-grabfeld-juechsen-meininger-strasse-1a.html",
+        "store_id": "6902",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.581048,
+          50.927644
+        ]
+      },
+      "properties": {
+        "name": "tegut… Jena",
+        "street": "Carl-Zeiß-Straße 4",
+        "city": "Jena",
+        "postal_code": "07743",
+        "district": "",
+        "opening_hours": "Mo-Fr: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-jena-goethegalerie-carl-zeiss-strasse-4.html",
+        "store_id": "2070",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.870285,
+          51.276506
+        ]
+      },
+      "properties": {
+        "name": "tegut… Korbach",
+        "street": "Briloner Landstraße 4 - 6",
+        "city": "Korbach",
+        "postal_code": "34497",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-korbach-briloner-landstrasse-4-6.html",
+        "store_id": "2560",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.199506,
+          50.221196
+        ]
+      },
+      "properties": {
+        "name": "tegut… Hünstetten",
+        "street": "Neukirchner Straße 14",
+        "city": "Hünstetten",
+        "postal_code": "65510",
+        "district": "Kesselbach",
+        "opening_hours": "Mo-Mi: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-huenstetten-kesselbach-neukirchner-strasse-14.html",
+        "store_id": "2664",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.76811,
+          50.67181
+        ]
+      },
+      "properties": {
+        "name": "tegut… Hünfeld",
+        "street": "Josefstraße 3",
+        "city": "Hünfeld",
+        "postal_code": "36088",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00 | Mo-Fr: 08:30 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-huenfeld-haune-center-josefstrasse-3.html",
+        "store_id": "2524",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.44478,
+          51.344258
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kassel",
+        "street": "Zum Hirtenkamp 1",
+        "city": "Kassel",
+        "postal_code": "34128",
+        "district": "Harleshausen",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kassel-harleshausen-zum-hirtenkamp-1.html",
+        "store_id": "2014",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.67626017,
+          49.9889688
+        ]
+      },
+      "properties": {
+        "name": "tegut… Langen (Hessen)",
+        "street": "Rheinstraße 31",
+        "city": "Langen (Hessen)",
+        "postal_code": "63225",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-langen-hessen-rheinstrasse-31.html",
+        "store_id": "2198",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.523067,
+          50.173843
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kronberg im Taunus",
+        "street": "Frankfurter Straße 50 - 52",
+        "city": "Kronberg im Taunus",
+        "postal_code": "61476",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kronberg-im-taunus-frankfurter-strasse-50-52.html",
+        "store_id": "2048",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.410167,
+          50.575779
+        ]
+      },
+      "properties": {
+        "name": "tegut… Meiningen",
+        "street": "Landsberger Straße 2 - 6",
+        "city": "Meiningen",
+        "postal_code": "98617",
+        "district": "",
+        "opening_hours": "Mo-Do,Sa: 07:00 - 20:00 | Mo-Fr: 08:00 - 12:00 und 14:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-meiningen-landsberger-strasse-2-6.html",
+        "store_id": "2140",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.975788,
+          50.289413
+        ]
+      },
+      "properties": {
+        "name": "tegut… Altenstadt",
+        "street": "Die Weidenbach 5 - 13",
+        "city": "Altenstadt",
+        "postal_code": "63674",
+        "district": "Lindheim",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00 | Mo-Fr: 10:00 - 13:00 und 15:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-altenstadt-lindheim-die-weidenbach-5-13.html",
+        "store_id": "2424",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1986,
+          50.19542
+        ]
+      },
+      "properties": {
+        "name": "tegut… Linsengericht",
+        "street": "Kleinbahnweg 3",
+        "city": "Linsengericht",
+        "postal_code": "63589",
+        "district": "Altenhasslau",
+        "opening_hours": "Mo-Do: 07:00 - 21:00 | Mo-Fr: 08:00 - 21:00 | Mo-Fr: 09:00 - 13:00 und 15:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-linsengericht-altenhasslau-kleinbahnweg-3.html",
+        "store_id": "2650",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.39009,
+          50.64266
+        ]
+      },
+      "properties": {
+        "name": "tegut… Lauterbach (Hessen)",
+        "street": "An der Leimenkaute 3",
+        "city": "Lauterbach (Hessen)",
+        "postal_code": "36341",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-lauterbach-hessen-an-der-leimenkaute-3.html",
+        "store_id": "2700",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.027862,
+          50.180064
+        ]
+      },
+      "properties": {
+        "name": "tegut… Langenselbold",
+        "street": "Ringstraße 58",
+        "city": "Langenselbold",
+        "postal_code": "63505",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-langenselbold-ringstrasse-58.html",
+        "store_id": "2630",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2755229,
+          50.741614
+        ]
+      },
+      "properties": {
+        "name": "tegut… Dillenburg",
+        "street": "Am Sportzentrum 3",
+        "city": "Dillenburg",
+        "postal_code": "35683",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-dillenburg-oranien-center-am-sportzentrum-3.html",
+        "store_id": "2488",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.276276,
+          49.994677
+        ]
+      },
+      "properties": {
+        "name": "tegut… Mainz",
+        "street": "Holzhofstraße 9",
+        "city": "Mainz",
+        "postal_code": "55116",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-mainz-altstadt-holzhofstrasse-9.html",
+        "store_id": "2218",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.86146,
+          49.84185
+        ]
+      },
+      "properties": {
+        "name": "tegut… Margetshöchheim",
+        "street": "Erlabrunnerstraße 36",
+        "city": "Margetshöchheim",
+        "postal_code": "97276",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-margetshoechheim-erlabrunnerstrasse-36.html",
+        "store_id": "2800",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.834215,
+          50.141597
+        ]
+      },
+      "properties": {
+        "name": "tegut… Maintal",
+        "street": "Braubachstraße 18",
+        "city": "Maintal",
+        "postal_code": "63477",
+        "district": "Dörnigheim",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-maintal-doernigheim-braubachstrasse-18.html",
+        "store_id": "2904",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.769372,
+          50.840847
+        ]
+      },
+      "properties": {
+        "name": "tegut… Marburg",
+        "street": "Am Kaufmarkt 1",
+        "city": "Marburg",
+        "postal_code": "35041",
+        "district": "Wehrda",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00 | Mo-Fr: 08:00 - 13:00 und 15:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-marburg-wehrda-am-kaufmarkt-1.html",
+        "store_id": "2340",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.76686596,
+          50.814341
+        ]
+      },
+      "properties": {
+        "name": "tegut… Marburg",
+        "street": "Ketzerbach 25 - 28",
+        "city": "Marburg",
+        "postal_code": "35037",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-marburg-ketzerbach-ketzerbach-25-28.html",
+        "store_id": "2330",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.78837,
+          50.65924
+        ]
+      },
+      "properties": {
+        "name": "tegut… Hünfeld",
+        "street": "Hünfelder Straße 2",
+        "city": "Hünfeld",
+        "postal_code": "36088",
+        "district": "Mackenzell",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-huenfeld-mackenzell-huenfelder-strasse-2.html",
+        "store_id": "3310",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.5701418,
+          49.9950914
+        ]
+      },
+      "properties": {
+        "name": "tegut… Lohr am Main",
+        "street": "Ludwigstraße 9",
+        "city": "Lohr am Main",
+        "postal_code": "97816",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-lohr-am-main-ludwigstrasse-9.html",
+        "store_id": "3890",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.703988,
+          49.411336
+        ]
+      },
+      "properties": {
+        "name": "tegut… Heidelberg",
+        "street": "Hauptstraße 110",
+        "city": "Heidelberg",
+        "postal_code": "69117",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-heidelberg-altstadt-hauptstrasse-110.html",
+        "store_id": "2508",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9794834,
+          51.065
+        ]
+      },
+      "properties": {
+        "name": "tegut… Haina (Kloster)",
+        "street": "Raiffeisenstraße 2",
+        "city": "Haina (Kloster)",
+        "postal_code": "35114",
+        "district": "Löhlbach",
+        "opening_hours": "Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-haina-kloster-loehlbach-raiffeisenstrasse-2.html",
+        "store_id": "6074",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2227968,
+          50.0479875
+        ]
+      },
+      "properties": {
+        "name": "tegut… Schweinfurt",
+        "street": "Schelmsrasen 4 - 6",
+        "city": "Schweinfurt",
+        "postal_code": "97421",
+        "district": "",
+        "opening_hours": "Mo-Fr: 07:00 - 19:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-schweinfurt-schelmsrasen-4-6.html",
+        "store_id": "6064",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.6298047,
+          50.5477898
+        ]
+      },
+      "properties": {
+        "name": "tegut… Fulda",
+        "street": "Merkurstraße 16 - 20",
+        "city": "Fulda",
+        "postal_code": "36041",
+        "district": "Haimbach",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Sa: 09:00 - 19:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-fulda-haimbach-merkurstrasse-16-20.html",
+        "store_id": "3950",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.123765,
+          50.439996
+        ]
+      },
+      "properties": {
+        "name": "tegut… Oberelsbach",
+        "street": "Oberwaldbehrunger Straße 20",
+        "city": "Oberelsbach",
+        "postal_code": "97656",
+        "district": "",
+        "opening_hours": "Mo-Fr: 08:00 - 20:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-oberelsbach-oberwaldbehrunger-strasse-20.html",
+        "store_id": "3822",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.206765,
+          50.331648
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Neustadt an der Saale",
+        "street": "Thomas-Mann-Straße 1",
+        "city": "Bad Neustadt an der Saale",
+        "postal_code": "97616",
+        "district": "Brendlorenzen",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Sa: 08:00 - 19:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-neustadt-an-der-saale-brendlorenzen-thomas-mann-strasse-1.html",
+        "store_id": "3802",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.65282867,
+          51.4163743
+        ]
+      },
+      "properties": {
+        "name": "tegut… Hann. Münden",
+        "street": "Burgstraße 32",
+        "city": "Hann. Münden",
+        "postal_code": "34346",
+        "district": "",
+        "opening_hours": "Mo-Fr: 07:30 - 19:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-hann-muenden-burgstrasse-32.html",
+        "store_id": "6544",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9212003,
+          51.2356946
+        ]
+      },
+      "properties": {
+        "name": "tegut… Berkatal",
+        "street": "Am Wasser 4",
+        "city": "Berkatal",
+        "postal_code": "37297",
+        "district": "Frankershausen",
+        "opening_hours": "Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-berkatal-frankershausen-am-wasser-4.html",
+        "store_id": "6404",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.055108,
+          51.185799
+        ]
+      },
+      "properties": {
+        "name": "tegut… Eschwege",
+        "street": "Wendische Mark 9 - 13",
+        "city": "Eschwege",
+        "postal_code": "37269",
+        "district": "",
+        "opening_hours": "Mo-Fr: 08:00 - 19:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-eschwege-wendische-mark-9-13.html",
+        "store_id": "6104",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.550416,
+          51.599317
+        ]
+      },
+      "properties": {
+        "name": "tegut… Wesertal",
+        "street": "In der Klappe 2",
+        "city": "Wesertal",
+        "postal_code": "34399",
+        "district": "Gieselwerder",
+        "opening_hours": "Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-wesertal-gieselwerder-in-der-klappe-2.html",
+        "store_id": "6054",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.93734,
+          51.21083
+        ]
+      },
+      "properties": {
+        "name": "tegut… Meißner",
+        "street": "Vorderweg 1",
+        "city": "Meißner",
+        "postal_code": "37290",
+        "district": "Abterode",
+        "opening_hours": "Mo-Fr: 07:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-meissner-abterode-vorderweg-1.html",
+        "store_id": "6034",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.4847299,
+          51.314568
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kassel",
+        "street": "Friedrich-Ebert-Straße 29",
+        "city": "Kassel",
+        "postal_code": "34117",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kassel-friedrich-ebert-strasse-29.html",
+        "store_id": "3052",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3519799,
+          49.8968821
+        ]
+      },
+      "properties": {
+        "name": "tegut… Gerolzhofen",
+        "street": "Schallfelder Straße 38",
+        "city": "Gerolzhofen",
+        "postal_code": "97447",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-gerolzhofen-schallfelder-strasse-38.html",
+        "store_id": "3552",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.181157,
+          50.914506
+        ]
+      },
+      "properties": {
+        "name": "tegut… Schwalmstadt",
+        "street": "Walkmühlenweg 9",
+        "city": "Schwalmstadt",
+        "postal_code": "34613",
+        "district": "Treysa",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00 | Mo-Fr: 08:00 - 13:00 und 15:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-schwalmstadt-treysa-walkmuehlenweg-9.html",
+        "store_id": "2924",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.399105,
+          50.519457
+        ]
+      },
+      "properties": {
+        "name": "tegut… Braunfels",
+        "street": "Wetzlarer Straße 18 A",
+        "city": "Braunfels",
+        "postal_code": "35619",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-braunfels-wetzlarer-strasse-18-a.html",
+        "store_id": "2628",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.834366,
+          50.883324
+        ]
+      },
+      "properties": {
+        "name": "tegut… Cölbe",
+        "street": "Am Bürgerhaus 6",
+        "city": "Cölbe",
+        "postal_code": "35091",
+        "district": "Schoenstadt",
+        "opening_hours": "Mo-Fr: 07:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-coelbe-schoenstadt-am-buergerhaus-6.html",
+        "store_id": "6464",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7693462,
+          50.806579
+        ]
+      },
+      "properties": {
+        "name": "tegut… Marburg",
+        "street": "Universitätsstraße 8",
+        "city": "Marburg",
+        "postal_code": "35037",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00 | Mo-Fr: 09:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-marburg-2m-marburg-mall-universitaetsstrasse-8.html",
+        "store_id": "2538",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.738042,
+          50.790905
+        ]
+      },
+      "properties": {
+        "name": "tegut… Marburg",
+        "street": "Jakob-Kaiser-Straße 7",
+        "city": "Marburg",
+        "postal_code": "35037",
+        "district": "",
+        "opening_hours": "Mo-Fr: 08:00 - 19:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-marburg-stadtwald-jakob-kaiser-strasse-7.html",
+        "store_id": "6414",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.935063,
+          50.505178
+        ]
+      },
+      "properties": {
+        "name": "tegut… Hungen",
+        "street": "Höhenstraße 2",
+        "city": "Hungen",
+        "postal_code": "35410",
+        "district": "Villingen",
+        "opening_hours": "Mo-Fr: 07:00 - 18:30",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-hungen-villingen-hoehenstrasse-2.html",
+        "store_id": "6234",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.78213468,
+          50.8177408
+        ]
+      },
+      "properties": {
+        "name": "tegut… Marburg",
+        "street": "Rudolf-Bultmann-Straße 8",
+        "city": "Marburg",
+        "postal_code": "35039",
+        "district": "",
+        "opening_hours": "Mo-Fr: 08:00 - 15:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-marburg-rudolf-bultmann-strasse-8.html",
+        "store_id": "6224",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7145095,
+          50.8443926
+        ]
+      },
+      "properties": {
+        "name": "tegut… Marburg",
+        "street": "Stümpelstal 1a",
+        "city": "Marburg",
+        "postal_code": "35041",
+        "district": "Michelbach",
+        "opening_hours": "Mo-Fr: 08:00 - 18:00 | Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-marburg-michelbach-stuempelstal-1a.html",
+        "store_id": "6314",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.080329,
+          50.47112
+        ]
+      },
+      "properties": {
+        "name": "tegut… Schotten",
+        "street": "Mühlstraße 23",
+        "city": "Schotten",
+        "postal_code": "63679",
+        "district": "Rainrod",
+        "opening_hours": "Mo-Fr: 07:00 - 18:30",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-schotten-rainrod-muehlstrasse-23.html",
+        "store_id": "6174",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8936396,
+          50.766537
+        ]
+      },
+      "properties": {
+        "name": "tegut… Amöneburg",
+        "street": "Lindenstraße 15",
+        "city": "Amöneburg",
+        "postal_code": "35287",
+        "district": "Rossdorf",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 09:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-amoeneburg-rossdorf-lindenstrasse-15.html",
+        "store_id": "3592",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.287057,
+          50.840238
+        ]
+      },
+      "properties": {
+        "name": "tegut… Schrecksbach",
+        "street": "Kasseler Straße 25",
+        "city": "Schrecksbach",
+        "postal_code": "34637",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-schrecksbach-kasseler-strasse-25.html",
+        "store_id": "3532",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.922306,
+          50.8200793
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kirchhain",
+        "street": "Mühlgasse 11",
+        "city": "Kirchhain",
+        "postal_code": "35274",
+        "district": "",
+        "opening_hours": "Mo-Fr: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kirchhain-muehlgasse-11.html",
+        "store_id": "3064",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.108484,
+          50.768336
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kirtorf",
+        "street": "Grüner Weg 6",
+        "city": "Kirtorf",
+        "postal_code": "36320",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kirtorf-gruener-weg-6.html",
+        "store_id": "3142",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.00021,
+          50.50121
+        ]
+      },
+      "properties": {
+        "name": "tegut… Ehrenberg (Rhön)",
+        "street": "Am Schwimmbad 5",
+        "city": "Ehrenberg (Rhön)",
+        "postal_code": "36115",
+        "district": "Wüstensachsen",
+        "opening_hours": "Mo-Fr: 07:30 - 19:00 | Mo-Fr: 09:00 - 17:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-ehrenberg-rhoen-wuestensachsen-am-schwimmbad-5.html",
+        "store_id": "3472",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.513122,
+          50.621233
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Salzschlirf",
+        "street": "Fuldaer Straße 52",
+        "city": "Bad Salzschlirf",
+        "postal_code": "36364",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Fr: 09:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-salzschlirf-fuldaer-strasse-52.html",
+        "store_id": "3400",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9848495,
+          49.7874856
+        ]
+      },
+      "properties": {
+        "name": "tegut… Gerbrunn",
+        "street": "Am Kirschberg 5",
+        "city": "Gerbrunn",
+        "postal_code": "97218",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Sa: 09:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-gerbrunn-am-kirschberg-5.html",
+        "store_id": "3384",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.67646918,
+          50.5693914
+        ]
+      },
+      "properties": {
+        "name": "tegut... teo Fulda",
+        "street": "Gerloser Weg 72",
+        "city": "Fulda",
+        "postal_code": "36039",
+        "district": "",
+        "opening_hours": "",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-fulda-gerloser-weg-72.html",
+        "store_id": "3015",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.990632,
+          49.662009
+        ]
+      },
+      "properties": {
+        "name": "tegut… Erbach",
+        "street": "Werner-von-Siemens-Straße 35",
+        "city": "Erbach",
+        "postal_code": "64711",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-erbach-werner-von-siemens-strasse-35.html",
+        "store_id": "2704",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.132587,
+          49.984456
+        ]
+      },
+      "properties": {
+        "name": "tegut… Aschaffenburg",
+        "street": "Schillerstraße 109",
+        "city": "Aschaffenburg",
+        "postal_code": "63741",
+        "district": "Damm",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 09:00 - 13:00 und 14:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-aschaffenburg-damm-schillerstrasse-109.html",
+        "store_id": "2558",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.686443,
+          49.389888
+        ]
+      },
+      "properties": {
+        "name": "tegut… Heidelberg",
+        "street": "Rheinstraße 29",
+        "city": "Heidelberg",
+        "postal_code": "69126",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00 | Mo-Fr: 10:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-heidelberg-suedstadt-rheinstrasse-29.html",
+        "store_id": "2568",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.68841,
+          50.09155
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Mailänder Straße 8",
+        "city": "Frankfurt am Main",
+        "postal_code": "60598",
+        "district": "Sachsenhausen",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-sachsenhausen-mailaender-strasse-8.html",
+        "store_id": "2398",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.198814,
+          50.317572
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Neustadt an der Saale",
+        "street": "Saalestraße 2",
+        "city": "Bad Neustadt an der Saale",
+        "postal_code": "97616",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 10:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-neustadt-an-der-saale-saalestrasse-2.html",
+        "store_id": "2318",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.249913,
+          50.094277
+        ]
+      },
+      "properties": {
+        "name": "tegut… Wiesbaden",
+        "street": "Richard-Wagner-Straße 86",
+        "city": "Wiesbaden",
+        "postal_code": "65193",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-wiesbaden-richard-wagner-strasse-86.html",
+        "store_id": "2058",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8478622,
+          50.1201423
+        ]
+      },
+      "properties": {
+        "name": "tegut… Mühlheim am Main",
+        "street": "Schillerstraße 77 - 79",
+        "city": "Mühlheim am Main",
+        "postal_code": "63165",
+        "district": "",
+        "opening_hours": "Mo-Do: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muehlheim-am-main-schillerstrasse-77-79.html",
+        "store_id": "2874",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.304048,
+          50.139013
+        ]
+      },
+      "properties": {
+        "name": "tegut… Wiesbaden",
+        "street": "Fondetter Straße 26",
+        "city": "Wiesbaden",
+        "postal_code": "65207",
+        "district": "Naurod",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-wiesbaden-naurod-fondetterstrasse-26.html",
+        "store_id": "2038",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.45639,
+          50.31252
+        ]
+      },
+      "properties": {
+        "name": "tegut… Steinau an der Straße",
+        "street": "Brüder-Grimm-Straße 132",
+        "city": "Steinau an der Straße",
+        "postal_code": "36396",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-steinau-an-der-strasse-brueder-grimm-strasse-132.html",
+        "store_id": "3700",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.560291,
+          49.967365
+        ]
+      },
+      "properties": {
+        "name": "tegut… Mörfelden-Walldorf",
+        "street": "Gerauer Straße 54 a",
+        "city": "Mörfelden-Walldorf",
+        "postal_code": "64546",
+        "district": "",
+        "opening_hours": "Mo-Do: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-moerfelden-walldorf-gerauer-strasse-54-a.html",
+        "store_id": "2484",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.67785,
+          50.55391
+        ]
+      },
+      "properties": {
+        "name": "tegut… Fulda",
+        "street": "Rabanusstraße 3",
+        "city": "Fulda",
+        "postal_code": "36037",
+        "district": "",
+        "opening_hours": "Mo-Fr: 07:00 - 21:00 | Mo-Fr: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-fulda-rabanusstrasse-3.html",
+        "store_id": "3200",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.74394,
+          50.34414
+        ]
+      },
+      "properties": {
+        "name": "tegut… Friedberg (Hessen)",
+        "street": "Anna-Kloos-Straße 1",
+        "city": "Friedberg (Hessen)",
+        "postal_code": "61169",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-friedberg-hessen-anna-kloos-strasse-1.html",
+        "store_id": "2724",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6355617,
+          50.1171141
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Voltastraße 70 - 72",
+        "city": "Frankfurt am Main",
+        "postal_code": "60486",
+        "district": "Bockenheim",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-bockenheim-voltastrasse-70-72.html",
+        "store_id": "3054",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.00695,
+          49.83302
+        ]
+      },
+      "properties": {
+        "name": "tegut… Estenfeld",
+        "street": "Am Zehnthügel 2",
+        "city": "Estenfeld",
+        "postal_code": "97230",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-estenfeld-am-zehnthuegel-2.html",
+        "store_id": "2144",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.049647,
+          51.190744
+        ]
+      },
+      "properties": {
+        "name": "tegut… Eschwege",
+        "street": "Bahnhofstraße 25 - 27",
+        "city": "Eschwege",
+        "postal_code": "37269",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-eschwege-bahnhofstrasse-25-27.html",
+        "store_id": "2450",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.347009,
+          50.139461
+        ]
+      },
+      "properties": {
+        "name": "tegut… Eppstein",
+        "street": "Valterweg 1",
+        "city": "Eppstein",
+        "postal_code": "65817",
+        "district": "Bremthal",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-eppstein-bremthal-valterweg-1.html",
+        "store_id": "2158",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.668056,
+          49.629838
+        ]
+      },
+      "properties": {
+        "name": "tegut… Tauberbischofsheim",
+        "street": "Krautgartenweg 6",
+        "city": "Tauberbischofsheim",
+        "postal_code": "97941",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-tauberbischofsheim-krautgartenweg-6.html",
+        "store_id": "3354",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.3090539,
+          50.979828
+        ]
+      },
+      "properties": {
+        "name": "tegut… Weimar",
+        "street": "Damaschkestraße 1",
+        "city": "Weimar",
+        "postal_code": "99425",
+        "district": "",
+        "opening_hours": "Mo-Fr: 07:00 - 21:00 | Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-weimar-damaschkestrasse-1.html",
+        "store_id": "2478",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.57001,
+          50.66214
+        ]
+      },
+      "properties": {
+        "name": "tegut… Ranis",
+        "street": "Blumenstraße 41",
+        "city": "Ranis",
+        "postal_code": "07389",
+        "district": "",
+        "opening_hours": "Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-ranis-blumenstrasse-41.html",
+        "store_id": "6424",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.987483,
+          50.995173
+        ]
+      },
+      "properties": {
+        "name": "tegut… Erfurt",
+        "street": "Bergener Straße 18",
+        "city": "Erfurt",
+        "postal_code": "99092",
+        "district": "Marbach",
+        "opening_hours": "Mo-Fr: 07:30 - 18:00 | Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-erfurt-marbach-bergener-strasse-18.html",
+        "store_id": "6394",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.974026,
+          50.67316
+        ]
+      },
+      "properties": {
+        "name": "tegut… Ilmenau",
+        "street": "Margarethenstraße 9",
+        "city": "Ilmenau",
+        "postal_code": "98693",
+        "district": "Langewiesen",
+        "opening_hours": "Mo-Fr: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-ilmenau-langewiesen-margarethenstrasse-9.html",
+        "store_id": "6622",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.85439,
+          51.07626
+        ]
+      },
+      "properties": {
+        "name": "tegut… Dachwig",
+        "street": "Bahnhofstraße 9",
+        "city": "Dachwig",
+        "postal_code": "99100",
+        "district": "",
+        "opening_hours": "Mo-Fr: 07:00 - 18:00 | Mo-Fr: 07:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-dachwig-bahnhofstrasse-9.html",
+        "store_id": "6364",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.6466206,
+          51.1083963
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Langensalza",
+        "street": "Marktstraße 25",
+        "city": "Bad Langensalza",
+        "postal_code": "99947",
+        "district": "",
+        "opening_hours": "Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-laedchen-bad-langensalza-marktstrasse-25.html",
+        "store_id": "6154",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.651883,
+          51.453974
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bleicherode",
+        "street": "Straße der Einheit 105",
+        "city": "Bleicherode",
+        "postal_code": "99752",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bleicherode-strasse-der-einheit-105.html",
+        "store_id": "6660",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.328728,
+          50.966346
+        ]
+      },
+      "properties": {
+        "name": "tegut… Weimar",
+        "street": "Rainer-Maria-Rilke-Straße 41",
+        "city": "Weimar",
+        "postal_code": "99425",
+        "district": "",
+        "opening_hours": "Mo-Fr: 08:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-weimar-rainer-maria-rilke-strasse-41.html",
+        "store_id": "6330",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.84701,
+          50.89986
+        ]
+      },
+      "properties": {
+        "name": "tegut… Drei Gleichen",
+        "street": "Am Sportplatz 22",
+        "city": "Drei Gleichen",
+        "postal_code": "99869",
+        "district": "Wandersleben",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Fr: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-drei-gleichen-wandersleben-am-sportplatz-22.html",
+        "store_id": "6010",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3902606,
+          50.6114457
+        ]
+      },
+      "properties": {
+        "name": "tegut… Meiningen",
+        "street": "Fritz-Aßmus-Straße 16",
+        "city": "Meiningen",
+        "postal_code": "98617",
+        "district": "Walldorf",
+        "opening_hours": "Mo-Sa: 07:00 - 19:00 | Mo-Sa: 07:00 - 19:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-walldorf-fritz-assmuss-strasse-16.html",
+        "store_id": "6750",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.552528,
+          50.670274
+        ]
+      },
+      "properties": {
+        "name": "tegut… Steinbach-Hallenberg",
+        "street": "Mühlstraße 52",
+        "city": "Steinbach-Hallenberg",
+        "postal_code": "98587",
+        "district": "Viernau",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Sa: 08:00 - 20:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-steinbach-hallenberg-viernau-muehlstrasse-52.html",
+        "store_id": "6602",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.979535,
+          50.8168584
+        ]
+      },
+      "properties": {
+        "name": "tegut… Unterbreizbach",
+        "street": "Bahnhofstraße 27",
+        "city": "Unterbreizbach",
+        "postal_code": "36414",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 09:30 - 17:30",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-unterbreizbach-bahnhofstrasse-27.html",
+        "store_id": "3322",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.67273,
+          50.61016
+        ]
+      },
+      "properties": {
+        "name": "tegut… Suhl",
+        "street": "Linsenhoferstraße 63",
+        "city": "Suhl",
+        "postal_code": "98529",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-suhl-lautenberg-linsenhoferstrasse-63.html",
+        "store_id": "6712",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.853735,
+          51.370452
+        ]
+      },
+      "properties": {
+        "name": "tegut… Sondershausen",
+        "street": "Beethovenstraße 9",
+        "city": "Sondershausen",
+        "postal_code": "99706",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 19:00 | Mo-Sa: 08:00 - 17:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-sondershausen-beethovenstrasse-9.html",
+        "store_id": "6490",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.762976,
+          50.5138932
+        ]
+      },
+      "properties": {
+        "name": "tegut… Schleusingen",
+        "street": "Plettenberger Weg 17",
+        "city": "Schleusingen",
+        "postal_code": "98553",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-schleusingen-plettenberger-weg-17.html",
+        "store_id": "6850",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.87792,
+          50.52357
+        ]
+      },
+      "properties": {
+        "name": "tegut… Schleusegrund",
+        "street": "Gabeler Straße 1 a",
+        "city": "Schleusegrund",
+        "postal_code": "98667",
+        "district": "Schoenbrunn",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Fr: 11:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-schleusegrund-schoenbrunn-gabeler-strasse-1-a.html",
+        "store_id": "6870",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.36046,
+          50.641441
+        ]
+      },
+      "properties": {
+        "name": "tegut… Saalfeld/Saale",
+        "street": "Reinhardtstraße 56",
+        "city": "Saalfeld/Saale",
+        "postal_code": "07318",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 08:00 - 12:00 und 14:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-saalfeld-saale-reinhardtstrasse-56.html",
+        "store_id": "2230",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.733062,
+          50.826808
+        ]
+      },
+      "properties": {
+        "name": "tegut… Ohrdruf",
+        "street": "Marktplatz 13",
+        "city": "Ohrdruf",
+        "postal_code": "99885",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-ohrdruf-marktplatz-13.html",
+        "store_id": "2180",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.726397,
+          50.705649
+        ]
+      },
+      "properties": {
+        "name": "tegut… Oberhof",
+        "street": "Gräfenrodaer Straße 7",
+        "city": "Oberhof",
+        "postal_code": "98559",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Fr: 11:00 - 17:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-oberhof-graefenrodaer-strasse-7.html",
+        "store_id": "6800",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.770064,
+          51.519208
+        ]
+      },
+      "properties": {
+        "name": "tegut… Nordhausen",
+        "street": "Straße der Opfer des Faschismu",
+        "city": "Nordhausen",
+        "postal_code": "99734",
+        "district": "Salza",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-nordhausen-salza-strasse-der-opfer-des-faschismu.html",
+        "store_id": "6662",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.242935,
+          50.311466
+        ]
+      },
+      "properties": {
+        "name": "tegut… Föritztal",
+        "street": "Hofwiese 6",
+        "city": "Föritztal",
+        "postal_code": "96524",
+        "district": "Neuhaus-Schierschnitz",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-foeritztal-neuhaus-schierschnitz-hofwiese-6.html",
+        "store_id": "6862",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.473536,
+          51.199919
+        ]
+      },
+      "properties": {
+        "name": "tegut… Mühlhausen/Thüringen",
+        "street": "Langensalzaer Landstraße 25",
+        "city": "Mühlhausen/Thüringen",
+        "postal_code": "99974",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muehlhausen-thueringen-langensalzaer-landstrasse-25.html",
+        "store_id": "2120",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3398717,
+          51.076922
+        ]
+      },
+      "properties": {
+        "name": "tegut… Amt Creuzburg",
+        "street": "Schornstraße 2",
+        "city": "Amt Creuzburg",
+        "postal_code": "99831",
+        "district": "Mihla",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 10:00 - 17:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-amt-creuzburg-mihla-schornstrasse-2.html",
+        "store_id": "6582",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.118492,
+          50.395322
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankenblick",
+        "street": "Bahnhofsallee 6",
+        "city": "Frankenblick",
+        "postal_code": "96528",
+        "district": "Mengersgereuth-Hämmern",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankenblick-mengersgereuth-haemmern-bahnhofsallee-6.html",
+        "store_id": "6790",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.382256,
+          50.554615
+        ]
+      },
+      "properties": {
+        "name": "tegut… Meiningen",
+        "street": "Berkerserstraße 31",
+        "city": "Meiningen",
+        "postal_code": "98617",
+        "district": "Dreissigacker",
+        "opening_hours": "Mo-Fr: 07:00 - 19:00 | Mo-Fr: 07:00 - 19:00 | Mo-Fr: 07:00 - 19:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-meiningen-dreissigacker-berkerserstrasse-31.html",
+        "store_id": "6382",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.42135,
+          50.59128
+        ]
+      },
+      "properties": {
+        "name": "tegut… Meiningen",
+        "street": "Utendorfer Straße 31",
+        "city": "Meiningen",
+        "postal_code": "98617",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Sa: 07:00 - 14:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-meiningen-utendorfer-strasse-31.html",
+        "store_id": "6982",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.043626,
+          50.964399
+        ]
+      },
+      "properties": {
+        "name": "tegut… Erfurt",
+        "street": "Häßler Straße 6 - 8 a",
+        "city": "Erfurt",
+        "postal_code": "99096",
+        "district": "Daberstedt",
+        "opening_hours": "Mo-Fr: 07:00 - 21:00 | Mo-Fr: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-erfurt-daberstedt-haessler-strasse-6-8-a.html",
+        "store_id": "2264",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0261263,
+          50.9612573
+        ]
+      },
+      "properties": {
+        "name": "tegut… Erfurt",
+        "street": "Eichendorffstraße 27",
+        "city": "Erfurt",
+        "postal_code": "99096",
+        "district": "Löbervorstadt",
+        "opening_hours": "Mo-Fr: 07:00 - 21:00 | Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-erfurt-loebervorstadt-eichendorffstrasse-27.html",
+        "store_id": "2930",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.017811,
+          50.972138
+        ]
+      },
+      "properties": {
+        "name": "tegut… Erfurt",
+        "street": "Gorkistraße 11a",
+        "city": "Erfurt",
+        "postal_code": "99084",
+        "district": "Brühlervorstadt",
+        "opening_hours": "Mo-Fr: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-erfurt-bruehlervorstadt-gorkistrasse-11a.html",
+        "store_id": "2900",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.025077,
+          50.977663
+        ]
+      },
+      "properties": {
+        "name": "tegut… Erfurt",
+        "street": "Marktstraße 28 - 31",
+        "city": "Erfurt",
+        "postal_code": "99084",
+        "district": "",
+        "opening_hours": "Mo-Fr: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-erfurt-altstadt-marktstrasse-28-31.html",
+        "store_id": "6282",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.034807,
+          50.977718
+        ]
+      },
+      "properties": {
+        "name": "tegut… Erfurt",
+        "street": "Anger 74",
+        "city": "Erfurt",
+        "postal_code": "99084",
+        "district": "",
+        "opening_hours": "Mo-Fr: 07:30 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-erfurt-altstadt-anger-74.html",
+        "store_id": "6112",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.323084,
+          50.969866
+        ]
+      },
+      "properties": {
+        "name": "tegut… Eisenach",
+        "street": "Barfüsserstraße 1",
+        "city": "Eisenach",
+        "postal_code": "99817",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-eisenach-barfuesserstrasse-1.html",
+        "store_id": "6192",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.31019,
+          50.99513
+        ]
+      },
+      "properties": {
+        "name": "tegut… Eisenach",
+        "street": "Nordplatz 20",
+        "city": "Eisenach",
+        "postal_code": "99817",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-eisenach-nordplatz-20.html",
+        "store_id": "6190",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.242488,
+          51.051066
+        ]
+      },
+      "properties": {
+        "name": "tegut… Amt Creuzburg",
+        "street": "Bahnhofstraße 35",
+        "city": "Amt Creuzburg",
+        "postal_code": "99831",
+        "district": "Creuzburg",
+        "opening_hours": "Mo-Sa: 07:00 - 19:00 | Mo-Sa: 07:00 - 19:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-amt-creuzburg-creuzburg-bahnhofstrasse-35.html",
+        "store_id": "6580",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.595159,
+          50.645031
+        ]
+      },
+      "properties": {
+        "name": "tegut… Zella-Mehlis",
+        "street": "Benshäuser Straße 12",
+        "city": "Zella-Mehlis",
+        "postal_code": "98544",
+        "district": "Benshausen",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Sa: 08:00 - 20:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-zella-mehlis-benshausen-benshaeuser-strasse-12.html",
+        "store_id": "6752",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.233002,
+          50.814397
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Salzungen",
+        "street": "Bahnhofstraße 11",
+        "city": "Bad Salzungen",
+        "postal_code": "36433",
+        "district": "",
+        "opening_hours": "Mo-Fr: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-salzungen-goethe-park-center-bahnhofstrasse-11.html",
+        "store_id": "2750",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.34672,
+          50.81625
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Liebenstein",
+        "street": "Bahnhofstraße 3",
+        "city": "Bad Liebenstein",
+        "postal_code": "36448",
+        "district": "",
+        "opening_hours": "Mo-Do,Sa: 07:00 - 20:00 | Mo-Sa: 08:00 - 19:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-liebenstein-bahnhofstrasse-3.html",
+        "store_id": "2090",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.955984,
+          50.714701
+        ]
+      },
+      "properties": {
+        "name": "tegut… Geisa",
+        "street": "Gartenweg 3",
+        "city": "Geisa",
+        "postal_code": "36419",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-geisa-gartenweg-3.html",
+        "store_id": "3910",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.7422099,
+          50.9430236
+        ]
+      },
+      "properties": {
+        "name": "tegut… Gotha",
+        "street": "Weimarer Straße 120 b",
+        "city": "Gotha",
+        "postal_code": "99867",
+        "district": "Siebleben",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Fr: 09:00 - 17:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-gotha-siebleben-weimarer-strasse-120-b.html",
+        "store_id": "6092",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.676352,
+          50.934828
+        ]
+      },
+      "properties": {
+        "name": "tegut… Gotha",
+        "street": "Leinastraße 78",
+        "city": "Gotha",
+        "postal_code": "99867",
+        "district": "Sundhausen",
+        "opening_hours": "Mo-Fr: 07:00 - 21:00 | Mo-Fr: 08:00 - 12:00 und 14:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-gotha-sundhausen-leinastrasse-78.html",
+        "store_id": "2190",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.7253671,
+          50.277029
+        ]
+      },
+      "properties": {
+        "name": "tegut… Heldburg",
+        "street": "Rödelsweg 255 a",
+        "city": "Heldburg",
+        "postal_code": "98663",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-heldburg-roedelsweg-255-a.html",
+        "store_id": "6962",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.132119,
+          51.385855
+        ]
+      },
+      "properties": {
+        "name": "tegut… Heilbad Heiligenstadt",
+        "street": "Brüsseler Straße 1",
+        "city": "Heilbad Heiligenstadt",
+        "postal_code": "37308",
+        "district": "",
+        "opening_hours": "Mo-Fr: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-heilbad-heiligenstadt-bruesseler-strasse-1.html",
+        "store_id": "2454",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.842433,
+          51.119279
+        ]
+      },
+      "properties": {
+        "name": "tegut… Herbsleben",
+        "street": "Anger 55",
+        "city": "Herbsleben",
+        "postal_code": "99955",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-herbsleben-anger-55.html",
+        "store_id": "6130",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.159384,
+          50.628229
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kaltennordheim",
+        "street": "Gartenstraße 2",
+        "city": "Kaltennordheim",
+        "postal_code": "36452",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 19:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kaltennordheim-gartenstrasse-2.html",
+        "store_id": "3832",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.96758,
+          50.87866
+        ]
+      },
+      "properties": {
+        "name": "tegut… Amt Wachsenburg",
+        "street": "Wachsenburgstraße 99",
+        "city": "Amt Wachsenburg",
+        "postal_code": "99334",
+        "district": "Ichtershausen",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-amt-wachsenburg-ichtershausen-wachsenburgstrasse-99.html",
+        "store_id": "6380",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.9531202,
+          49.2357494
+        ]
+      },
+      "properties": {
+        "name": "tegut… Abenberg",
+        "street": "Im Gewerbegebiet 1",
+        "city": "Abenberg",
+        "postal_code": "91183",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-abenberg-im-gewerbegebiet-1.html",
+        "store_id": "3304",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.73684464,
+          50.5944194
+        ]
+      },
+      "properties": {
+        "name": "tegut… Petersberg",
+        "street": "Schulstraße 2",
+        "city": "Petersberg",
+        "postal_code": "36100",
+        "district": "Steinau",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-petersberg-steinau-schulstrasse-2.html",
+        "store_id": "3302",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.76473802,
+          50.6762394
+        ]
+      },
+      "properties": {
+        "name": "tegut… Hünfeld",
+        "street": "Am Niedertor 2 - 8",
+        "city": "Hünfeld",
+        "postal_code": "36088",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-huenfeld-am-niedertor-2-8.html",
+        "store_id": "3300",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2620995,
+          49.9481754
+        ]
+      },
+      "properties": {
+        "name": "tegut… Kolitzheim",
+        "street": "Lachenbrunnweg 1",
+        "city": "Kolitzheim",
+        "postal_code": "97509",
+        "district": "Unterspiesheim",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00 | Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-kolitzheim-unterspiesheim-lachenbrunnweg-1.html",
+        "store_id": "3292",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.57313599,
+          50.0516837
+        ]
+      },
+      "properties": {
+        "name": "tegut... Quartier Frankfurt am Main",
+        "street": "Terminal 1, Ebene U1, Bereich",
+        "city": "Frankfurt am Main",
+        "postal_code": "60547",
+        "district": "Flughafen",
+        "opening_hours": "Mo-So: 06:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-flughafen-terminal-1-terminal-1-ebene-u1-bereich.html",
+        "store_id": "3284",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.682539,
+          50.554135
+        ]
+      },
+      "properties": {
+        "name": "tegut... Quartier Fulda",
+        "street": "Bahnhofstraße 25",
+        "city": "Fulda",
+        "postal_code": "36037",
+        "district": "",
+        "opening_hours": "Mo-Sa: 05:30 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-fulda-bahnhofstrasse-25.html",
+        "store_id": "5020",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6755615,
+          50.108216
+        ]
+      },
+      "properties": {
+        "name": "tegut... Quartier Frankfurt am Main",
+        "street": "Neue Mainzer Straße 6-10",
+        "city": "Frankfurt am Main",
+        "postal_code": "60311",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-altstadt-neue-mainzer-strasse-6-10.html",
+        "store_id": "5060",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.205526,
+          50.103761
+        ]
+      },
+      "properties": {
+        "name": "tegut… Dittelbrunn",
+        "street": "Im Büttnerstrich 4",
+        "city": "Dittelbrunn",
+        "postal_code": "97456",
+        "district": "Hambach",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Fr: 08:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-dittelbrunn-hambach-im-buettnerstrich-4.html",
+        "store_id": "3272",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.6596721,
+          50.5641458
+        ]
+      },
+      "properties": {
+        "name": "tegut… Fulda",
+        "street": "Schlitzer Straße 79 - 81",
+        "city": "Fulda",
+        "postal_code": "36039",
+        "district": "Horas",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-fulda-horas-schlitzer-strasse-79-81.html",
+        "store_id": "3270",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7089006,
+          50.126878
+        ]
+      },
+      "properties": {
+        "name": "tegut… Frankfurt am Main",
+        "street": "Berger Straße 226",
+        "city": "Frankfurt am Main",
+        "postal_code": "60385",
+        "district": "Bornheim",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-frankfurt-am-main-bornheim-berger-strasse-226.html",
+        "store_id": "2808",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.00844228,
+          48.6871774
+        ]
+      },
+      "properties": {
+        "name": "tegut… Böblingen",
+        "street": "Wolfgang-Brumme-Allee 3",
+        "city": "Böblingen",
+        "postal_code": "71034",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-boeblingen-wolfgang-brumme-allee-3.html",
+        "store_id": "2838",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.5778574,
+          50.0156393
+        ]
+      },
+      "properties": {
+        "name": "tegut… Zeil am Main",
+        "street": "In den Sutten 3",
+        "city": "Zeil am Main",
+        "postal_code": "97475",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-zeil-am-main-in-den-sutten-3.html",
+        "store_id": "2078",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.228461,
+          49.803771
+        ]
+      },
+      "properties": {
+        "name": "tegut… Schwarzach am Main",
+        "street": "Zur Abtei 1",
+        "city": "Schwarzach am Main",
+        "postal_code": "97359",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00 | Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-schwarzach-am-main-zur-abtei-1.html",
+        "store_id": "3264",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.3357617,
+          50.988293
+        ]
+      },
+      "properties": {
+        "name": "tegut… Weimar",
+        "street": "Wolfgang-Borchert-Bogen 1",
+        "city": "Weimar",
+        "postal_code": "99423",
+        "district": "",
+        "opening_hours": "Mo-Fr: 07:00 - 21:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-weimar-wolfgang-borchert-bogen-1.html",
+        "store_id": "2438",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.768067,
+          50.786776
+        ]
+      },
+      "properties": {
+        "name": "tegut… Marburg",
+        "street": "Marburger Straße 100",
+        "city": "Marburg",
+        "postal_code": "35043",
+        "district": "Cappel",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-marburg-cappel-marburger-strasse-100.html",
+        "store_id": "2234",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.614512,
+          50.506874
+        ]
+      },
+      "properties": {
+        "name": "tegut… Themar",
+        "street": "Meininger Straße 6",
+        "city": "Themar",
+        "postal_code": "98660",
+        "district": "",
+        "opening_hours": "Mo-Sa: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-themar-meininger-strasse-6.html",
+        "store_id": "2240",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.70717693,
+          50.8634347
+        ]
+      },
+      "properties": {
+        "name": "tegut… Bad Hersfeld",
+        "street": "Heinrich-von-Stephan-Straße 4",
+        "city": "Bad Hersfeld",
+        "postal_code": "36251",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 22:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-bad-hersfeld-heinrich-von-stephan-strasse-4.html",
+        "store_id": "2974",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.688028,
+          50.548658
+        ]
+      },
+      "properties": {
+        "name": "tegut… Fulda",
+        "street": "Am Emaillierwerk 1",
+        "city": "Fulda",
+        "postal_code": "36043",
+        "district": "",
+        "opening_hours": "Mo-Sa: 07:00 - 21:00 | Mo-Do: 08:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-fulda-emaillierwerk-am-emaillierwerk-1.html",
+        "store_id": "2954",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.24304611,
+          50.9100798
+        ]
+      },
+      "properties": {
+        "name": "tegut… Schwalmstadt",
+        "street": "Ernst-Ihle-Straße 8",
+        "city": "Schwalmstadt",
+        "postal_code": "34613",
+        "district": "Ziegenhain",
+        "opening_hours": "Mo-Do: 07:00 - 20:00 | Mo-Fr: 08:00 - 13:00 und 15:00 - 18:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-schwalmstadt-ziegenhain-ernst-ihle-strasse-8.html",
+        "store_id": "2390",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.192052,
+          50.0596285
+        ]
+      },
+      "properties": {
+        "name": "tegut… Schweinfurt",
+        "street": "Gretel-Baumbach-Straße 8",
+        "city": "Schweinfurt",
+        "postal_code": "97424",
+        "district": "Niederwerrn",
+        "opening_hours": "Mo-Sa: 07:00 - 20:00",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-schweinfurt-niederwerrn-gretel-baumbach-strasse-8.html",
+        "store_id": "2820",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.554557,
+          48.208995
+        ]
+      },
+      "properties": {
+        "name": "tegut... teo München",
+        "street": "Weitlstraße 66",
+        "city": "München",
+        "postal_code": "80935",
+        "district": "Feldmoching-Hasenbergl",
+        "opening_hours": "",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muenchen-augustinum-nord-weitlstrasse-66.html",
+        "store_id": "1730",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.66517357,
+          49.9673615
+        ]
+      },
+      "properties": {
+        "name": "tegut... teo Egelsbach",
+        "street": "Am Berliner Platz",
+        "city": "Egelsbach",
+        "postal_code": "63329",
+        "district": "",
+        "opening_hours": "",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-egelsbach-am-berliner-platz.html",
+        "store_id": "1450",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.603403,
+          49.463815
+        ]
+      },
+      "properties": {
+        "name": "tegut... teo Edingen-Neckarhausen",
+        "street": "Hauptstraße 356",
+        "city": "Edingen-Neckarhausen",
+        "postal_code": "68535",
+        "district": "",
+        "opening_hours": "",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-edingen-neckarhausen-hauptstrasse-356.html",
+        "store_id": "1400",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.46927557,
+          49.480099
+        ]
+      },
+      "properties": {
+        "name": "tegut... teo Mannheim",
+        "street": "Willy-Brandt-Platz 17",
+        "city": "Mannheim",
+        "postal_code": "68161",
+        "district": "",
+        "opening_hours": "",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-mannheim-hauptbahnhof-willy-brandt-platz-17.html",
+        "store_id": "1710",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.94247,
+          49.35418
+        ]
+      },
+      "properties": {
+        "name": "tegut... teo Reichartshausen",
+        "street": "Wannestraße 11",
+        "city": "Reichartshausen",
+        "postal_code": "74934",
+        "district": "",
+        "opening_hours": "",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-reichartshausen-wannestrasse-11.html",
+        "store_id": "1410",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.821445,
+          49.297995
+        ]
+      },
+      "properties": {
+        "name": "tegut... teo Zuzenhausen",
+        "street": "Meckesheimer Straße 7/2",
+        "city": "Zuzenhausen",
+        "postal_code": "74939",
+        "district": "",
+        "opening_hours": "",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-zuzenhausen-meckesheimer-strasse-7/2.html",
+        "store_id": "1390",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.805314,
+          50.81571
+        ]
+      },
+      "properties": {
+        "name": "tegut... teo Marburg",
+        "street": "Baldingerstraße 1",
+        "city": "Marburg",
+        "postal_code": "35043",
+        "district": "Lahnberge",
+        "opening_hours": "",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-marburg-lahnberge-universitaetsklinikum-baldingerstrasse-1.html",
+        "store_id": "1260",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.055258,
+          50.139271
+        ]
+      },
+      "properties": {
+        "name": "tegut... teo Rodenbach",
+        "street": "Hanauer Straße 46",
+        "city": "Rodenbach",
+        "postal_code": "63517",
+        "district": "Oberrodenbach",
+        "opening_hours": "",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-rodenbach-oberrodenbach-hanauer-strasse-46.html",
+        "store_id": "1380",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.57358027,
+          49.7356942
+        ]
+      },
+      "properties": {
+        "name": "tegut... teo Alsbach-Hähnlein",
+        "street": "Gernsheimer Straße 42",
+        "city": "Alsbach-Hähnlein",
+        "postal_code": "64665",
+        "district": "Hähnlein",
+        "opening_hours": "",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-alsbach-haehnlein-haehnlein-gernsheimer-strasse-42.html",
+        "store_id": "1360",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.836152,
+          50.109037
+        ]
+      },
+      "properties": {
+        "name": "tegut... teo Mühlheim am Main",
+        "street": "Ulmenstraße 13h",
+        "city": "Mühlheim am Main",
+        "postal_code": "63165",
+        "district": "",
+        "opening_hours": "",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-muehlheim-am-main-ulmenstrasse-13h.html",
+        "store_id": "1200",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.87057436,
+          49.3558431
+        ]
+      },
+      "properties": {
+        "name": "tegut... teo Lobbach",
+        "street": "Langenzeller Straße 1",
+        "city": "Lobbach",
+        "postal_code": "74931",
+        "district": "Lobenfeld",
+        "opening_hours": "",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-lobbach-lobenfeld-langenzeller-strasse-1.html",
+        "store_id": "1220",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.684333,
+          49.245527
+        ]
+      },
+      "properties": {
+        "name": "tegut... teo Malsch",
+        "street": "Hauptstraße 122",
+        "city": "Malsch",
+        "postal_code": "69254",
+        "district": "",
+        "opening_hours": "",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-malsch-hauptstrasse-122.html",
+        "store_id": "1210",
+        "chain_id": "tegut"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8294771,
+          50.1982004
+        ]
+      },
+      "properties": {
+        "name": "tegut... teo Schöneck",
+        "street": "Nidderauer Straße 47",
+        "city": "Schöneck",
+        "postal_code": "61137",
+        "district": "",
+        "opening_hours": "",
+        "url": "https://www.tegut.com/maerkte/markt/tegut-schoeneck-nidderauer-strasse-47.html",
+        "store_id": "1290",
+        "chain_id": "tegut"
+      }
     }
   ]
 }

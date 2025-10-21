@@ -305,6 +305,13 @@
             popupAnchor: [0, -50]
         });
 
+        const tegutIcon = L.icon({
+            iconUrl: 'images/tegut-marker.svg',
+            iconSize: [40, 50],
+            iconAnchor: [20, 50],
+            popupAnchor: [0, -50]
+        });
+
         // Function to get icon based on chain
         function getChainIcon(chainId) {
             switch(chainId) {
@@ -312,6 +319,8 @@
                     return dennsIcon;
                 case 'alnatura':
                     return alnaturaIcon;
+                case 'tegut':
+                    return tegutIcon;
                 default:
                     return dennsIcon; // fallback
             }
