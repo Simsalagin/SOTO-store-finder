@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
 
+    <!-- Leaflet Control Geocoder CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder@2.4.0/dist/Control.Geocoder.css" />
+
     <style>
         :root {
             --soto-green-primary: #6B9F3E;
@@ -212,6 +215,70 @@
             color: white;
             font-weight: 700;
         }
+
+        /* Geocoder Search Box Styling */
+        .leaflet-control-geocoder {
+            border-radius: 12px !important;
+            box-shadow: 0 4px 12px rgba(107, 159, 62, 0.2) !important;
+            border: 2px solid var(--soto-green-primary) !important;
+        }
+
+        .leaflet-control-geocoder-form {
+            border-radius: 10px !important;
+        }
+
+        .leaflet-control-geocoder-form input {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+            font-size: 14px !important;
+            padding: 10px 12px !important;
+            border: none !important;
+            border-radius: 8px !important;
+            color: var(--soto-text-dark) !important;
+        }
+
+        .leaflet-control-geocoder-form input:focus {
+            outline: none !important;
+            box-shadow: 0 0 0 3px rgba(107, 159, 62, 0.2) !important;
+        }
+
+        .leaflet-control-geocoder-alternatives {
+            background: white !important;
+            border-radius: 8px !important;
+            box-shadow: 0 4px 12px rgba(107, 159, 62, 0.15) !important;
+            border: 1px solid var(--soto-cream) !important;
+            margin-top: 4px !important;
+        }
+
+        .leaflet-control-geocoder-alternatives a {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+            font-size: 13px !important;
+            padding: 10px 12px !important;
+            color: var(--soto-text-dark) !important;
+            border-bottom: 1px solid var(--soto-cream) !important;
+        }
+
+        .leaflet-control-geocoder-alternatives a:hover {
+            background: var(--soto-cream) !important;
+            color: var(--soto-green-dark) !important;
+        }
+
+        .leaflet-control-geocoder-alternatives a:first-child {
+            border-radius: 8px 8px 0 0 !important;
+        }
+
+        .leaflet-control-geocoder-alternatives a:last-child {
+            border-radius: 0 0 8px 8px !important;
+            border-bottom: none !important;
+        }
+
+        .leaflet-control-geocoder-icon {
+            background-color: var(--soto-green-primary) !important;
+            border-radius: 8px !important;
+        }
+
+        .leaflet-control-geocoder-icon:hover {
+            background-color: var(--soto-green-dark) !important;
+        }
     </style>
 </head>
 <body>
@@ -246,6 +313,9 @@
 
     <!-- Leaflet MarkerCluster JavaScript -->
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <!-- Leaflet Control Geocoder JavaScript -->
+    <script src="https://unpkg.com/leaflet-control-geocoder@2.4.0/dist/Control.Geocoder.js"></script>
 
     <script>
         // Initialize map centered on Germany (fallback position)
@@ -346,6 +416,56 @@
 
         // Start geolocation attempt immediately
         tryGeolocation();
+
+        // Add search/geocoder control
+        const geocoder = L.Control.Geocoder.nominatim({
+            geocodingQueryParams: {
+                countrycodes: 'de',  // Limit search to Germany
+                addressdetails: 1,
+                limit: 5
+            }
+        });
+
+        const geocoderControl = L.Control.geocoder({
+            geocoder: geocoder,
+            defaultMarkGeocode: false,  // Don't add default marker
+            placeholder: 'Adresse oder PLZ suchen...',
+            errorMessage: 'Keine Ergebnisse gefunden',
+            collapsed: false,  // Keep search box expanded
+            position: 'topright'
+        }).addTo(map);
+
+        // Handle geocoding results
+        geocoderControl.on('markgeocode', function(e) {
+            const latlng = e.geocode.center;
+            const bbox = e.geocode.bbox;
+
+            console.log('Search result:', e.geocode.name);
+
+            // Remove previous search marker if exists
+            if (window.searchMarker) {
+                map.removeLayer(window.searchMarker);
+            }
+
+            // Add green marker for searched location
+            window.searchMarker = L.circleMarker(latlng, {
+                radius: 8,
+                fillColor: '#6B9F3E',  // SOTO green
+                color: '#ffffff',
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.8
+            }).addTo(map);
+
+            window.searchMarker.bindPopup('🔍 ' + e.geocode.name).openPopup();
+
+            // Zoom to the result
+            if (bbox) {
+                map.fitBounds(bbox, { padding: [50, 50], maxZoom: 14 });
+            } else {
+                map.setView(latlng, 13);
+            }
+        });
 
         // Custom icons for each chain
         const dennsIcon = L.icon({
