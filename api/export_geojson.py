@@ -44,14 +44,13 @@ def export_to_geojson():
                 'street': store['street'],
                 'postal_code': store['postal_code'],
                 'city': store['city'],
-                'district': store['district'],
                 'country_code': store['country_code'],
                 'phone': store['phone'],
                 'email': store['email'],
                 'website': store['website'],
                 'opening_hours': opening_hours,
                 'services': services,
-                'address': store['address']
+                'address': f"{store['street']}, {store['postal_code']} {store['city']}"
             }
         }
         features.append(feature)
