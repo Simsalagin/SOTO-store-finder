@@ -88,9 +88,28 @@ mypy src/
    }
    ```
 
-4. **Test:**
+4. **Create marker icon (frontend/images/newchain-marker.svg):**
+   ```xml
+   <svg width="40" height="50" xmlns="http://www.w3.org/2000/svg">
+     <path d="M20 0 C8.954 0 0 8.954 0 20 C0 28 8 38 20 50 C32 38 40 28 40 20 C40 8.954 31.046 0 20 0 Z"
+           fill="#YOUR_BRAND_COLOR" stroke="#DARKER_SHADE" stroke-width="2"/>
+     <circle cx="20" cy="18" r="12" fill="white"/>
+     <circle cx="20" cy="18" r="10" fill="#YOUR_BRAND_COLOR"/>
+     <text x="20" y="23" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+           fill="white" text-anchor="middle">N</text>
+   </svg>
+   ```
+   **Color guide:** denn's=#8BC34A, Alnatura=#FF9800, tegut=#E53935, VollCorner=#00A0B0
+
+5. **Integrate marker in frontend/index.html:**
+   - Add icon definition (around line 364)
+   - Update `getChainIcon()` switch case
+
+6. **Test:**
    ```bash
    python scripts/update_stores.py
+   python api/export_geojson.py
+   cd frontend && python -m http.server 8000
    ```
 
 ---
