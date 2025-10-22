@@ -12,12 +12,12 @@ Entwicklung einer interaktiven Karte, die alle Filialen anzeigt, in denen SOTO-P
 - ✅ **denn's Biomarkt** - 590 Filialen
 - ✅ **Alnatura** - 150 Filialen
 - ✅ **tegut** - 314 Filialen
+- ✅ **VollCorner** - 21 Filialen
 
-**Total: 1,054 validierte Filialen**
+**Total: 1,075 validierte Filialen**
 
 **In Entwicklung:**
 - 🔄 Bio Company
-- 🔄 Vollcorner
 - 🔄 Globus
 
 **Features:**
@@ -290,9 +290,69 @@ scraper_map = {
 }
 ```
 
-4. **Logo/Marker hinzufügen:**
-- `frontend/images/neue_kette-logo.svg`
-- `frontend/images/neue_kette-marker.svg`
+4. **Marker-Icon erstellen (`frontend/images/neue_kette-marker.svg`):**
+```xml
+<svg width="40" height="50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Marker pin shape -->
+  <path d="M20 0 C8.954 0 0 8.954 0 20 C0 28 8 38 20 50 C32 38 40 28 40 20 C40 8.954 31.046 0 20 0 Z"
+        fill="#MARKENFARBE" stroke="#DUNKLERER_TON" stroke-width="2"/>
+
+  <!-- White circle background -->
+  <circle cx="20" cy="18" r="12" fill="white"/>
+
+  <!-- Colored inner circle -->
+  <circle cx="20" cy="18" r="10" fill="#MARKENFARBE"/>
+
+  <!-- Chain letter -->
+  <text x="20" y="23" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+        fill="white" text-anchor="middle">N</text>
+</svg>
+```
+
+**Farb-Referenzen:**
+- denn's: Grün `#8BC34A` / `#689F38`
+- Alnatura: Orange `#FF9800` / `#F57C00`
+- tegut: Rot `#E53935` / `#C62828`
+- VollCorner: Türkis `#00A0B0` / `#006B75`
+
+5. **Marker in Frontend integrieren (`frontend/index.html`):**
+
+a. Icon-Definition hinzufügen (ca. Zeile 364):
+```javascript
+const neueKetteIcon = L.icon({
+    iconUrl: 'images/neue_kette-marker.svg',
+    iconSize: [40, 50],
+    iconAnchor: [20, 50],
+    popupAnchor: [0, -50]
+});
+```
+
+b. In `getChainIcon()` Funktion eintragen:
+```javascript
+function getChainIcon(chainId) {
+    switch(chainId) {
+        case 'denns':
+            return dennsIcon;
+        case 'alnatura':
+            return alnaturaIcon;
+        case 'tegut':
+            return tegutIcon;
+        case 'vollcorner':
+            return vollcornerIcon;
+        case 'neue_kette':
+            return neueKetteIcon;  // HINZUFÜGEN
+        default:
+            return dennsIcon;
+    }
+}
+```
+
+6. **Testen:**
+```bash
+python scripts/update_stores.py
+python api/export_geojson.py
+cd frontend && python -m http.server 8000
+```
 
 ## 🛠️ Entwicklung
 

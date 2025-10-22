@@ -279,6 +279,13 @@
             popupAnchor: [0, -50]
         });
 
+        const vollcornerIcon = L.icon({
+            iconUrl: 'images/vollcorner-marker.svg',
+            iconSize: [40, 50],
+            iconAnchor: [20, 50],
+            popupAnchor: [0, -50]
+        });
+
         // Function to get icon based on chain
         function getChainIcon(chainId) {
             switch(chainId) {
@@ -288,6 +295,8 @@
                     return alnaturaIcon;
                 case 'tegut':
                     return tegutIcon;
+                case 'vollcorner':
+                    return vollcornerIcon;
                 default:
                     return dennsIcon; // fallback
             }

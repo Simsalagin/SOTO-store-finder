@@ -296,13 +296,75 @@ def validate_coordinates(lat: float, lon: float) -> Dict:
    }
    ```
 
-4. **Add assets** (`frontend/images/`):
-   - `newchain-logo.svg`
-   - `newchain-marker.svg`
+4. **Create marker icon** (`frontend/images/newchain-marker.svg`):
+   ```xml
+   <svg width="40" height="50" xmlns="http://www.w3.org/2000/svg">
+     <!-- Marker pin shape - choose unique color -->
+     <path d="M20 0 C8.954 0 0 8.954 0 20 C0 28 8 38 20 50 C32 38 40 28 40 20 C40 8.954 31.046 0 20 0 Z"
+           fill="#YOUR_COLOR" stroke="#DARKER_COLOR" stroke-width="2"/>
 
-5. **Test:**
+     <!-- White circle background -->
+     <circle cx="20" cy="18" r="12" fill="white"/>
+
+     <!-- Brand color circle -->
+     <circle cx="20" cy="18" r="10" fill="#YOUR_COLOR"/>
+
+     <!-- Chain initial -->
+     <text x="20" y="23" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+           fill="white" text-anchor="middle">N</text>
+   </svg>
+   ```
+
+   **Color Guide:**
+   - denn's: Green (#8BC34A)
+   - Alnatura: Orange (#FF9800)
+   - tegut: Red (#E53935)
+   - VollCorner: Teal (#00A0B0)
+   - Choose a distinct color for your chain!
+
+5. **Integrate marker in frontend** (`frontend/index.html`):
+
+   a. Add icon definition (around line 364):
+   ```javascript
+   const newchainIcon = L.icon({
+       iconUrl: 'images/newchain-marker.svg',
+       iconSize: [40, 50],
+       iconAnchor: [20, 50],
+       popupAnchor: [0, -50]
+   });
+   ```
+
+   b. Update getChainIcon function (around line 372):
+   ```javascript
+   function getChainIcon(chainId) {
+       switch(chainId) {
+           case 'denns':
+               return dennsIcon;
+           case 'alnatura':
+               return alnaturaIcon;
+           case 'tegut':
+               return tegutIcon;
+           case 'vollcorner':
+               return vollcornerIcon;
+           case 'newchain':  // Add this
+               return newchainIcon;
+           default:
+               return dennsIcon;
+       }
+   }
+   ```
+
+6. **Test:**
    ```bash
+   # Update database with new chain
    python scripts/update_stores.py
+
+   # Export to GeoJSON
+   python api/export_geojson.py
+
+   # Test frontend locally
+   cd frontend && python -m http.server 8000
+   # Visit http://localhost:8000 and verify markers show correctly
    ```
 
 ### Task 2: Modify Database Schema
