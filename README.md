@@ -29,6 +29,7 @@ Entwicklung einer interaktiven Karte, die alle Filialen anzeigt, in denen SOTO-P
 - ✅ Konfigurationsbasiertes Chain-Management
 - ✅ GitHub Pages Deployment
 - ✅ **Automatische Standorterkennung** - Karte zoomt automatisch zum Nutzerstandort
+- ✅ **Adresssuche** - Suche nach Adressen und Postleitzahlen
 
 ## 🏗️ Projektstruktur
 
@@ -164,6 +165,25 @@ Die Karte erkennt automatisch deinen Standort und zoomt auf deine Umgebung:
    - Zeigt alle Filialen in Deutschland
    - Aktiviert sich wenn beide Methoden fehlschlagen
    - Zoom Stufe 6 mit allen Markern sichtbar
+
+#### 🔍 Adresssuche
+
+Die Karte bietet eine integrierte Suchfunktion für Adressen und Postleitzahlen:
+
+- **Suchfeld** in der oberen rechten Ecke
+- **Unterstützte Suchbegriffe:**
+  - Vollständige Adressen: "Hauptstraße 123, Berlin"
+  - Postleitzahlen (PLZ): "10115"
+  - Städte: "Frankfurt am Main"
+  - Stadtteile: "Berlin Mitte"
+  - Kombinationen: "60311 Frankfurt"
+
+- **Funktionen:**
+  - Autocomplete mit bis zu 5 Vorschlägen
+  - Nur deutsche Adressen (schnellere Suche)
+  - Grüner Marker zeigt gesuchten Ort
+  - Automatischer Zoom auf gefundene Location
+  - Verwendet OpenStreetMap Nominatim
 
 ### GeoJSON neu generieren
 
