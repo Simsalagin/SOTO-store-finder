@@ -55,36 +55,87 @@ class TegutScraper(BaseScraper):
 
     def _get_all_store_urls(self) -> List[str]:
         """
-        Get all store URLs from the search page.
+        Get all store URLs from the search page using Playwright to handle pagination.
 
-        Note: This is a simplified version that gets stores from a single page.
-        For production use with pagination, consider using Playwright.
+        The tegut website uses JavaScript to load stores dynamically with a "Mehr anzeigen"
+        (Show more) button. We need a headless browser to handle this.
 
         Returns:
             List of store URLs
         """
         try:
-            response = requests.get(
-                f"{self.SEARCH_URL}?mksearch[address]=&mksearch[submit]=1",
-                headers=self.headers,
-                timeout=30
-            )
-            response.raise_for_status()
+            from playwright.sync_api import sync_playwright
+        except ImportError:
+            logger.error("Playwright not installed. Run: pip install playwright && playwright install chromium")
+            return []
 
-            soup = BeautifulSoup(response.text, 'html.parser')
-            store_links = soup.find_all('a', href=re.compile(r'/maerkte/markt/.*\.html'))
+        stores_by_url = {}
 
-            urls = set()
-            for link in store_links:
-                href = link.get('href')
-                if href and '/maerkte/markt/' in href:
-                    full_url = f"{self.BASE_URL}{href}" if href.startswith('/') else href
-                    urls.add(full_url)
+        try:
+            with sync_playwright() as p:
+                logger.info("Launching browser for pagination...")
+                browser = p.chromium.launch(headless=True)
+                page = browser.new_page()
 
-            return list(urls)
+                logger.info("Loading store search page...")
+                page.goto(f"{self.SEARCH_URL}?mksearch[address]=&mksearch[submit]=1")
+                time.sleep(3)
+
+                page_num = 1
+                while True:
+                    html = page.content()
+                    soup = BeautifulSoup(html, 'html.parser')
+
+                    store_links = soup.find_all('a', href=re.compile(r'/maerkte/markt/.*\.html'))
+                    page_urls = set()
+                    for link in store_links:
+                        href = link.get('href')
+                        if href and '/maerkte/markt/' in href:
+                            full_url = f"{self.BASE_URL}{href}" if href.startswith('/') else href
+                            page_urls.add(full_url)
+
+                    new_urls = page_urls - set(stores_by_url.keys())
+                    if new_urls:
+                        logger.info(f"Page {page_num}: Found {len(new_urls)} new stores ({len(stores_by_url) + len(new_urls)} total)")
+                        for url in new_urls:
+                            stores_by_url[url] = None
+                    else:
+                        logger.info(f"Page {page_num}: No new stores found")
+
+                    # Try to click "Mehr anzeigen" (Show more) button
+                    try:
+                        more_button = None
+                        for text in ['Mehr anzeigen', 'Mehr laden']:
+                            try:
+                                more_button = page.get_by_text(text, exact=False).first
+                                if more_button.is_visible():
+                                    break
+                            except:
+                                continue
+
+                        if more_button and more_button.is_visible():
+                            more_button.click()
+                            time.sleep(2)
+                            page_num += 1
+                        else:
+                            logger.info("Reached end of pagination")
+                            break
+                    except:
+                        logger.info("No more pagination available")
+                        break
+
+                    # Safety limit
+                    if page_num > 100:
+                        logger.warning("Reached page limit (100)")
+                        break
+
+                browser.close()
+
+            logger.info(f"Found {len(stores_by_url)} unique store URLs")
+            return list(stores_by_url.keys())
 
         except Exception as e:
-            logger.error(f"Error getting store URLs: {e}")
+            logger.error(f"Error getting store URLs with Playwright: {e}")
             return []
 
     def _scrape_store_page(self, url: str) -> Optional[Store]:
