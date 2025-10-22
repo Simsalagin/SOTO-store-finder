@@ -506,13 +506,19 @@
 
                 // Automatically try to locate user after map is loaded
                 if (navigator.geolocation) {
+                    console.log('Auto-locating user...');
+                    const locateBtn = document.getElementById('locateBtn');
+                    locateBtn.classList.add('loading');
+
                     map.locate({
-                        setView: false,
+                        setView: true, // Changed to true for auto-zoom
                         maxZoom: 13,
                         enableHighAccuracy: true,
                         timeout: 10000,
                         maximumAge: 0
                     });
+                } else {
+                    console.log('Geolocation not available');
                 }
             })
             .catch(error => {
@@ -524,6 +530,7 @@
 
         // Handle location found
         function onLocationFound(e) {
+            console.log('Location found:', e.latlng, 'accuracy:', e.accuracy);
             const radius = e.accuracy;
 
             // Remove loading state
@@ -544,12 +551,12 @@
                 })
             }).addTo(map);
 
-            // Zoom to user location with appropriate zoom level
-            map.setView(e.latlng, 13);
+            console.log('User marker added, map should zoom to location');
         }
 
         // Handle location error
         function onLocationError(e) {
+            console.error('Location error:', e.code, e.message);
             const locateBtn = document.getElementById('locateBtn');
             locateBtn.classList.remove('loading');
 
