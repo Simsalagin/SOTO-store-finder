@@ -28,6 +28,7 @@ Entwicklung einer interaktiven Karte, die alle Filialen anzeigt, in denen SOTO-P
 - ✅ GeoJSON Export
 - ✅ Konfigurationsbasiertes Chain-Management
 - ✅ GitHub Pages Deployment
+- ✅ **Automatische Standorterkennung** - Karte zoomt automatisch zum Nutzerstandort
 
 ## 🏗️ Projektstruktur
 
@@ -142,6 +143,27 @@ python -m http.server 8000
 Öffne: http://localhost:8000
 
 **Live:** https://simsalagin.github.io/SOTO-store-finder/
+
+#### 🎯 Automatische Standorterkennung
+
+Die Karte erkennt automatisch deinen Standort und zoomt auf deine Umgebung:
+
+1. **Browser-Geolocation (bevorzugt)**
+   - Browser fragt nach Standort-Berechtigung
+   - Bei Zustimmung: Präzise Standorterkennung (Zoom Stufe 12)
+   - Blauer Marker zeigt "Dein Standort" an
+   - Position wird 5 Minuten gecacht
+
+2. **IP-basierte Geolocation (Fallback)**
+   - Aktiviert sich automatisch bei abgelehnter Berechtigung
+   - Ungefährer Standort auf Stadt-Ebene (Zoom Stufe 10)
+   - Keine zusätzlichen Berechtigungen nötig
+   - Verwendet ipapi.co Service
+
+3. **Deutschland-Übersicht (Standard)**
+   - Zeigt alle Filialen in Deutschland
+   - Aktiviert sich wenn beide Methoden fehlschlagen
+   - Zoom Stufe 6 mit allen Markern sichtbar
 
 ### GeoJSON neu generieren
 
