@@ -248,7 +248,7 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
     <script>
-        // Initialize map centered on Germany
+        // Initialize map centered on Germany (fallback position)
         const map = L.map('map').setView([51.1657, 10.4515], 6);
 
         // Add OpenStreetMap tile layer
@@ -256,6 +256,77 @@
             attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             maxZoom: 19
         }).addTo(map);
+
+        // Track if user location was found
+        let userLocationFound = false;
+
+        // Try to get user's location using browser geolocation
+        function tryGeolocation() {
+            if ('geolocation' in navigator) {
+                navigator.geolocation.getCurrentPosition(
+                    // Success callback
+                    (position) => {
+                        const userLat = position.coords.latitude;
+                        const userLon = position.coords.longitude;
+
+                        // Zoom to user location with appropriate zoom level
+                        map.setView([userLat, userLon], 12);
+                        userLocationFound = true;
+
+                        // Add a temporary marker for user location
+                        const userMarker = L.circleMarker([userLat, userLon], {
+                            radius: 8,
+                            fillColor: '#4285F4',
+                            color: '#ffffff',
+                            weight: 2,
+                            opacity: 1,
+                            fillOpacity: 0.8
+                        }).addTo(map);
+
+                        userMarker.bindPopup('📍 Dein Standort').openPopup();
+                    },
+                    // Error callback
+                    (error) => {
+                        console.warn('Geolocation denied or failed:', error.message);
+                        // Try IP-based geolocation as fallback
+                        tryIPGeolocation();
+                    },
+                    // Options
+                    {
+                        enableHighAccuracy: false,
+                        timeout: 5000,
+                        maximumAge: 300000 // Cache position for 5 minutes
+                    }
+                );
+            } else {
+                // Browser doesn't support geolocation
+                console.warn('Geolocation not supported by browser');
+                tryIPGeolocation();
+            }
+        }
+
+        // Fallback: Try to get approximate location from IP address
+        function tryIPGeolocation() {
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.latitude && data.longitude) {
+                        // Zoom to approximate location (less precise, so lower zoom)
+                        map.setView([data.latitude, data.longitude], 10);
+                        userLocationFound = true;
+                        console.log('Using IP-based location:', data.city, data.country_name);
+                    } else {
+                        console.warn('IP geolocation failed, using default Germany view');
+                    }
+                })
+                .catch(error => {
+                    console.warn('IP geolocation error:', error.message);
+                    console.log('Using default Germany view');
+                });
+        }
+
+        // Start geolocation attempt
+        tryGeolocation();
 
         // Custom icons for each chain
         const dennsIcon = L.icon({
@@ -426,8 +497,9 @@
                 document.getElementById('store-count').textContent = data.features.length;
                 document.getElementById('city-count').textContent = cities.size;
 
-                // Fit bounds to show all markers initially
-                if (data.features.length > 0) {
+                // Only fit bounds to all markers if user location was not found
+                // This prevents overriding the user's location zoom
+                if (data.features.length > 0 && !userLocationFound) {
                     map.fitBounds(markers.getBounds(), { padding: [50, 50] });
                 }
             })
