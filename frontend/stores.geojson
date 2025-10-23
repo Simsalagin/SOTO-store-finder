@@ -41245,6 +41245,1714 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          8.3526894,
+          49.5817948
+        ]
+      },
+      "properties": {
+        "id": "globus_bobenheim-roxheim",
+        "chain_id": "globus",
+        "store_id": "bobenheim-roxheim",
+        "name": "GLOBUS Bobenheim-Roxheim",
+        "street": "Südring 2",
+        "postal_code": "67240",
+        "city": "Bobenheim",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Südring 2, 67240 Bobenheim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1946334,
+          51.5065358
+        ]
+      },
+      "properties": {
+        "id": "globus_bochum",
+        "chain_id": "globus",
+        "store_id": "bochum",
+        "name": "GLOBUS Bochum",
+        "street": "Riemker Straße 13",
+        "postal_code": "44809",
+        "city": "Bochum",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 22 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Riemker Straße 13, 44809 Bochum"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.5113534,
+          52.2422984
+        ]
+      },
+      "properties": {
+        "id": "globus_braunschweig",
+        "chain_id": "globus",
+        "store_id": "braunschweig",
+        "name": "GLOBUS Braunschweig",
+        "street": "Otto-von-Guericke Straße 11",
+        "postal_code": "38122",
+        "city": "Braunschweig",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 07 bis 00 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Otto-von-Guericke Straße 11, 38122 Braunschweig"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.308025,
+          51.581439
+        ]
+      },
+      "properties": {
+        "id": "globus_castrop-rauxel",
+        "chain_id": "globus",
+        "store_id": "castrop-rauxel",
+        "name": "GLOBUS Castrop-Rauxel",
+        "street": "Siemensstr. 10",
+        "postal_code": "44579",
+        "city": "Castrop-Rauxel",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Siemensstr. 10, 44579 Castrop-Rauxel"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0264259,
+          49.2899018
+        ]
+      },
+      "properties": {
+        "id": "globus_dudweiler",
+        "chain_id": "globus",
+        "store_id": "dudweiler",
+        "name": "GLOBUS Dudweiler",
+        "street": "Fischbachstr. 121",
+        "postal_code": "66125",
+        "city": "Dudweiler",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Fischbachstr. 121, 66125 Dudweiler"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.8094817,
+          51.4801109
+        ]
+      },
+      "properties": {
+        "id": "globus_duisburg",
+        "chain_id": "globus",
+        "store_id": "duisburg",
+        "name": "GLOBUS Duisburg",
+        "street": "Berliner Str. 90",
+        "postal_code": "47138",
+        "city": "Duisburg",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Berliner Str. 90, 47138 Duisburg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0014515,
+          51.0345977
+        ]
+      },
+      "properties": {
+        "id": "globus_erfurt-mittelhausen",
+        "chain_id": "globus",
+        "store_id": "erfurt-mittelhausen",
+        "name": "GLOBUS Erfurt-Mittelhausen",
+        "street": "Erfurter Straße 72",
+        "postal_code": "99095",
+        "city": "Erfurt",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Erfurter Straße 72, 99095 Erfurt"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.1060535,
+          50.9763887
+        ]
+      },
+      "properties": {
+        "id": "globus_erfurt-linderbach",
+        "chain_id": "globus",
+        "store_id": "erfurt-linderbach",
+        "name": "GLOBUS Erfurt-Linderbach",
+        "street": "Weimarische Straße 117",
+        "postal_code": "99098",
+        "city": "Erfurt-Linderbach",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Weimarische Straße 117, 99098 Erfurt-Linderbach"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5814378,
+          50.1423248
+        ]
+      },
+      "properties": {
+        "id": "globus_eschborn",
+        "chain_id": "globus",
+        "store_id": "eschborn",
+        "name": "GLOBUS Eschborn",
+        "street": "Ginnheimer Straße 18",
+        "postal_code": "65760",
+        "city": "Eschborn",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 22 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Ginnheimer Straße 18, 65760 Eschborn"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0702113,
+          49.7064188
+        ]
+      },
+      "properties": {
+        "id": "globus_forchheim",
+        "chain_id": "globus",
+        "store_id": "forchheim",
+        "name": "GLOBUS Forchheim",
+        "street": "Willy-Brandt-Allee 1",
+        "postal_code": "91301",
+        "city": "Forchheim",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Willy-Brandt-Allee 1, 91301 Forchheim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.9632035,
+          47.8270675
+        ]
+      },
+      "properties": {
+        "id": "globus_freilassing",
+        "chain_id": "globus",
+        "store_id": "freilassing",
+        "name": "GLOBUS Freilassing",
+        "street": "Traunsteiner Str. 6",
+        "postal_code": "83395",
+        "city": "Freilassing",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Traunsteiner Str. 6, 83395 Freilassing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.9232209,
+          49.8995078
+        ]
+      },
+      "properties": {
+        "id": "globus_gensingen",
+        "chain_id": "globus",
+        "store_id": "gensingen",
+        "name": "GLOBUS Gensingen",
+        "street": "Binger Straße",
+        "postal_code": "55457",
+        "city": "Gensingen",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Binger Straße, 55457 Gensingen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.1407223,
+          50.8851656
+        ]
+      },
+      "properties": {
+        "id": "globus_gera-trebnitz",
+        "chain_id": "globus",
+        "store_id": "gera-trebnitz",
+        "name": "GLOBUS Gera-Trebnitz",
+        "street": "An der Beerweinschänke Nr. 2",
+        "postal_code": "07554",
+        "city": "Gera",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "An der Beerweinschänke Nr. 2, 07554 Gera"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.1828309,
+          49.5577121
+        ]
+      },
+      "properties": {
+        "id": "globus_gr-nstadt",
+        "chain_id": "globus",
+        "store_id": "gr-nstadt",
+        "name": "GLOBUS Grünstadt",
+        "street": "Daimler-Str. 23",
+        "postal_code": "67269",
+        "city": "Grünstadt",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Daimler-Str. 23, 67269 Grünstadt"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.9925055,
+          51.4558983
+        ]
+      },
+      "properties": {
+        "id": "globus_halle-dieselstra-e",
+        "chain_id": "globus",
+        "store_id": "halle-dieselstra-e",
+        "name": "GLOBUS Halle-Dieselstraße",
+        "street": "Dieselstraße 47",
+        "postal_code": "06130",
+        "city": "Halle",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 07 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Dieselstraße 47, 06130 Halle"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.8705333,
+          53.5842134
+        ]
+      },
+      "properties": {
+        "id": "globus_hamburg-lurup",
+        "chain_id": "globus",
+        "store_id": "hamburg-lurup",
+        "name": "GLOBUS Hamburg-Lurup",
+        "street": "Grandkuhlenweg 11",
+        "postal_code": "22549",
+        "city": "Hamburg",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Grandkuhlenweg 11, 22549 Hamburg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4762687,
+          50.0719163
+        ]
+      },
+      "properties": {
+        "id": "globus_hattersheim",
+        "chain_id": "globus",
+        "store_id": "hattersheim",
+        "name": "GLOBUS Hattersheim",
+        "street": "Heddingheimer Straße 2-4",
+        "postal_code": "65795",
+        "city": "Hattersheim",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 22 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Heddingheimer Straße 2-4, 65795 Hattersheim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.8476086,
+          50.8865608
+        ]
+      },
+      "properties": {
+        "id": "globus_hermsdorf",
+        "chain_id": "globus",
+        "store_id": "hermsdorf",
+        "name": "GLOBUS Hermsdorf",
+        "street": "Rodaer Straße 72",
+        "postal_code": "07629",
+        "city": "Hermsdorf",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Rodaer Straße 72, 07629 Hermsdorf"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5324036,
+          49.3354215
+        ]
+      },
+      "properties": {
+        "id": "globus_hockenheim",
+        "chain_id": "globus",
+        "store_id": "hockenheim",
+        "name": "GLOBUS Hockenheim",
+        "street": "Speyerer Str. 1",
+        "postal_code": "68766",
+        "city": "Hockenheim",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Speyerer Str. 1, 68766 Hockenheim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.3352317,
+          49.2633626
+        ]
+      },
+      "properties": {
+        "id": "globus_homburg-ein-d",
+        "chain_id": "globus",
+        "store_id": "homburg-ein-d",
+        "name": "GLOBUS Homburg-Einöd",
+        "street": "Neunmorgenstraße 8",
+        "postal_code": "66424",
+        "city": "Homburg-Einöd",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Neunmorgenstraße 8, 66424 Homburg-Einöd"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.2378352,
+          51.4270898
+        ]
+      },
+      "properties": {
+        "id": "globus_hoyerswerda",
+        "chain_id": "globus",
+        "store_id": "hoyerswerda",
+        "name": "GLOBUS Hoyerswerda",
+        "street": "Kamenzer Bogen 1",
+        "postal_code": "02977",
+        "city": "Hoyerswerda",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Kamenzer Bogen 1, 02977 Hoyerswerda"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.3950154,
+          49.7315854
+        ]
+      },
+      "properties": {
+        "id": "globus_idar-oberstein",
+        "chain_id": "globus",
+        "store_id": "idar-oberstein",
+        "name": "GLOBUS Idar-Oberstein",
+        "street": "Zwischen Wasser 13",
+        "postal_code": "55743",
+        "city": "Idar-Oberstein",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Zwischen Wasser 13, 55743 Idar-Oberstein"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.509008,
+          50.958126
+        ]
+      },
+      "properties": {
+        "id": "globus_isserstedt",
+        "chain_id": "globus",
+        "store_id": "isserstedt",
+        "name": "GLOBUS Isserstedt",
+        "street": "Weimarische Straße 3",
+        "postal_code": "07751",
+        "city": "Jena-Isserstedt",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Weimarische Straße 3, 07751 Jena-Isserstedt"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7093132,
+          49.4400722
+        ]
+      },
+      "properties": {
+        "id": "globus_kaiserslautern",
+        "chain_id": "globus",
+        "store_id": "kaiserslautern",
+        "name": "GLOBUS Kaiserslautern",
+        "street": "Merkurstraße 57",
+        "postal_code": "67663",
+        "city": "Kaiserslautern",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 22 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Merkurstraße 57, 67663 Kaiserslautern"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.555533,
+          50.3862643
+        ]
+      },
+      "properties": {
+        "id": "globus_koblenz",
+        "chain_id": "globus",
+        "store_id": "koblenz",
+        "name": "GLOBUS Koblenz",
+        "street": "Jakob-Caspers-Straße 2",
+        "postal_code": "56070",
+        "city": "Koblenz-Bubenheim",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Jakob-Caspers-Straße 2, 56070 Koblenz-Bubenheim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.5989624,
+          51.3183418
+        ]
+      },
+      "properties": {
+        "id": "globus_krefeld",
+        "chain_id": "globus",
+        "store_id": "krefeld",
+        "name": "GLOBUS Krefeld",
+        "street": "Hafelsstraße 200",
+        "postal_code": "47809",
+        "city": "Krefeld",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 07 bis 22 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Hafelsstraße 200, 47809 Krefeld"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.8525286,
+          50.9221324
+        ]
+      },
+      "properties": {
+        "id": "globus_k-ln-marsdorf",
+        "chain_id": "globus",
+        "store_id": "k-ln-marsdorf",
+        "name": "GLOBUS Köln-Marsdorf",
+        "street": "Max-Planck-Straße 9",
+        "postal_code": "50858",
+        "city": "Köln-Marsdorf",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 07 bis 22 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Max-Planck-Straße 9, 50858 Köln-Marsdorf"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6051429,
+          50.3077674
+        ]
+      },
+      "properties": {
+        "id": "globus_lahnstein",
+        "chain_id": "globus",
+        "store_id": "lahnstein",
+        "name": "GLOBUS Lahnstein",
+        "street": "Brückenstraße 17",
+        "postal_code": "56112",
+        "city": "Lahnstein",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Brückenstraße 17, 56112 Lahnstein"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.0283144,
+          54.1074138
+        ]
+      },
+      "properties": {
+        "id": "globus_rostock-sievershagen",
+        "chain_id": "globus",
+        "store_id": "rostock-sievershagen",
+        "name": "GLOBUS Rostock-Sievershagen",
+        "street": "Ostsee-Park-Straße 3",
+        "postal_code": "18069",
+        "city": "Lambrechtshagen",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Ostsee-Park-Straße 3, 18069 Lambrechtshagen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3950677,
+          51.4010673
+        ]
+      },
+      "properties": {
+        "id": "globus_leipzig-seehausen",
+        "chain_id": "globus",
+        "store_id": "leipzig-seehausen",
+        "name": "GLOBUS Leipzig-Seehausen",
+        "street": "An der Passage 1",
+        "postal_code": "04356",
+        "city": "Leipzig",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "An der Passage 1, 04356 Leipzig"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0768973,
+          50.3980054
+        ]
+      },
+      "properties": {
+        "id": "globus_limburg",
+        "chain_id": "globus",
+        "store_id": "limburg",
+        "name": "GLOBUS Limburg",
+        "street": "Mundipharma Str. 1",
+        "postal_code": "65549",
+        "city": "Limburg",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Mundipharma Str. 1, 65549 Limburg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7554256,
+          49.511965
+        ]
+      },
+      "properties": {
+        "id": "globus_losheim",
+        "chain_id": "globus",
+        "store_id": "losheim",
+        "name": "GLOBUS Losheim",
+        "street": "Haagstr. 60",
+        "postal_code": "66679",
+        "city": "Losheim am See",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Haagstr. 60, 66679 Losheim am See"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.3490341,
+          49.486602
+        ]
+      },
+      "properties": {
+        "id": "globus_ludwigshafen",
+        "chain_id": "globus",
+        "store_id": "ludwigshafen",
+        "name": "GLOBUS Ludwigshafen",
+        "street": "Oderstr. 6",
+        "postal_code": "67071",
+        "city": "Ludwigshafen-Oggersheim",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 22 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Oderstr. 6, 67071 Ludwigshafen-Oggersheim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8668521,
+          50.1304659
+        ]
+      },
+      "properties": {
+        "id": "globus_maintal",
+        "chain_id": "globus",
+        "store_id": "maintal",
+        "name": "GLOBUS Maintal",
+        "street": "Industriestraße 6",
+        "postal_code": "63477",
+        "city": "Maintal-Dörnigheim",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 22 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Industriestraße 6, 63477 Maintal-Dörnigheim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5551123,
+          49.5197333
+        ]
+      },
+      "properties": {
+        "id": "globus_mannheim-vogelstang",
+        "chain_id": "globus",
+        "store_id": "mannheim-vogelstang",
+        "name": "GLOBUS Mannheim-Vogelstang",
+        "street": "Spreewaldallee 44-50",
+        "postal_code": "68309",
+        "city": "Mannheim - Vogelstang",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Spreewaldallee 44-50, 68309 Mannheim - Vogelstang"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4287769,
+          51.2853914
+        ]
+      },
+      "properties": {
+        "id": "globus_markkleeberg-wachau",
+        "chain_id": "globus",
+        "store_id": "markkleeberg-wachau",
+        "name": "GLOBUS Markkleeberg-Wachau",
+        "street": "Nordstraße 1",
+        "postal_code": "04416",
+        "city": "Markkleeberg",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Nordstraße 1, 04416 Markkleeberg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4950129,
+          48.2499157
+        ]
+      },
+      "properties": {
+        "id": "globus_m-hldorf",
+        "chain_id": "globus",
+        "store_id": "m-hldorf",
+        "name": "GLOBUS Mühldorf",
+        "street": "Siemensstr. 18",
+        "postal_code": "84453",
+        "city": "Mühldorf",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Siemensstr. 18, 84453 Mühldorf"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2659173,
+          53.5248293
+        ]
+      },
+      "properties": {
+        "id": "globus_neubrandenburg",
+        "chain_id": "globus",
+        "store_id": "neubrandenburg",
+        "name": "GLOBUS Neubrandenburg",
+        "street": "Mirabellenstraße 2",
+        "postal_code": "17033",
+        "city": "Neubrandenburg",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Mirabellenstraße 2, 17033 Neubrandenburg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1697898,
+          49.3461207
+        ]
+      },
+      "properties": {
+        "id": "globus_neunkirchen",
+        "chain_id": "globus",
+        "store_id": "neunkirchen",
+        "name": "GLOBUS Neunkirchen",
+        "street": "Margarethe-Bacher-Straße 1",
+        "postal_code": "66538",
+        "city": "Neunkirchen",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Margarethe-Bacher-Straße 1, 66538 Neunkirchen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.1617145,
+          49.3394878
+        ]
+      },
+      "properties": {
+        "id": "globus_neustadt",
+        "chain_id": "globus",
+        "store_id": "neustadt",
+        "name": "GLOBUS Neustadt",
+        "street": "Adolf-Kolping-Straße 173",
+        "postal_code": "67433",
+        "city": "Neustadt a.d. Weinstraße",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 22 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Adolf-Kolping-Straße 173, 67433 Neustadt a.d. Weinstraße"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.1915277,
+          48.9820712
+        ]
+      },
+      "properties": {
+        "id": "globus_neutraubling",
+        "chain_id": "globus",
+        "store_id": "neutraubling",
+        "name": "GLOBUS Neutraubling",
+        "street": "Pommernstraße 4",
+        "postal_code": "93073",
+        "city": "Neutraubling",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Pommernstraße 4, 93073 Neutraubling"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.8958823,
+          48.789278
+        ]
+      },
+      "properties": {
+        "id": "globus_plattling",
+        "chain_id": "globus",
+        "store_id": "plattling",
+        "name": "GLOBUS Plattling",
+        "street": "Dr.-Walter-Bruch-Straße 1",
+        "postal_code": "94447",
+        "city": "Plattling",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Dr.-Walter-Bruch-Straße 1, 94447 Plattling"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.2015312,
+          54.0753403
+        ]
+      },
+      "properties": {
+        "id": "globus_rostock-roggentin",
+        "chain_id": "globus",
+        "store_id": "rostock-roggentin",
+        "name": "GLOBUS Rostock-Roggentin",
+        "street": "Globusring 1",
+        "postal_code": "18184",
+        "city": "Roggentin/Rostock",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Globusring 1, 18184 Roggentin/Rostock"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.3896881,
+          49.9669348
+        ]
+      },
+      "properties": {
+        "id": "globus_r-sselsheim-bauschheim",
+        "chain_id": "globus",
+        "store_id": "r-sselsheim-bauschheim",
+        "name": "GLOBUS Rüsselsheim-Bauschheim",
+        "street": "Am Steinmarkt 1",
+        "postal_code": "65428",
+        "city": "Rüsselsheim",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21:30 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Am Steinmarkt 1, 65428 Rüsselsheim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0265638,
+          49.2091844
+        ]
+      },
+      "properties": {
+        "id": "globus_saarbr-cken-g-dingen",
+        "chain_id": "globus",
+        "store_id": "saarbr-cken-g-dingen",
+        "name": "GLOBUS Saarbrücken-Güdingen",
+        "street": "Wolfsau 4",
+        "postal_code": "66130",
+        "city": "Saarbrücken-Güdingen",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Wolfsau 4, 66130 Saarbrücken-Güdingen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7484598,
+          49.3188648
+        ]
+      },
+      "properties": {
+        "id": "globus_saarlouis",
+        "chain_id": "globus",
+        "store_id": "saarlouis",
+        "name": "GLOBUS Saarlouis",
+        "street": "Dieselstraße",
+        "postal_code": "66740",
+        "city": "Saarlouis",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Dieselstraße, 66740 Saarlouis"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.1445745,
+          49.3134199
+        ]
+      },
+      "properties": {
+        "id": "globus_schwandorf",
+        "chain_id": "globus",
+        "store_id": "schwandorf",
+        "name": "GLOBUS Schwandorf",
+        "street": "Am Brunnfeld 8",
+        "postal_code": "92421",
+        "city": "Schwandorf",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Am Brunnfeld 8, 92421 Schwandorf"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.010743,
+          50.8578966
+        ]
+      },
+      "properties": {
+        "id": "globus_siegen",
+        "chain_id": "globus",
+        "store_id": "siegen",
+        "name": "GLOBUS Siegen",
+        "street": "Eiserfelder Str. 170",
+        "postal_code": "57072",
+        "city": "Siegen",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Eiserfelder Str. 170, 57072 Siegen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.5403418,
+          49.9823191
+        ]
+      },
+      "properties": {
+        "id": "globus_simmern",
+        "chain_id": "globus",
+        "store_id": "simmern",
+        "name": "GLOBUS Simmern",
+        "street": "Argenthaler Straße",
+        "postal_code": "55469",
+        "city": "Simmern",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Argenthaler Straße, 55469 Simmern"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.161396,
+          49.4653727
+        ]
+      },
+      "properties": {
+        "id": "globus_sankt-wendel",
+        "chain_id": "globus",
+        "store_id": "sankt-wendel",
+        "name": "GLOBUS Sankt Wendel",
+        "street": "Am Wirthembösch 5",
+        "postal_code": "66606",
+        "city": "St. Wendel",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Am Wirthembösch 5, 66606 St. Wendel"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.1104192,
+          51.0813882
+        ]
+      },
+      "properties": {
+        "id": "globus_theissen-zeitz",
+        "chain_id": "globus",
+        "store_id": "theissen-zeitz",
+        "name": "GLOBUS Theissen-Zeitz",
+        "street": "Zeitzer Straße 39",
+        "postal_code": "06711",
+        "city": "Theißen",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Zeitzer Straße 39, 06711 Theißen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.4730492,
+          51.3161414
+        ]
+      },
+      "properties": {
+        "id": "globus_t-nisvorst",
+        "chain_id": "globus",
+        "store_id": "t-nisvorst",
+        "name": "GLOBUS Tönisvorst",
+        "street": "Höhenhöfe 19",
+        "postal_code": "47918",
+        "city": "Tönisvorst",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Höhenhöfe 19, 47918 Tönisvorst"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.850195,
+          49.2489079
+        ]
+      },
+      "properties": {
+        "id": "globus_v-lklingen",
+        "chain_id": "globus",
+        "store_id": "v-lklingen",
+        "name": "GLOBUS Völklingen",
+        "street": "Rathausstraße 53",
+        "postal_code": "66333",
+        "city": "Völklingen",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Rathausstraße 53, 66333 Völklingen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5276074,
+          49.2120471
+        ]
+      },
+      "properties": {
+        "id": "globus_wiesental",
+        "chain_id": "globus",
+        "store_id": "wiesental",
+        "name": "GLOBUS Wiesental",
+        "street": "Hambrücker Landstraße 4",
+        "postal_code": "68753",
+        "city": "Waghäusel-Wiesental",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 21 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Hambrücker Landstraße 4, 68753 Waghäusel-Wiesental"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.09136,
+          50.4383845
+        ]
+      },
+      "properties": {
+        "id": "globus_weischlitz",
+        "chain_id": "globus",
+        "store_id": "weischlitz",
+        "name": "GLOBUS Weischlitz",
+        "street": "Taltitzer Str. 80",
+        "postal_code": "08538",
+        "city": "Weischlitz",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Taltitzer Str. 80, 08538 Weischlitz"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6084821,
+          50.5611632
+        ]
+      },
+      "properties": {
+        "id": "globus_dutenhofen",
+        "chain_id": "globus",
+        "store_id": "dutenhofen",
+        "name": "GLOBUS Dutenhofen",
+        "street": "Industriestraße 2",
+        "postal_code": "35582",
+        "city": "Wetzlar-Dutenhofen",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Industriestraße 2, 35582 Wetzlar-Dutenhofen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.3434673,
+          50.0580769
+        ]
+      },
+      "properties": {
+        "id": "globus_wiesbaden",
+        "chain_id": "globus",
+        "store_id": "wiesbaden",
+        "name": "GLOBUS Wiesbaden",
+        "street": "Ostring 2",
+        "postal_code": "65205",
+        "city": "Wiesbaden-Nordenstadt",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 22 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Ostring 2, 65205 Wiesbaden-Nordenstadt"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9085803,
+          49.9811251
+        ]
+      },
+      "properties": {
+        "id": "globus_wittlich",
+        "chain_id": "globus",
+        "store_id": "wittlich",
+        "name": "GLOBUS Wittlich",
+        "street": "Justus-von-Liebig-Straße 4",
+        "postal_code": "54516",
+        "city": "Wittlich",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Justus-von-Liebig-Straße 4, 54516 Wittlich"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2905521,
+          50.2513552
+        ]
+      },
+      "properties": {
+        "id": "globus_w-chtersbach",
+        "chain_id": "globus",
+        "store_id": "w-chtersbach",
+        "name": "GLOBUS Wächtersbach",
+        "street": "Main-Kinzig-Straße",
+        "postal_code": "63607",
+        "city": "Wächtersbach",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Main-Kinzig-Straße, 63607 Wächtersbach"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1583602,
+          50.0253821
+        ]
+      },
+      "properties": {
+        "id": "globus_zell",
+        "chain_id": "globus",
+        "store_id": "zell",
+        "name": "GLOBUS Zell",
+        "street": "Fliehburgstraße 4",
+        "postal_code": "56856",
+        "city": "Zell",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Fliehburgstraße 4, 56856 Zell"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.496169,
+          50.7066477
+        ]
+      },
+      "properties": {
+        "id": "globus_zwickau",
+        "chain_id": "globus",
+        "store_id": "zwickau",
+        "name": "GLOBUS Zwickau",
+        "street": "Äußere Schneeberger Straße 100",
+        "postal_code": "08056",
+        "city": "Zwickau",
+        "country_code": "DE",
+        "phone": null,
+        "email": null,
+        "website": null,
+        "opening_hours": {
+          "raw": "Heute von 08 bis 20 Uhr geöffnet"
+        },
+        "services": null,
+        "address": "Äußere Schneeberger Straße 100, 08056 Zwickau"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           10.1103905,
           48.843175
         ]

@@ -2,10 +2,10 @@
 
 This document tracks potential improvements, features, and refactoring opportunities for the SOTO Store Finder project.
 
-## 🎯 Current Status (as of 2025-10-21)
+## 🎯 Current Status (as of 2025-10-23)
 
-- **Implemented Chains:** 3 (denn's, Alnatura, tegut)
-- **Total Stores:** 1,054 validated locations
+- **Implemented Chains:** 5 (denn's, Alnatura, tegut, VollCorner, Globus)
+- **Total Stores:** 1,132 validated locations
 - **Architecture:** Clean, modular, config-driven
 - **Deployment:** Automated via GitHub Pages
 
@@ -24,13 +24,14 @@ Implement scrapers for the remaining chains defined in `config/chains.json`:
   - Create `src/scrapers/biocompany.py`
 
 - [x] **Vollcorner** (vollcorner.de)
-  - ✅ Implemented: 21 stores
+  - ✅ Implemented: 18 stores
   - Created `src/scrapers/vollcorner.py`
 
-- [ ] **Globus** (globus.de)
-  - Large chain, ~50+ stores
-  - May have structured data API
-  - Create `src/scrapers/globus.py`
+- [x] **Globus** (globus.de)
+  - ✅ Implemented: 61 stores
+  - Uses Playwright for JavaScript-rendered content
+  - Created `src/scrapers/globus.py`
+  - Features deduplication optimization (3x faster)
 
 **Steps:**
 1. Analyze website structure for each chain
@@ -328,5 +329,5 @@ When implementing items from this roadmap:
 
 ---
 
-**Last Updated:** 2025-10-21
+**Last Updated:** 2025-10-23
 **Next Review:** When starting new major feature
