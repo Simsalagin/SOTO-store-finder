@@ -2,10 +2,10 @@
 
 This document tracks potential improvements, features, and refactoring opportunities for the SOTO Store Finder project.
 
-## 🎯 Current Status (as of 2025-10-23)
+## 🎯 Current Status (as of 2025-10-24)
 
-- **Implemented Chains:** 5 (denn's, Alnatura, tegut, VollCorner, Globus)
-- **Total Stores:** 1,132 validated locations
+- **Implemented Chains:** 6 (denn's, Alnatura, tegut, VollCorner, Globus, Bio Company)
+- **Total Stores:** 1,173 validated locations
 - **Architecture:** Clean, modular, config-driven
 - **Deployment:** Automated via GitHub Pages
 
@@ -18,10 +18,14 @@ This document tracks potential improvements, features, and refactoring opportuni
 
 Implement scrapers for the remaining chains defined in `config/chains.json`:
 
-- [ ] **Bio Company** (biocompany.de)
-  - Estimated stores: ~50-70
-  - Website structure needs analysis
-  - Create `src/scrapers/biocompany.py`
+- [x] **Bio Company** (biocompany.de)
+  - ✅ Implemented: 41 stores (Berlin only)
+  - Uses Uberall API directly (fast and reliable)
+  - Created `src/scrapers/biocompany.py`
+  - ⚠️ **Note:** Website claims ~60 stores across Berlin, Brandenburg, and Saxony, but only 41 Berlin stores are available in their Uberall store locator API. Additional stores (Brandenburg/Saxony regions) are not yet integrated into their store locator system. Further work needed to either:
+    - Wait for Bio Company to add missing stores to their Uberall system
+    - Find alternative data source for Brandenburg/Saxony stores
+    - Contact Bio Company directly for complete store list
 
 - [x] **Vollcorner** (vollcorner.de)
   - ✅ Implemented: 18 stores
@@ -329,5 +333,5 @@ When implementing items from this roadmap:
 
 ---
 
-**Last Updated:** 2025-10-23
+**Last Updated:** 2025-10-24
 **Next Review:** When starting new major feature
