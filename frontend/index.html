@@ -503,6 +503,13 @@
             popupAnchor: [0, -50]
         });
 
+        const biocompanyIcon = L.icon({
+            iconUrl: 'images/biocompany-marker.svg',
+            iconSize: [40, 50],
+            iconAnchor: [20, 50],
+            popupAnchor: [0, -50]
+        });
+
         // Function to get icon based on chain
         function getChainIcon(chainId) {
             switch(chainId) {
@@ -516,6 +523,8 @@
                     return vollcornerIcon;
                 case 'globus':
                     return globusIcon;
+                case 'biocompany':
+                    return biocompanyIcon;
                 default:
                     return dennsIcon; // fallback
             }

@@ -36,6 +36,7 @@ def get_scraper_for_chain(chain_id: str):
         'tegut': 'src.scrapers.tegut.TegutScraper',
         'vollcorner': 'src.scrapers.vollcorner.VollcornerScraper',
         'globus': 'src.scrapers.globus.GlobusScraper',
+        'biocompany': 'src.scrapers.biocompany.BioCompanyScraper',
     }
 
     scraper_class_path = scraper_map.get(chain_id)
