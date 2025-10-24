@@ -9,16 +9,16 @@ Entwicklung einer interaktiven Karte, die alle Filialen anzeigt, in denen SOTO-P
 ## 📊 Status
 
 **Implementierte Ketten:**
-- ✅ **denn's Biomarkt** - 590 Filialen
+- ✅ **denn's Biomarkt** - 591 Filialen
 - ✅ **Alnatura** - 150 Filialen
-- ✅ **tegut** - 314 Filialen
-- ✅ **VollCorner** - 21 Filialen
+- ✅ **tegut** - 312 Filialen
+- ✅ **VollCorner** - 18 Filialen
+- ✅ **Globus** - 61 Filialen
 
-**Total: 1,075 validierte Filialen**
+**Total: 1,132 validierte Filialen**
 
 **In Entwicklung:**
 - 🔄 Bio Company
-- 🔄 Globus
 
 **Features:**
 - ✅ Automatische Koordinaten-Validierung
@@ -233,8 +233,15 @@ Bei ungültigen Koordinaten wird die Adresse neu geocoded
 ### tegut
 - **Quelle:** Website Scraping mit JSON-LD
 - **Typ:** HTML + Strukturierte Daten
-- **Daten:** 314 Filialen
+- **Daten:** 312 Filialen
 - **Infos:** Adresse, Koordinaten, Öffnungszeiten
+
+### Globus
+- **Quelle:** Website Scraping mit Playwright
+- **Typ:** Dynamisches HTML Rendering
+- **Daten:** 61 Filialen
+- **Infos:** Adresse, Öffnungszeiten (teilweise)
+- **Besonderheit:** JavaScript-gerenderte Inhalte
 
 ### Geocoding/Validierung
 - **Service:** OpenStreetMap Nominatim
@@ -356,6 +363,7 @@ scraper_map = {
 - Alnatura: Orange `#FF9800` / `#F57C00`
 - tegut: Rot `#E53935` / `#C62828`
 - VollCorner: Türkis `#00A0B0` / `#006B75`
+- Globus: Blau `#2196F3` / `#1565C0`
 
 5. **Marker in Frontend integrieren (`frontend/index.html`):**
 

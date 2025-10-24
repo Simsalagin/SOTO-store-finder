@@ -496,6 +496,13 @@
             popupAnchor: [0, -50]
         });
 
+        const globusIcon = L.icon({
+            iconUrl: 'images/globus-marker.svg',
+            iconSize: [40, 50],
+            iconAnchor: [20, 50],
+            popupAnchor: [0, -50]
+        });
+
         // Function to get icon based on chain
         function getChainIcon(chainId) {
             switch(chainId) {
@@ -507,6 +514,8 @@
                     return tegutIcon;
                 case 'vollcorner':
                     return vollcornerIcon;
+                case 'globus':
+                    return globusIcon;
                 default:
                     return dennsIcon; // fallback
             }
@@ -543,14 +552,25 @@
 
                     // Opening hours
                     if (props.opening_hours) {
-                        // Always show structured format with all 7 days
                         const days = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
                         const today = days[new Date().getDay() === 0 ? 6 : new Date().getDay() - 1];
 
                         let hoursHtml = '<div class="popup-section"><strong>🕐 Öffnungszeiten</strong><div class="popup-hours">';
 
+                        // Check if we only have raw text (e.g., "Heute von 08 bis 21 Uhr geöffnet")
+                        if (props.opening_hours.raw && !props.opening_hours.text && !props.opening_hours[days[0]]) {
+                            // Only raw unstructured data - show info message
+                            hoursHtml += `
+                                <div class="popup-hours-item">
+                                    <span style="color: #666; font-style: italic;">
+                                        Keine detaillierten Öffnungszeiten verfügbar.<br>
+                                        Bitte kontaktieren Sie den Markt direkt.
+                                    </span>
+                                </div>
+                            `;
+                        }
                         // Check if it's text format (Alnatura) - parse and convert to structured display
-                        if (props.opening_hours.text) {
+                        else if (props.opening_hours.text) {
                             const text = props.opening_hours.text;
 
                             // Parse the text to extract time and day range
@@ -591,26 +611,40 @@
                                 `;
                             });
                         } else {
-                            // Structured format - show all days, "geschlossen" for missing
-                            days.forEach(day => {
-                                const isToday = day === today;
-                                const todayClass = isToday ? 'today' : '';
+                            // Structured format - check if we have ANY day data
+                            const hasAnyDayData = days.some(day => props.opening_hours[day]);
 
-                                let timeText;
-                                if (props.opening_hours[day]) {
-                                    const hours = props.opening_hours[day];
-                                    timeText = `${hours.open_from} - ${hours.open_until}`;
-                                } else {
-                                    timeText = 'geschlossen';
-                                }
-
+                            if (!hasAnyDayData) {
+                                // No structured data at all
                                 hoursHtml += `
-                                    <div class="popup-hours-item ${todayClass}">
-                                        <span class="popup-hours-day">${day}</span>
-                                        <span class="popup-hours-time">${timeText}</span>
+                                    <div class="popup-hours-item">
+                                        <span style="color: #666; font-style: italic;">
+                                            Keine Öffnungszeiten verfügbar
+                                        </span>
                                     </div>
                                 `;
-                            });
+                            } else {
+                                // Show all days, use "n/a" for missing days
+                                days.forEach(day => {
+                                    const isToday = day === today;
+                                    const todayClass = isToday ? 'today' : '';
+
+                                    let timeText;
+                                    if (props.opening_hours[day]) {
+                                        const hours = props.opening_hours[day];
+                                        timeText = `${hours.open_from} - ${hours.open_until}`;
+                                    } else {
+                                        timeText = 'n/a';
+                                    }
+
+                                    hoursHtml += `
+                                        <div class="popup-hours-item ${todayClass}">
+                                            <span class="popup-hours-day">${day}</span>
+                                            <span class="popup-hours-time">${timeText}</span>
+                                        </div>
+                                    `;
+                                });
+                            }
                         }
 
                         hoursHtml += '</div></div>';

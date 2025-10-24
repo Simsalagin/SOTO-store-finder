@@ -35,6 +35,7 @@ def get_scraper_for_chain(chain_id: str):
         'alnatura': 'src.scrapers.alnatura.AlnaturaScraper',
         'tegut': 'src.scrapers.tegut.TegutScraper',
         'vollcorner': 'src.scrapers.vollcorner.VollcornerScraper',
+        'globus': 'src.scrapers.globus.GlobusScraper',
     }
 
     scraper_class_path = scraper_map.get(chain_id)
