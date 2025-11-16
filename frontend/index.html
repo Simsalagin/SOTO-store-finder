@@ -279,6 +279,55 @@
         .leaflet-control-geocoder-icon:hover {
             background-color: var(--soto-green-dark) !important;
         }
+
+        /* Custom HTML-based Store Markers */
+        .store-marker {
+            background: white;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--soto-green-primary);
+            position: relative;
+            transition: transform 0.2s ease;
+            transform: rotate(-45deg);
+        }
+
+        /* Round pin for round logos */
+        .store-marker.round {
+            border-radius: 50% 50% 50% 0;
+        }
+
+        .store-marker.round:hover {
+            transform: rotate(-45deg) scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+        }
+
+        .store-marker.round .store-marker-logo {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            transform: rotate(45deg);
+        }
+
+        /* Square pin for rectangular logos */
+        .store-marker.square {
+            border-radius: 12px 12px 12px 0;
+        }
+
+        .store-marker.square:hover {
+            transform: rotate(-45deg) scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+        }
+
+        .store-marker.square .store-marker-logo {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            transform: rotate(45deg);
+        }
     </style>
 </head>
 <body>
@@ -319,7 +368,11 @@
 
     <script>
         // Initialize map centered on Germany (fallback position)
-        const map = L.map('map').setView([51.1657, 10.4515], 6);
+        const map = L.map('map', {
+            zoomSnap: 0.1,   // erlaubt z.B. 6.1, 6.2, 6.3 ...
+            zoomDelta: 0.8,  // wie fein der Zoom bei Buttons/Tastatur ist
+            wheelPxPerZoomLevel: 10 // optional: Scroll-Geschwindigkeit
+        }).setView([51.1657, 10.4515], 6);
 
         // Add OpenStreetMap tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -467,67 +520,38 @@
             }
         });
 
-        // Custom icons for each chain
-        const dennsIcon = L.icon({
-            iconUrl: 'images/denns-marker.svg',
-            iconSize: [40, 50],
-            iconAnchor: [20, 50],
-            popupAnchor: [0, -50]
-        });
+        // Create custom HTML-based icon with store logo
+        function createStoreIcon(logoUrl, chainId) {
+            // Define which chains have round logos vs square logos
+            const roundChains = ['denns', 'globus'];
+            const shapeClass = roundChains.includes(chainId) ? 'round' : 'square';
 
-        const alnaturaIcon = L.icon({
-            iconUrl: 'images/alnatura-marker.svg',
-            iconSize: [40, 50],
-            iconAnchor: [20, 50],
-            popupAnchor: [0, -50]
-        });
+            return L.divIcon({
+                html: `
+                    <div class="store-marker ${shapeClass}">
+                        <img src="${logoUrl}" alt="${chainId}" class="store-marker-logo">
+                    </div>
+                `,
+                className: '', // Keine zusätzliche Leaflet-Klasse (verhindert default styling)
+                iconSize: [48, 48],
+                iconAnchor: [24, 48], // Pin-Spitze
+                popupAnchor: [0, -48]
+            });
+        }
 
-        const tegutIcon = L.icon({
-            iconUrl: 'images/tegut-marker.svg',
-            iconSize: [40, 50],
-            iconAnchor: [20, 50],
-            popupAnchor: [0, -50]
-        });
-
-        const vollcornerIcon = L.icon({
-            iconUrl: 'images/vollcorner-marker.svg',
-            iconSize: [40, 50],
-            iconAnchor: [20, 50],
-            popupAnchor: [0, -50]
-        });
-
-        const globusIcon = L.icon({
-            iconUrl: 'images/globus-marker.svg',
-            iconSize: [40, 50],
-            iconAnchor: [20, 50],
-            popupAnchor: [0, -50]
-        });
-
-        const biocompanyIcon = L.icon({
-            iconUrl: 'images/biocompany-marker.svg',
-            iconSize: [40, 50],
-            iconAnchor: [20, 50],
-            popupAnchor: [0, -50]
-        });
-
-        // Function to get icon based on chain
+        // Get icon based on chain ID
         function getChainIcon(chainId) {
-            switch(chainId) {
-                case 'denns':
-                    return dennsIcon;
-                case 'alnatura':
-                    return alnaturaIcon;
-                case 'tegut':
-                    return tegutIcon;
-                case 'vollcorner':
-                    return vollcornerIcon;
-                case 'globus':
-                    return globusIcon;
-                case 'biocompany':
-                    return biocompanyIcon;
-                default:
-                    return dennsIcon; // fallback
-            }
+            const logoMap = {
+                'denns': 'images/logos/denns.png',        // PNG
+                'alnatura': 'images/logos/alnatura.png',   // PNG
+                'tegut': 'images/logos/tegut.svg',         // SVG
+                'biocompany': 'images/logos/biocompany.png', // PNG
+                'vollcorner': 'images/logos/vollcorner.jpg', // JPG
+                'globus': 'images/logos/globus.svg'        // SVG
+            };
+
+            const logoUrl = logoMap[chainId] || 'images/logos/default.svg';
+            return createStoreIcon(logoUrl, chainId);
         }
 
         // Create marker cluster group
