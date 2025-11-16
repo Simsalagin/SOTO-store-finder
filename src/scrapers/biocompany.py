@@ -12,7 +12,9 @@ class BioCompanyScraper(BaseScraper):
     """Scraper for Bio Company stores using Uberall API."""
 
     API_KEY = "4w3OLJTTT66unD30WlbJhuit7Hd45w"
-    API_URL = f"https://locator.uberall.com/api/storefinders/{API_KEY}/locations"
+    # Note: radius parameter required to fetch all stores across regions (Berlin, Brandenburg, Sachsen)
+    # Without radius, API defaults to ~30km from Berlin center (only returns 41 stores instead of 59)
+    API_URL = f"https://locator.uberall.com/api/storefinders/{API_KEY}/locations?radius=10000000&max=200"
 
     # Day of week mapping for opening hours
     DAY_NAMES = {

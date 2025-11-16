@@ -2,7 +2,29 @@
 
 Automated system for scraping, validating, and visualizing store locations that carry SOTO brand products across German organic supermarket chains.
 
-![Status](https://img.shields.io/badge/stores-1173-brightgreen) ![Chains](https://img.shields.io/badge/chains-6-blue) ![Python](https://img.shields.io/badge/python-3.8+-blue)
+![Status](https://img.shields.io/badge/stores-1191-brightgreen) ![Chains](https://img.shields.io/badge/chains-6-blue) ![Python](https://img.shields.io/badge/python-3.8+-blue)
+
+## 📑 Table of Contents
+
+- [Quick Start (5 Minutes)](#-quick-start-5-minutes)
+- [Current Status](#-current-status)
+- [Project Architecture](#️-project-architecture)
+  - [Key Components](#key-components)
+- [Common Commands](#-common-commands)
+- [Development](#-development)
+  - [Adding a New Chain](#adding-a-new-chain)
+  - [Scraper Patterns](#scraper-patterns)
+  - [Git Workflow & Branch Strategy](#git-workflow--branch-strategy)
+  - [Database Schema](#database-schema)
+- [Testing](#-testing)
+- [Key Principles](#-key-principles)
+- [Troubleshooting](#-troubleshooting)
+- [Documentation Update Checklist](#-documentation-update-checklist)
+- [Deployment](#-deployment)
+- [Dependencies](#-dependencies)
+- [AI Assistant Guidelines](#-ai-assistant-guidelines)
+- [License](#-license)
+- [Contact](#-contact)
 
 ## 🚀 Quick Start (5 Minutes)
 
@@ -34,10 +56,10 @@ python -m http.server 8000
 | tegut... | 312 | Custom (requests + lxml) | ✅ Working |
 | Alnatura | 150 | Custom (requests + lxml) | ✅ Working |
 | Globus | 61 | Playwright (Browser automation) | ✅ Working |
-| Bio Company | 41 | Uberall API | ✅ Working |
+| Bio Company | 59 | Uberall API | ✅ Working |
 | VollCorner | 18 | Custom (BeautifulSoup) | ✅ Working |
 
-**Total: 1,173 stores**
+**Total: 1,191 stores**
 
 **Live Map:** https://simsalagin.github.io/SOTO-store-finder/
 
@@ -377,4 +399,4 @@ For questions or contributions, please open an issue or pull request.
 
 ---
 
-**Last Updated:** January 2025 | **Total Stores:** 1,173 | **Active Chains:** 6
+**Last Updated:** January 2025 | **Total Stores:** 1,191 | **Active Chains:** 6
