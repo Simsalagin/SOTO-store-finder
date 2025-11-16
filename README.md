@@ -1,547 +1,380 @@
 # SOTO Store Finder
 
-Ein automatisiertes System zum Scrapen, Validieren und Visualisieren von Filialstandorten für Produkte der Marke SOTO.
+Automated system for scraping, validating, and visualizing store locations that carry SOTO brand products across German organic supermarket chains.
 
-## 🎯 Projektziel
+![Status](https://img.shields.io/badge/stores-1173-brightgreen) ![Chains](https://img.shields.io/badge/chains-6-blue) ![Python](https://img.shields.io/badge/python-3.8+-blue)
 
-Entwicklung einer interaktiven Karte, die alle Filialen anzeigt, in denen SOTO-Produkte erhältlich sind. Das System scrapt automatisch Standortdaten von verschiedenen (Bio-)Supermarktketten und validiert diese mithilfe von OpenStreetMap.
+## 🚀 Quick Start (5 Minutes)
 
-## 📊 Status
+```bash
+# 1. Clone and setup
+git clone <repo-url>
+cd SOTO-store-finder
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-**Implementierte Ketten:**
-- ✅ **denn's Biomarkt** - 591 Filialen
-- ✅ **Alnatura** - 150 Filialen
-- ✅ **tegut** - 312 Filialen
-- ✅ **VollCorner** - 18 Filialen
-- ✅ **Globus** - 61 Filialen
+# 2. Install dependencies
+pip install -r requirements.txt
+playwright install chromium  # Required for Playwright-based scrapers
 
-**Total: 1,132 validierte Filialen**
+# 3. Update stores
+python scripts/update_stores.py
 
-**In Entwicklung:**
-- 🔄 Bio Company
+# 4. View the map
+cd frontend
+python -m http.server 8000
+# Open http://localhost:8000
+```
 
-**Features:**
-- ✅ Automatische Koordinaten-Validierung
-- ✅ Interaktive Karte mit Leaflet.js
-- ✅ SQLite-Datenbank mit ORM
-- ✅ REST API Server
-- ✅ GeoJSON Export
-- ✅ Konfigurationsbasiertes Chain-Management
-- ✅ GitHub Pages Deployment
-- ✅ **Automatische Standorterkennung** - Karte zoomt automatisch zum Nutzerstandort
-- ✅ **Adresssuche** - Suche nach Adressen und Postleitzahlen
+## 📊 Current Status
 
-## 🏗️ Projektstruktur
+| Chain | Stores | Scraper Type | Status |
+|-------|--------|--------------|--------|
+| denn's Biomarkt | 591 | Custom (requests + lxml) | ✅ Working |
+| tegut... | 312 | Custom (requests + lxml) | ✅ Working |
+| Alnatura | 150 | Custom (requests + lxml) | ✅ Working |
+| Globus | 61 | Playwright (Browser automation) | ✅ Working |
+| Bio Company | 41 | Uberall API | ✅ Working |
+| VollCorner | 18 | Custom (BeautifulSoup) | ✅ Working |
+
+**Total: 1,173 stores**
+
+**Live Map:** https://simsalagin.github.io/SOTO-store-finder/
+
+## 🏗️ Project Architecture
 
 ```
 SOTO-store-finder/
-├── .github/workflows/
-│   └── deploy.yml          # GitHub Pages CI/CD
-├── api/                     # REST API Server
-│   ├── server.py           # HTTP Server für Store-Daten
-│   └── export_geojson.py   # GeoJSON Export-Utility
-├── config/                  # Konfigurationsdateien
-│   └── chains.json         # Definition der Supermarktketten
-├── data/                    # Datenbank und Cache
-│   └── stores.db           # SQLite Datenbank
-├── frontend/                # Web-Visualisierung
-│   ├── .nojekyll           # GitHub Pages Config
-│   ├── index.html          # Interaktive Karte
-│   ├── stores.geojson      # GeoJSON Export
-│   └── images/             # Logos und Marker-Icons
-├── logs/                    # Log-Dateien
-├── scripts/                 # Utility-Scripts
-│   ├── update_stores.py    # Haupt-Update-Script
-│   └── fix_coordinates.py  # Koordinaten-Reparatur
-├── src/                     # Source Code
-│   ├── scrapers/           # Scraper für verschiedene Ketten
-│   │   ├── base.py         # Basis-Scraper-Klasse
-│   │   ├── denns.py        # denn's Biomarkt Scraper
-│   │   ├── alnatura.py     # Alnatura Scraper
-│   │   └── tegut.py        # tegut Scraper
-│   ├── geocoding/          # Geocoding & Validierung
-│   │   ├── geocoder.py     # OpenStreetMap Geocoding
-│   │   └── validator.py    # Koordinaten-Validierung
-│   ├── storage/            # Datenbank-Layer
-│   │   └── database.py     # SQLAlchemy ORM
-│   └── export/             # Export-Funktionen
-│       └── geojson.py      # GeoJSON Export
-├── tests/                   # Test-Scripts
-│   ├── test_denns.py       # denn's Scraper Tests
-│   ├── test_alnatura.py    # Alnatura Scraper Tests
-│   └── test_validation.py  # Validierungs-Tests
-├── requirements.txt         # Python Dependencies
-├── .env.example            # Umgebungsvariablen Template
-└── README.md               # Diese Datei
+├── src/
+│   ├── scrapers/          # Store scrapers
+│   │   ├── base.py        # BaseScraper abstract class
+│   │   ├── denns.py       # denn's scraper
+│   │   ├── alnatura.py    # Alnatura scraper
+│   │   ├── tegut.py       # tegut scraper
+│   │   └── biocompany.py  # Bio Company scraper
+│   ├── geocoding/         # Coordinate validation
+│   │   └── validator.py   # OSM-based validation
+│   └── database/          # Database models
+│       └── models.py      # SQLAlchemy models
+├── scripts/
+│   └── update_stores.py   # Main orchestrator (config-driven)
+├── api/
+│   ├── server.py          # Flask API server
+│   └── export_geojson.py  # GeoJSON generator
+├── frontend/              # Interactive map (Leaflet.js)
+│   ├── index.html
+│   ├── stores.geojson     # Generated from database
+│   └── markers/           # Custom chain markers
+├── config/
+│   └── chains.json        # Chain configuration
+├── data/
+│   └── stores.db          # SQLite database
+└── tests/                 # Test suite
 ```
 
-## 🚀 Installation
+### Key Components
 
-### Voraussetzungen
-- Python 3.11+
-- Git
+- **BaseScraper** (`src/scrapers/base.py`): Abstract base class for all scrapers
+- **Orchestrator** (`scripts/update_stores.py`): Config-driven chain management
+- **Validator** (`src/geocoding/validator.py`): OSM-based coordinate validation
+- **Database** (`src/database/models.py`): SQLAlchemy models (Chain, Store)
+- **API** (`api/server.py`): Flask server for dynamic data serving
+- **Frontend** (`frontend/`): Leaflet.js map with custom markers
 
-### Setup
-
-1. **Repository klonen**
-```bash
-git clone <repository-url>
-cd SOTO-store-finder
-```
-
-2. **Virtual Environment erstellen**
-```bash
-python3 -m venv venv
-source venv/bin/activate  # macOS/Linux
-# oder
-venv\Scripts\activate     # Windows
-```
-
-3. **Dependencies installieren**
-```bash
-pip install -r requirements.txt
-```
-
-4. **Umgebungsvariablen konfigurieren**
-```bash
-cp .env.example .env
-# .env bei Bedarf anpassen
-```
-
-## 📖 Verwendung
-
-### Stores aktualisieren
+## 📖 Common Commands
 
 ```bash
-source venv/bin/activate
-python scripts/update_stores.py
-```
-
-Dieser Befehl:
-- Lädt aktive Ketten aus `config/chains.json`
-- Scrapt automatisch alle konfigurierten Ketten
-- Validiert automatisch alle Koordinaten
-- Speichert Daten in SQLite
-- Zeigt detaillierte Statistiken
-
-### API Server starten
-
-```bash
-python api/server.py
-```
-
-Verfügbare Endpoints:
-- `http://localhost:8001/api/stores` - Alle Stores als JSON
-- `http://localhost:8001/api/stores/geojson` - GeoJSON Format
-
-### Karte anzeigen
-
-**Lokal:**
-```bash
-cd frontend
-python -m http.server 8000
-```
-Öffne: http://localhost:8000
-
-**Live:** https://simsalagin.github.io/SOTO-store-finder/
-
-#### 🎯 Automatische Standorterkennung
-
-Die Karte erkennt automatisch deinen Standort und zoomt auf deine Umgebung:
-
-1. **Browser-Geolocation (bevorzugt)**
-   - Browser fragt nach Standort-Berechtigung
-   - Bei Zustimmung: Präzise Standorterkennung (Zoom Stufe 12)
-   - Blauer Marker zeigt "Dein Standort" an
-   - Position wird 5 Minuten gecacht
-
-2. **IP-basierte Geolocation (Fallback)**
-   - Aktiviert sich automatisch bei abgelehnter Berechtigung
-   - Ungefährer Standort auf Stadt-Ebene (Zoom Stufe 10)
-   - Keine zusätzlichen Berechtigungen nötig
-   - Verwendet ipapi.co Service
-
-3. **Deutschland-Übersicht (Standard)**
-   - Zeigt alle Filialen in Deutschland
-   - Aktiviert sich wenn beide Methoden fehlschlagen
-   - Zoom Stufe 6 mit allen Markern sichtbar
-
-#### 🔍 Adresssuche
-
-Die Karte bietet eine integrierte Suchfunktion für Adressen und Postleitzahlen:
-
-- **Suchfeld** in der oberen rechten Ecke
-- **Unterstützte Suchbegriffe:**
-  - Vollständige Adressen: "Hauptstraße 123, Berlin"
-  - Postleitzahlen (PLZ): "10115"
-  - Städte: "Frankfurt am Main"
-  - Stadtteile: "Berlin Mitte"
-  - Kombinationen: "60311 Frankfurt"
-
-- **Funktionen:**
-  - Autocomplete mit bis zu 5 Vorschlägen
-  - Nur deutsche Adressen (schnellere Suche)
-  - Grüner Marker zeigt gesuchten Ort
-  - Automatischer Zoom auf gefundene Location
-  - Verwendet OpenStreetMap Nominatim
-
-### GeoJSON neu generieren
-
-```python
-from src.storage.database import Database
-from src.export.geojson import GeoJSONExporter
-
-db = Database()
-exporter = GeoJSONExporter(db)
-exporter.export_stores(output_file='frontend/stores.geojson')
-```
-
-## 🔍 Koordinaten-Validierung
-
-Das System validiert automatisch alle Koordinaten durch:
-
-### 1. Null-Punkt Check
-Erkennt (0,0) Koordinaten ("Null Island")
-
-### 2. Ländergrenzen-Prüfung
-Stellt sicher, dass Koordinaten in Deutschland liegen (47.27-55.06°N, 5.87-15.04°E)
-
-### 3. Reverse Geocoding
-Fragt OpenStreetMap nach der Adresse an den Koordinaten
-
-### 4. Plausibilitätsprüfung
-- Vergleicht Postleitzahl
-- Vergleicht Stadt (Fuzzy-Matching)
-- Berechnet Distanz (max. 50km erlaubt)
-
-### 5. Automatische Korrektur
-Bei ungültigen Koordinaten wird die Adresse neu geocoded
-
-## 🗺️ Datenquellen
-
-### denn's Biomarkt
-- **Quelle:** JSON API
-- **Typ:** Strukturierte Daten
-- **Daten:** 590 Filialen
-- **Infos:** Adresse, Koordinaten, Öffnungszeiten, Services
-
-### Alnatura
-- **Quelle:** Website Scraping
-- **Typ:** HTML Parsing
-- **Daten:** 150 Filialen
-
-### tegut
-- **Quelle:** Website Scraping mit JSON-LD
-- **Typ:** HTML + Strukturierte Daten
-- **Daten:** 312 Filialen
-- **Infos:** Adresse, Koordinaten, Öffnungszeiten
-
-### Globus
-- **Quelle:** Website Scraping mit Playwright
-- **Typ:** Dynamisches HTML Rendering
-- **Daten:** 61 Filialen
-- **Infos:** Adresse, Öffnungszeiten (teilweise)
-- **Besonderheit:** JavaScript-gerenderte Inhalte
-
-### Geocoding/Validierung
-- **Service:** OpenStreetMap Nominatim
-- **Rate Limit:** 1 Request/Sekunde
-- **Kostenlos:** Ja
-- **User Agent:** Konfigurierbar via `.env`
-
-## 📊 Datenbank-Schema
-
-```sql
-CREATE TABLE stores (
-    id TEXT PRIMARY KEY,              -- Format: {chain_id}_{store_id}
-    chain_id TEXT NOT NULL,           -- z.B. 'denns', 'alnatura', 'tegut'
-    store_id TEXT NOT NULL,           -- Original-ID der Kette
-    name TEXT NOT NULL,
-    street TEXT NOT NULL,
-    postal_code TEXT NOT NULL,
-    city TEXT NOT NULL,
-    country_code TEXT NOT NULL,
-    latitude REAL,
-    longitude REAL,
-    phone TEXT,
-    email TEXT,
-    website TEXT,
-    opening_hours JSON,               -- Öffnungszeiten als JSON
-    services JSON,                    -- Services als JSON Array
-    scraped_at DATETIME NOT NULL,
-    updated_at DATETIME NOT NULL,
-    is_active TEXT DEFAULT 'true'     -- 'true', 'false', 'closed'
-);
-```
-
-**Indizes:**
-- `idx_chain_city` - Schnelle Suche nach Kette + Stadt
-- `idx_country` - Länderfilterung
-- `idx_location` - Geografische Suche
-
-## 🔄 Workflow
-
-### Automatisches Update (empfohlen)
-
-```bash
-# Alle aktiven Ketten aktualisieren
+# Update all stores
 python scripts/update_stores.py
 
-# GeoJSON automatisch exportieren
+# Update specific chain
+python scripts/update_stores.py --chain denns
+
+# Start API server
+cd api
+python server.py  # http://localhost:5000
+
+# Export GeoJSON
 python api/export_geojson.py
 
-# Karte ist live auf GitHub Pages
-```
+# Run tests
+pytest tests/ -v
 
-### Manuelles Chain-Management
-
-**Kette aktivieren/deaktivieren** in `config/chains.json`:
-```json
-{
-  "id": "tegut",
-  "name": "tegut",
-  "active": true,  // <- auf false setzen zum Deaktivieren
-  "priority": 3
-}
-```
-
-### Neue Kette hinzufügen
-
-1. **In `config/chains.json` registrieren:**
-```json
-{
-  "id": "neue_kette",
-  "name": "Neue Kette",
-  "website": "https://example.com",
-  "scraper_type": "all_stores",
-  "priority": 7,
-  "active": true
-}
-```
-
-2. **Scraper implementieren in `src/scrapers/neue_kette.py`:**
-```python
-from .base import BaseScraper, Store
-
-class NeueKetteScraper(BaseScraper):
-    def __init__(self):
-        super().__init__(chain_id="neue_kette", chain_name="Neue Kette")
-
-    def scrape(self) -> List[Store]:
-        # Implementierung hier
-        pass
-```
-
-3. **In `scripts/update_stores.py` registrieren:**
-```python
-scraper_map = {
-    'neue_kette': 'src.scrapers.neue_kette.NeueKetteScraper',
-}
-```
-
-4. **Marker-Icon erstellen (`frontend/images/neue_kette-marker.svg`):**
-```xml
-<svg width="40" height="50" xmlns="http://www.w3.org/2000/svg">
-  <!-- Marker pin shape -->
-  <path d="M20 0 C8.954 0 0 8.954 0 20 C0 28 8 38 20 50 C32 38 40 28 40 20 C40 8.954 31.046 0 20 0 Z"
-        fill="#MARKENFARBE" stroke="#DUNKLERER_TON" stroke-width="2"/>
-
-  <!-- White circle background -->
-  <circle cx="20" cy="18" r="12" fill="white"/>
-
-  <!-- Colored inner circle -->
-  <circle cx="20" cy="18" r="10" fill="#MARKENFARBE"/>
-
-  <!-- Chain letter -->
-  <text x="20" y="23" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
-        fill="white" text-anchor="middle">N</text>
-</svg>
-```
-
-**Farb-Referenzen:**
-- denn's: Grün `#8BC34A` / `#689F38`
-- Alnatura: Orange `#FF9800` / `#F57C00`
-- tegut: Rot `#E53935` / `#C62828`
-- VollCorner: Türkis `#00A0B0` / `#006B75`
-- Globus: Blau `#2196F3` / `#1565C0`
-
-5. **Marker in Frontend integrieren (`frontend/index.html`):**
-
-a. Icon-Definition hinzufügen (ca. Zeile 364):
-```javascript
-const neueKetteIcon = L.icon({
-    iconUrl: 'images/neue_kette-marker.svg',
-    iconSize: [40, 50],
-    iconAnchor: [20, 50],
-    popupAnchor: [0, -50]
-});
-```
-
-b. In `getChainIcon()` Funktion eintragen:
-```javascript
-function getChainIcon(chainId) {
-    switch(chainId) {
-        case 'denns':
-            return dennsIcon;
-        case 'alnatura':
-            return alnaturaIcon;
-        case 'tegut':
-            return tegutIcon;
-        case 'vollcorner':
-            return vollcornerIcon;
-        case 'neue_kette':
-            return neueKetteIcon;  // HINZUFÜGEN
-        default:
-            return dennsIcon;
-    }
-}
-```
-
-6. **Testen:**
-```bash
-python scripts/update_stores.py
-python api/export_geojson.py
-cd frontend && python -m http.server 8000
-```
-
-## 🛠️ Entwicklung
-
-### Tests ausführen
-
-```bash
-# Alle Tests
-pytest tests/
-
-# Mit Coverage
-pytest --cov=src tests/
-
-# Einzelner Test
-python tests/test_denns.py
-```
-
-### Code Quality
-
-```bash
-# Linting mit ruff
-ruff check src/
-
-# Type Checking mit mypy
+# Code quality
+ruff check .
 mypy src/
 ```
 
-### Logging
+## 🔧 Development
 
-Logs werden in `logs/store_finder.log` gespeichert.
+### Adding a New Chain
 
-Level anpassen in `.env`:
+1. **Add to `config/chains.json`:**
+```json
+{
+  "chain_id": "newchain",
+  "name": "New Chain",
+  "scraper_module": "newchain",
+  "enabled": true,
+  "color": "#FF5733"
+}
 ```
-LOG_LEVEL=DEBUG
+
+2. **Create scraper `src/scrapers/newchain.py`:**
+```python
+from src.scrapers.base import BaseScraper, Store
+import requests
+from typing import List
+
+class NewChainScraper(BaseScraper):
+    def scrape(self) -> List[Store]:
+        stores = []
+        # Your scraping logic here
+        return stores
 ```
 
-## 📝 Best Practices
+3. **Test the scraper:**
+```bash
+python scripts/update_stores.py --chain newchain
+```
 
-### Geocoding Rate Limits
-- OpenStreetMap Nominatim: Max. 1 Request/Sekunde
-- Delay ist konfigurierbar (siehe `.env`)
-- Bei großen Updates: Geduld haben!
+4. **Verify in database:**
+```bash
+sqlite3 data/stores.db "SELECT COUNT(*) FROM stores WHERE chain_id = 'newchain';"
+```
 
-### Koordinaten-Validierung
-- Immer aktiviert beim Scraping
-- Kann für Tests deaktiviert werden
-- Logs zeigen alle Korrekturen
+### Scraper Patterns
 
-### Datenbank-Updates
-- Stores werden per ID aktualisiert (upsert)
-- `updated_at` wird automatisch gesetzt
-- Alte Stores bleiben erhalten (für Change Detection)
+**Pattern 1: Static HTML (requests + lxml)**
+- Used by: denn's, Alnatura, tegut
+- Best for: Server-side rendered store locators
+- Fast and reliable
+
+**Pattern 2: API-based (requests)**
+- Used by: Bio Company (Uberall API)
+- Best for: Chains with public APIs
+- Most reliable when available
+
+**Pattern 3: Dynamic JavaScript (Playwright)**
+- Used by: Globus (optional)
+- Best for: SPAs and AJAX-loaded content
+- Slower but handles complex cases
+
+### Git Workflow & Branch Strategy
+
+**MANDATORY for new features:**
+
+```bash
+# Create feature branch
+git checkout -b feature/add-newchain-scraper
+
+# Make changes, commit regularly
+git add .
+git commit -m "Add newchain scraper"
+
+# Push and create PR
+git push -u origin feature/add-newchain-scraper
+gh pr create --title "Add NewChain scraper" --body "..."
+
+# After human approval: merge
+git checkout main
+git merge feature/add-newchain-scraper
+git push origin main
+```
+
+**Branch naming:**
+- `feature/` - New features
+- `fix/` - Bug fixes
+- `refactor/` - Code refactoring
+- `docs/` - Documentation updates
+- `test/` - Test additions
+
+**Exception:** Small fixes (typos, minor docs) can go directly to main.
+
+### Database Schema
+
+```sql
+CREATE TABLE chains (
+    id TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    color TEXT
+);
+
+CREATE TABLE stores (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    chain_id TEXT NOT NULL,
+    name TEXT NOT NULL,
+    street TEXT,
+    postal_code TEXT,
+    city TEXT NOT NULL,
+    latitude REAL NOT NULL,
+    longitude REAL NOT NULL,
+    opening_hours TEXT,
+    coordinates_validated BOOLEAN DEFAULT 0,
+    FOREIGN KEY (chain_id) REFERENCES chains(id)
+);
+```
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+pytest tests/ -v
+
+# Run specific test
+pytest tests/test_scrapers.py -v
+
+# With coverage
+pytest --cov=src tests/
+```
+
+**Testing Standards:**
+- All scrapers must have unit tests
+- Test both successful and error cases
+- Mock external HTTP requests
+- Validate data structure and types
+
+## 🎯 Key Principles
+
+### 1. Logging over Print
+```python
+# ✅ Good
+import logging
+logger = logging.getLogger(__name__)
+logger.info(f"Scraped {len(stores)} stores")
+
+# ❌ Bad
+print(f"Scraped {len(stores)} stores")
+```
+
+### 2. Use BaseScraper Pattern
+```python
+# ✅ Good - Inherit from BaseScraper
+class NewScraper(BaseScraper):
+    def scrape(self) -> List[Store]:
+        # Your logic
+        pass
+
+# ❌ Bad - Standalone scraper
+def scrape_stores():
+    # Your logic
+    pass
+```
+
+### 3. Configuration-Driven
+- All chains in `config/chains.json`
+- No hardcoded chain data in code
+- Enables/disables chains via config
+
+### 4. Coordinate Validation
+- Always validate coordinates with OSM
+- Catch invalid/swapped coordinates
+- Log validation results
 
 ## 🐛 Troubleshooting
 
-### Geocoding schlägt fehl
+### Common Issues
+
+**Issue:** Scraper returns 0 stores
+```bash
+# Solution: Check if website structure changed
+# Enable debug logging
+export LOG_LEVEL=DEBUG
+python scripts/update_stores.py --chain <chain>
 ```
-Error: GeocoderTimedOut
+
+**Issue:** Playwright timeout
+```bash
+# Solution: Increase timeout or check network
+# Verify playwright installation
+playwright install --with-deps chromium
 ```
-**Lösung:** Erhöhe `GEOCODING_DELAY` in `.env` auf 2.0
 
-### Koordinaten sind (0, 0)
-**Automatisch gelöst:** Validator erkennt und korrigiert dies
+**Issue:** Database locked
+```bash
+# Solution: Close all connections
+pkill -f "python.*server.py"
+```
 
-### Karte zeigt keine Marker
-1. GeoJSON neu generieren: `python api/export_geojson.py`
-2. Browser-Cache leeren
-3. Console auf Fehler prüfen
+**Issue:** Coordinates not validated
+```bash
+# Solution: Run validator manually
+cd src/geocoding
+python validator.py
+```
 
-### Import Error beim Update
-**Problem:** Scraper nicht gefunden
-**Lösung:** Prüfe, ob der Scraper in `src/scrapers/` existiert und korrekt in `update_stores.py` registriert ist
+## 📋 Documentation Update Checklist
+
+When making changes, update:
+
+| Change Type | Update These Docs |
+|-------------|-------------------|
+| New chain added | README.md (Status table), chains.json |
+| New scraper pattern | README.md (Scraper Patterns section) |
+| New dependency | requirements.txt |
+| Architecture change | README.md (Project Architecture) |
+| New feature/API | README.md (Common Commands) |
+| Bug fix | Document in commit message |
 
 ## 🚀 Deployment
 
-### GitHub Pages (automatisch)
+The frontend is automatically deployed to GitHub Pages:
+- **URL:** `https://simsalagin.github.io/SOTO-store-finder/`
+- **Trigger:** Push to `main` branch
+- **Workflow:** `.github/workflows/deploy.yml`
 
-Push auf `main` branch löst automatisch aus:
-1. GitHub Actions Workflow
-2. Build & Deploy zu GitHub Pages
-3. Live unter: https://simsalagin.github.io/SOTO-store-finder/
-
-### Manuelle Aktualisierung
-
+To deploy manually:
 ```bash
-# 1. Stores aktualisieren
-python scripts/update_stores.py
-
-# 2. GeoJSON exportieren
 python api/export_geojson.py
-
-# 3. Committen und pushen
-git add frontend/stores.geojson data/stores.db
+git add frontend/stores.geojson
 git commit -m "Update store data"
 git push origin main
 ```
 
 ## 📦 Dependencies
 
-- **beautifulsoup4** 4.12.3 - HTML Parsing
-- **requests** 2.32.3 - HTTP Requests
-- **lxml** 5.3.0 - XML/HTML Parser
-- **geopy** 2.4.1 - Geocoding
-- **sqlalchemy** 2.0.36 - ORM
-- **pandas** 2.2.3 - Data Processing
-- **pytest** 8.3.4 - Testing
-- **ruff** 0.8.4 - Linting
-- **mypy** 1.13.0 - Type Checking
+Key dependencies (see `requirements.txt` for full list):
 
-## 📄 Lizenz
+- **requests 2.32.3** - HTTP library
+- **lxml 5.3.0** - HTML/XML parsing
+- **playwright 1.49.1** - Browser automation
+- **sqlalchemy 2.0.36** - Database ORM
+- **flask 3.1.0** - API server
+- **pandas 2.2.3** - Data export
+- **geopy 2.4.1** - Geocoding utilities
 
-[Lizenz hier einfügen]
+Dev dependencies:
+- **pytest 8.3.4** - Testing framework
+- **ruff 0.8.4** - Linter
+- **mypy 1.13.0** - Type checker
 
-## 👥 Kontakt
+## 🤖 AI Assistant Guidelines
 
-[Kontakt hier einfügen]
+When working on this project:
 
-## 🗓️ Changelog
+1. **Always use feature branches** for new features (except small fixes)
+2. **Update documentation** before merging (README, chains.json, etc.)
+3. **Follow BaseScraper pattern** for new scrapers
+4. **Use logging**, not print statements
+5. **Test your changes** with pytest
+6. **Validate coordinates** with OSM
+7. **Ask before merging** to main branch
 
-### v0.3.0 - Refactoring & Best Practices (2025-10-21)
-- ♻️ Refactored tegut scraper to use BaseScraper architecture
-- 🔧 Made chains.json functional - dynamic scraper loading
-- 📝 Standardized logging across all modules
-- 📦 Updated dependencies to latest stable versions
-- 🔒 Fixed API server schema issues
-- 🧹 Cleaned up temporary files and old code
-- 📚 Improved .gitignore coverage
-- 🚀 Enhanced README with current project state
+**Self-Check Questions:**
+- [ ] Am I on a feature branch?
+- [ ] Have I updated all relevant documentation?
+- [ ] Does my code follow the existing patterns?
+- [ ] Have I tested my changes?
+- [ ] Did I use logging instead of print?
 
-### v0.2.0 - Multi-Chain Support (2025-10-20)
-- ✅ Added Alnatura scraper (150 stores)
-- ✅ Added tegut scraper (314 stores)
-- ✅ Total: 1,054 stores across 3 chains
-- ✅ Added GitHub Pages deployment
-- ✅ Added chain-specific logos and markers
+## 📄 License
 
-### v0.1.0 - MVP (2025-10-20)
-- ✅ denn's Biomarkt Scraper
-- ✅ Koordinaten-Validierung via OSM
-- ✅ SQLite Datenbank
-- ✅ GeoJSON Export
-- ✅ Interaktive Leaflet-Karte
-- ✅ 590 validierte Filialen
+This project is licensed under the MIT License.
+
+## 👥 Contact
+
+For questions or contributions, please open an issue or pull request.
+
+---
+
+**Last Updated:** January 2025 | **Total Stores:** 1,173 | **Active Chains:** 6
