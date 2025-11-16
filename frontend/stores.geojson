@@ -4342,6 +4342,40 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          13.55906543,
+          52.50630171
+        ]
+      },
+      "properties": {
+        "id": "biocompany_B_WEISSE_108",
+        "chain_id": "biocompany",
+        "store_id": "B_WEISSE_108",
+        "name": "BIO COMPANY Biesdorf Center",
+        "street": "Weißenhöher Straße 108",
+        "postal_code": "12683",
+        "city": "Berlin",
+        "country_code": "DE",
+        "phone": "+49 30 688128690",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/berlin/weißenhöher-straße-108/403370",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Weißenhöher Straße 108, 12683 Berlin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           13.46896783,
           52.50703533
         ]
@@ -4369,6 +4403,40 @@
         },
         "services": null,
         "address": "Boxhagener Straße 73, 10245 Berlin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.21661973,
+          52.43704971
+        ]
+      },
+      "properties": {
+        "id": "biocompany_B_BREISGA_17",
+        "chain_id": "biocompany",
+        "store_id": "B_BREISGA_17",
+        "name": "BIO COMPANY Breisgauer Straße",
+        "street": "Breisgauer Straße 17",
+        "postal_code": "14129",
+        "city": "Berlin",
+        "country_code": "DE",
+        "phone": "+49 30 801979700",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/berlin/breisgauer-straße-17/2841889",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Breisgauer Straße 17, 14129 Berlin"
       }
     },
     {
@@ -4437,6 +4505,40 @@
         },
         "services": null,
         "address": "Brunnenstraße 6-7, 10119 Berlin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.6245527,
+          52.44710632
+        ]
+      },
+      "properties": {
+        "id": "biocompany_B_BOELSCHE_2",
+        "chain_id": "biocompany",
+        "store_id": "B_BOELSCHE_2",
+        "name": "BIO COMPANY Bölschestraße",
+        "street": "Bölschestraße 2",
+        "postal_code": "12587",
+        "city": "Berlin",
+        "country_code": "DE",
+        "phone": "+49 30 32590332",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/berlin/bölschestraße-2/358394",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Bölschestraße 2, 12587 Berlin"
       }
     },
     {
@@ -4818,6 +4920,40 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          13.30791928,
+          52.6164423
+        ]
+      },
+      "properties": {
+        "id": "biocompany_B_HEINSES_28",
+        "chain_id": "biocompany",
+        "store_id": "B_HEINSES_28",
+        "name": "BIO COMPANY Heinsestraße",
+        "street": "Heinsestraße 28",
+        "postal_code": "13467",
+        "city": "Berlin",
+        "country_code": "DE",
+        "phone": "+49 30 680715420",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/berlin/heinsestraße-28/358392",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Heinsestraße 28, 13467 Berlin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           13.42763374,
           52.47523713
         ]
@@ -4886,6 +5022,40 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          13.14520339,
+          52.45552535
+        ]
+      },
+      "properties": {
+        "id": "biocompany_B_KLADOW_362",
+        "chain_id": "biocompany",
+        "store_id": "B_KLADOW_362",
+        "name": "BIO COMPANY Kladower Damm",
+        "street": "Kladower Damm 362-364",
+        "postal_code": "14089",
+        "city": "Berlin",
+        "country_code": "DE",
+        "phone": "+49 30 639640010",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/berlin/kladower-damm-362-364/358393",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Kladower Damm 362-364, 14089 Berlin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           13.42219414,
           52.49346041
         ]
@@ -4947,6 +5117,40 @@
         },
         "services": null,
         "address": "Köpenicker Straße 103, 10179 Berlin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.40630961,
+          52.40634311
+        ]
+      },
+      "properties": {
+        "id": "biocompany_B_LICHTEN_83",
+        "chain_id": "biocompany",
+        "store_id": "B_LICHTEN_83",
+        "name": "BIO COMPANY Lichtenrader Damm",
+        "street": "Lichtenrader Damm 83",
+        "postal_code": "12305",
+        "city": "Berlin",
+        "country_code": "DE",
+        "phone": "+49 30 439750740",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/berlin/lichtenrader-damm-83/3541377",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Lichtenrader Damm 83, 12305 Berlin"
       }
     },
     {
@@ -5192,8 +5396,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          13.4117549,
-          52.5303884
+          13.411411577246092,
+          52.53054830597096
         ]
       },
       "properties": {
@@ -5294,6 +5498,40 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          13.26025669,
+          52.43369045
+        ]
+      },
+      "properties": {
+        "id": "biocompany_B_TELTOWE_13",
+        "chain_id": "biocompany",
+        "store_id": "B_TELTOWE_13",
+        "name": "BIO COMPANY Teltower Damm",
+        "street": "Teltower Damm 13",
+        "postal_code": "14169",
+        "city": "Berlin",
+        "country_code": "DE",
+        "phone": "+49 30 32513665",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/berlin/teltower-damm-13/358374",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Teltower Damm 13, 14169 Berlin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           13.38578216,
           52.45554345
         ]
@@ -5355,6 +5593,40 @@
         },
         "services": null,
         "address": "Bundesallee 201, 10717 Berlin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.52451735,
+          52.48122753
+        ]
+      },
+      "properties": {
+        "id": "biocompany_B_TRESKO_114",
+        "chain_id": "biocompany",
+        "store_id": "B_TRESKO_114",
+        "name": "BIO COMPANY Treskowallee",
+        "street": "Treskowallee 114",
+        "postal_code": "10318",
+        "city": "Berlin",
+        "country_code": "DE",
+        "phone": "+49 30 5210760610",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/berlin/treskowallee-114/857330",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Treskowallee 114, 10318 Berlin"
       }
     },
     {
@@ -5498,6 +5770,40 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          13.21769441,
+          52.42740712
+        ]
+      },
+      "properties": {
+        "id": "biocompany_B_WIESENSC_4",
+        "chain_id": "biocompany",
+        "store_id": "B_WIESENSC_4",
+        "name": "BIO COMPANY Wiesenschlag",
+        "street": "Wiesenschlag 4",
+        "postal_code": "14129",
+        "city": "Berlin",
+        "country_code": "DE",
+        "phone": "+49 30 311755610",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/berlin/wiesenschlag-4/358375",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Wiesenschlag 4, 14129 Berlin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           13.32296006,
           52.48592519
         ]
@@ -5593,6 +5899,312 @@
         },
         "services": null,
         "address": "Yorckstraße 37, 10965 Berlin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.74813094,
+          51.06817452
+        ]
+      },
+      "properties": {
+        "id": "biocompany_DD_KOENIG_34",
+        "chain_id": "biocompany",
+        "store_id": "DD_KOENIG_34",
+        "name": "BIO COMPANY Königsbrücker Straße",
+        "street": "Königsbrücker Straße 34",
+        "postal_code": "01099",
+        "city": "Dresden",
+        "country_code": "DE",
+        "phone": "+49 351 40754850",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/dresden/königsbrücker-straße-34/358385",
+        "opening_hours": {
+          "Mo": "08:00-21:00",
+          "Di": "08:00-21:00",
+          "Mi": "08:00-21:00",
+          "Do": "08:00-21:00",
+          "Fr": "08:00-21:00",
+          "Sa": "08:00-21:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Königsbrücker Straße 34, 01099 Dresden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.80780819,
+          51.05100342
+        ]
+      },
+      "properties": {
+        "id": "biocompany_DD_TOLKEWI_8",
+        "chain_id": "biocompany",
+        "store_id": "DD_TOLKEWI_8",
+        "name": "BIO COMPANY Tolkewitzer Straße",
+        "street": "Tolkewitzer Straße 8-10",
+        "postal_code": "01277",
+        "city": "Dresden",
+        "country_code": "DE",
+        "phone": "+49 351 31406170",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/dresden/tolkewitzer-straße-8-10/358386",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Tolkewitzer Straße 8-10, 01277 Dresden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.0877955,
+          52.5609842
+        ]
+      },
+      "properties": {
+        "id": "biocompany_FALK_POST_40",
+        "chain_id": "biocompany",
+        "store_id": "FALK_POST_40",
+        "name": "BIO COMPANY Falkensee",
+        "street": "Poststraße 40",
+        "postal_code": "14612",
+        "city": "Falkensee",
+        "country_code": "DE",
+        "phone": "+49 30 439750720",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/falkensee/poststraße-40/3709654",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Poststraße 40, 14612 Falkensee"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.30964689,
+          52.63352919
+        ]
+      },
+      "properties": {
+        "id": "biocompany_B_ORANIEN_21",
+        "chain_id": "biocompany",
+        "store_id": "B_ORANIEN_21",
+        "name": "BIO COMPANY Oranienburger Chaussee",
+        "street": "Oranienburger Chaussee 21",
+        "postal_code": "16548",
+        "city": "Glienicke-Nordbahn",
+        "country_code": "DE",
+        "phone": "+49 33056 409431",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/glienicke-nordbahn/oranienburger-chaussee-21/358376",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Oranienburger Chaussee 21, 16548 Glienicke-Nordbahn"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.21795503,
+          52.40489802
+        ]
+      },
+      "properties": {
+        "id": "biocompany_B_FOERST_103",
+        "chain_id": "biocompany",
+        "store_id": "B_FOERST_103",
+        "name": "BIO COMPANY Förster-Funke-Allee",
+        "street": "Förster-Funke-Allee 103",
+        "postal_code": "14532",
+        "city": "Kleinmachnow",
+        "country_code": "DE",
+        "phone": "+49 33203 609320",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/kleinmachnow/förster-funke-allee-103/358377",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Förster-Funke-Allee 103, 14532 Kleinmachnow"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.06706811,
+          52.3923103
+        ]
+      },
+      "properties": {
+        "id": "biocompany_P_BABELSB_16",
+        "chain_id": "biocompany",
+        "store_id": "P_BABELSB_16",
+        "name": "BIO COMPANY Babelsberger Straße im Hauptbahnhof",
+        "street": "Babelsberger Straße 16",
+        "postal_code": "14473",
+        "city": "Potsdam",
+        "country_code": "DE",
+        "phone": "+49 331 24346080",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/potsdam/babelsberger-straße-16/358378",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Babelsberger Straße 16, 14473 Potsdam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.05471676,
+          52.40124463
+        ]
+      },
+      "properties": {
+        "id": "biocompany_P_GUTENBE_20",
+        "chain_id": "biocompany",
+        "store_id": "P_GUTENBE_20",
+        "name": "BIO COMPANY Gutenbergstraße",
+        "street": "Gutenbergstraße 20-22",
+        "postal_code": "14467",
+        "city": "Potsdam",
+        "country_code": "DE",
+        "phone": "+49 331 64748360",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/potsdam/gutenbergstraße-20-22/358379",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Gutenbergstraße 20-22, 14467 Potsdam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.05438104,
+          52.42381163
+        ]
+      },
+      "properties": {
+        "id": "biocompany_P_NEDLITZ_19",
+        "chain_id": "biocompany",
+        "store_id": "P_NEDLITZ_19",
+        "name": "BIO COMPANY Nedlitzer Straße",
+        "street": "Nedlitzer Straße 19",
+        "postal_code": "14469",
+        "city": "Potsdam",
+        "country_code": "DE",
+        "phone": "+49 331 64747700",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/potsdam/nedlitzer-straße-19/358380",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Nedlitzer Straße 19, 14469 Potsdam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.07112823,
+          52.40278474
+        ]
+      },
+      "properties": {
+        "id": "biocompany_P_SCHIFFB_4B",
+        "chain_id": "biocompany",
+        "store_id": "P_SCHIFFB_4B",
+        "name": "BIO COMPANY Schiffbauergasse",
+        "street": "Schiffbauergasse 4B",
+        "postal_code": "14467",
+        "city": "Potsdam",
+        "country_code": "DE",
+        "phone": "+49 331 6200962",
+        "email": null,
+        "website": "https://www.biocompany.de/bio-company-markt-finden/l/potsdam/schiffbauergasse-4b/358381",
+        "opening_hours": {
+          "Mo": "08:00-20:00",
+          "Di": "08:00-20:00",
+          "Mi": "08:00-20:00",
+          "Do": "08:00-20:00",
+          "Fr": "08:00-20:00",
+          "Sa": "08:00-20:00",
+          "So": "closed"
+        },
+        "services": null,
+        "address": "Schiffbauergasse 4B, 14467 Potsdam"
       }
     },
     {
