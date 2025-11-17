@@ -1,69 +1,60 @@
 # SOTO Store Finder
 
-Automated system for scraping, validating, and visualizing store locations that carry SOTO brand products across German organic supermarket chains.
+Find stores carrying SOTO brand products across German organic supermarket chains. Automated scraping, validation, and interactive map visualization.
 
 ![Status](https://img.shields.io/badge/stores-1191-brightgreen) ![Chains](https://img.shields.io/badge/chains-6-blue) ![Python](https://img.shields.io/badge/python-3.8+-blue)
 
-## 📑 Table of Contents
+**[Live Map](https://simsalagin.github.io/SOTO-store-finder/)** | **[AI Assistant Context](.claude/AI_CONTEXT.md)**
 
-- [Quick Start (5 Minutes)](#-quick-start-5-minutes)
-- [Current Status](#-current-status)
-- [Project Architecture](#️-project-architecture)
-  - [Key Components](#key-components)
-- [Common Commands](#-common-commands)
-- [Development](#-development)
-  - [Adding a New Chain](#adding-a-new-chain)
-  - [Scraper Patterns](#scraper-patterns)
-  - [Git Workflow & Branch Strategy](#git-workflow--branch-strategy)
-  - [Database Schema](#database-schema)
-- [Testing](#-testing)
-- [Key Principles](#-key-principles)
-- [Troubleshooting](#-troubleshooting)
-- [Documentation Update Checklist](#-documentation-update-checklist)
-- [Deployment](#-deployment)
-- [Dependencies](#-dependencies)
-- [AI Assistant Guidelines](#-ai-assistant-guidelines)
-- [License](#-license)
-- [Contact](#-contact)
+---
 
-## 🚀 Quick Start (5 Minutes)
+## Features
+
+- 🔄 **Automated scraping** from 6 organic supermarket chains
+- 📍 **Coordinate validation** using OpenStreetMap
+- 🗺️ **Interactive map** with 1,191 stores
+- 🔌 **REST API** for dynamic data access
+- 🧪 **Comprehensive tests** with pytest
+
+---
+
+## Quick Start
 
 ```bash
-# 1. Clone and setup
+# 1. Setup
 git clone <repo-url>
 cd SOTO-store-finder
 python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# 2. Install dependencies
+source venv/bin/activate
 pip install -r requirements.txt
-playwright install chromium  # Required for Playwright-based scrapers
+playwright install chromium
 
-# 3. Update stores
+# 2. Update stores
 python scripts/update_stores.py
 
-# 4. View the map
-cd frontend
-python -m http.server 8000
+# 3. View map
+cd frontend && python -m http.server 8000
 # Open http://localhost:8000
 ```
 
-## 📊 Current Status
+---
+
+## Current Status
 
 | Chain | Stores | Scraper Type | Status |
 |-------|--------|--------------|--------|
-| denn's Biomarkt | 591 | Custom (requests + lxml) | ✅ Working |
-| tegut... | 312 | Custom (requests + lxml) | ✅ Working |
-| Alnatura | 150 | Custom (requests + lxml) | ✅ Working |
-| Globus | 61 | Playwright (Browser automation) | ✅ Working |
-| Bio Company | 59 | Uberall API | ✅ Working |
-| VollCorner | 18 | Custom (BeautifulSoup) | ✅ Working |
+| denn's Biomarkt | 591 | API (JSON) | ✅ |
+| tegut | 312 | HTML (lxml) | ✅ |
+| Alnatura | 150 | HTML (lxml) | ✅ |
+| Globus | 61 | Playwright | ✅ |
+| Bio Company | 59 | Uberall API | ✅ |
+| VollCorner | 18 | BeautifulSoup | ✅ |
 
-**Total: 1,191 stores**
+**Total: 1,191 stores** | **Live Map:** [simsalagin.github.io/SOTO-store-finder](https://simsalagin.github.io/SOTO-store-finder/)
 
-**Live Map:** https://simsalagin.github.io/SOTO-store-finder/
+---
 
-## 🏗️ Project Architecture
+## Project Structure
 
 ```
 SOTO-store-finder/
@@ -73,18 +64,20 @@ SOTO-store-finder/
 │   │   ├── denns.py       # denn's scraper
 │   │   ├── alnatura.py    # Alnatura scraper
 │   │   ├── tegut.py       # tegut scraper
-│   │   └── biocompany.py  # Bio Company scraper
-│   ├── geocoding/         # Coordinate validation
-│   │   └── validator.py   # OSM-based validation
-│   └── database/          # Database models
-│       └── models.py      # SQLAlchemy models
+│   │   ├── biocompany.py  # Bio Company scraper
+│   │   ├── vollcorner.py  # VollCorner scraper
+│   │   └── globus.py      # Globus scraper
+│   ├── storage/           # Database models
+│   │   └── database.py    # SQLAlchemy models
+│   └── geocoding/         # Coordinate validation
+│       └── validator.py   # OSM-based validation
 ├── scripts/
-│   └── update_stores.py   # Main orchestrator (config-driven)
+│   └── update_stores.py   # Main orchestrator
 ├── api/
 │   ├── server.py          # Flask API server
 │   └── export_geojson.py  # GeoJSON generator
-├── frontend/              # Interactive map (Leaflet.js)
-│   ├── index.html
+├── frontend/              # Interactive map
+│   ├── index.html         # Leaflet.js map
 │   ├── stores.geojson     # Generated from database
 │   └── markers/           # Custom chain markers
 ├── config/
@@ -94,308 +87,244 @@ SOTO-store-finder/
 └── tests/                 # Test suite
 ```
 
-### Key Components
+---
 
-- **BaseScraper** (`src/scrapers/base.py`): Abstract base class for all scrapers
-- **Orchestrator** (`scripts/update_stores.py`): Config-driven chain management
-- **Validator** (`src/geocoding/validator.py`): OSM-based coordinate validation
-- **Database** (`src/database/models.py`): SQLAlchemy models (Chain, Store)
-- **API** (`api/server.py`): Flask server for dynamic data serving
-- **Frontend** (`frontend/`): Leaflet.js map with custom markers
+## Usage
 
-## 📖 Common Commands
+### Update Stores
 
 ```bash
-# Update all stores
+# Update all chains
 python scripts/update_stores.py
 
 # Update specific chain
 python scripts/update_stores.py --chain denns
+```
 
-# Start API server
+### Start API Server
+
+```bash
 cd api
-python server.py  # http://localhost:5000
+python server.py
+# Access at http://localhost:5000
 
-# Export GeoJSON
+# Example endpoints:
+# GET /api/stores
+# GET /api/stores?chain_id=denns
+# GET /api/stores?city=Berlin
+```
+
+### Export GeoJSON
+
+```bash
 python api/export_geojson.py
+# Generates frontend/stores.geojson
+```
 
-# Run tests
+### Run Tests
+
+```bash
+# All tests
 pytest tests/ -v
 
-# Code quality
-ruff check .
-mypy src/
-```
-
-## 🔧 Development
-
-### Adding a New Chain
-
-1. **Add to `config/chains.json`:**
-```json
-{
-  "chain_id": "newchain",
-  "name": "New Chain",
-  "scraper_module": "newchain",
-  "enabled": true,
-  "color": "#FF5733"
-}
-```
-
-2. **Create scraper `src/scrapers/newchain.py`:**
-```python
-from src.scrapers.base import BaseScraper, Store
-import requests
-from typing import List
-
-class NewChainScraper(BaseScraper):
-    def scrape(self) -> List[Store]:
-        stores = []
-        # Your scraping logic here
-        return stores
-```
-
-3. **Test the scraper:**
-```bash
-python scripts/update_stores.py --chain newchain
-```
-
-4. **Verify in database:**
-```bash
-sqlite3 data/stores.db "SELECT COUNT(*) FROM stores WHERE chain_id = 'newchain';"
-```
-
-### Scraper Patterns
-
-**Pattern 1: Static HTML (requests + lxml)**
-- Used by: denn's, Alnatura, tegut
-- Best for: Server-side rendered store locators
-- Fast and reliable
-
-**Pattern 2: API-based (requests)**
-- Used by: Bio Company (Uberall API)
-- Best for: Chains with public APIs
-- Most reliable when available
-
-**Pattern 3: Dynamic JavaScript (Playwright)**
-- Used by: Globus (optional)
-- Best for: SPAs and AJAX-loaded content
-- Slower but handles complex cases
-
-### Git Workflow & Branch Strategy
-
-**MANDATORY for new features:**
-
-```bash
-# Create feature branch
-git checkout -b feature/add-newchain-scraper
-
-# Make changes, commit regularly
-git add .
-git commit -m "Add newchain scraper"
-
-# Push and create PR
-git push -u origin feature/add-newchain-scraper
-gh pr create --title "Add NewChain scraper" --body "..."
-
-# After human approval: merge
-git checkout main
-git merge feature/add-newchain-scraper
-git push origin main
-```
-
-**Branch naming:**
-- `feature/` - New features
-- `fix/` - Bug fixes
-- `refactor/` - Code refactoring
-- `docs/` - Documentation updates
-- `test/` - Test additions
-
-**Exception:** Small fixes (typos, minor docs) can go directly to main.
-
-### Database Schema
-
-```sql
-CREATE TABLE chains (
-    id TEXT PRIMARY KEY,
-    name TEXT NOT NULL,
-    color TEXT
-);
-
-CREATE TABLE stores (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    chain_id TEXT NOT NULL,
-    name TEXT NOT NULL,
-    street TEXT,
-    postal_code TEXT,
-    city TEXT NOT NULL,
-    latitude REAL NOT NULL,
-    longitude REAL NOT NULL,
-    opening_hours TEXT,
-    coordinates_validated BOOLEAN DEFAULT 0,
-    FOREIGN KEY (chain_id) REFERENCES chains(id)
-);
-```
-
-## 🧪 Testing
-
-```bash
-# Run all tests
-pytest tests/ -v
-
-# Run specific test
-pytest tests/test_scrapers.py -v
+# Specific scraper
+pytest tests/test_denns.py -v
 
 # With coverage
 pytest --cov=src tests/
 ```
 
-**Testing Standards:**
-- All scrapers must have unit tests
-- Test both successful and error cases
-- Mock external HTTP requests
-- Validate data structure and types
+---
 
-## 🎯 Key Principles
+## Adding a New Chain
 
-### 1. Logging over Print
-```python
-# ✅ Good
-import logging
-logger = logging.getLogger(__name__)
-logger.info(f"Scraped {len(stores)} stores")
+**Quick guide** ([detailed AI guide here](.claude/AI_CONTEXT.md#task-1-add-new-chain)):
 
-# ❌ Bad
-print(f"Scraped {len(stores)} stores")
+1. **Add to config:**
+```json
+// config/chains.json
+{
+  "id": "newchain",
+  "name": "New Chain",
+  "website": "https://www.newchain.com",
+  "scraper_type": "all_stores",
+  "priority": 7,
+  "active": true
+}
 ```
 
-### 2. Use BaseScraper Pattern
+2. **Create scraper:**
 ```python
-# ✅ Good - Inherit from BaseScraper
-class NewScraper(BaseScraper):
+# src/scrapers/newchain.py
+from .base import BaseScraper, Store
+import requests
+
+class NewChainScraper(BaseScraper):
+    def __init__(self):
+        super().__init__(chain_id="newchain", chain_name="New Chain")
+
     def scrape(self) -> List[Store]:
-        # Your logic
-        pass
-
-# ❌ Bad - Standalone scraper
-def scrape_stores():
-    # Your logic
-    pass
+        # Your scraping logic
+        return stores
 ```
 
-### 3. Configuration-Driven
-- All chains in `config/chains.json`
-- No hardcoded chain data in code
-- Enables/disables chains via config
+3. **Register in orchestrator:**
+```python
+# scripts/update_stores.py
+scraper_map = {
+    'newchain': 'src.scrapers.newchain.NewChainScraper',
+    # ...
+}
+```
 
-### 4. Coordinate Validation
-- Always validate coordinates with OSM
-- Catch invalid/swapped coordinates
-- Log validation results
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**Issue:** Scraper returns 0 stores
+4. **Test and verify:**
 ```bash
-# Solution: Check if website structure changed
-# Enable debug logging
+python scripts/update_stores.py --chain newchain
+sqlite3 data/stores.db "SELECT COUNT(*) FROM stores WHERE chain_id = 'newchain';"
+```
+
+5. **Update this README** (status table above)
+
+---
+
+## Troubleshooting
+
+### Scraper returns 0 stores
+```bash
+# Website structure likely changed - enable debug logging
 export LOG_LEVEL=DEBUG
 python scripts/update_stores.py --chain <chain>
 ```
 
-**Issue:** Playwright timeout
+### Playwright timeout
 ```bash
-# Solution: Increase timeout or check network
-# Verify playwright installation
+# Reinstall with system dependencies
 playwright install --with-deps chromium
 ```
 
-**Issue:** Database locked
+### Database locked
 ```bash
-# Solution: Close all connections
+# Close all connections
 pkill -f "python.*server.py"
 ```
 
-**Issue:** Coordinates not validated
+### Import errors
 ```bash
-# Solution: Run validator manually
-cd src/geocoding
-python validator.py
+# Set PYTHONPATH
+export PYTHONPATH=/path/to/SOTO-store-finder
+python scripts/update_stores.py
 ```
 
-## 📋 Documentation Update Checklist
+---
 
-When making changes, update:
+## Deployment
 
-| Change Type | Update These Docs |
-|-------------|-------------------|
-| New chain added | README.md (Status table), chains.json |
-| New scraper pattern | README.md (Scraper Patterns section) |
-| New dependency | requirements.txt |
-| Architecture change | README.md (Project Architecture) |
-| New feature/API | README.md (Common Commands) |
-| Bug fix | Document in commit message |
+Frontend auto-deploys to GitHub Pages on push to `main`:
 
-## 🚀 Deployment
-
-The frontend is automatically deployed to GitHub Pages:
-- **URL:** `https://simsalagin.github.io/SOTO-store-finder/`
-- **Trigger:** Push to `main` branch
-- **Workflow:** `.github/workflows/deploy.yml`
-
-To deploy manually:
 ```bash
+# 1. Update stores
+python scripts/update_stores.py
+
+# 2. Export GeoJSON
 python api/export_geojson.py
+
+# 3. Commit and push
 git add frontend/stores.geojson
 git commit -m "Update store data"
 git push origin main
+
+# GitHub Actions will deploy to:
+# https://simsalagin.github.io/SOTO-store-finder/
 ```
 
-## 📦 Dependencies
+Workflow: [.github/workflows/deploy.yml](.github/workflows/deploy.yml)
 
-Key dependencies (see `requirements.txt` for full list):
+---
 
-- **requests 2.32.3** - HTTP library
-- **lxml 5.3.0** - HTML/XML parsing
-- **playwright 1.49.1** - Browser automation
-- **sqlalchemy 2.0.36** - Database ORM
-- **flask 3.1.0** - API server
-- **pandas 2.2.3** - Data export
-- **geopy 2.4.1** - Geocoding utilities
+## Database Schema
 
-Dev dependencies:
-- **pytest 8.3.4** - Testing framework
-- **ruff 0.8.4** - Linter
-- **mypy 1.13.0** - Type checker
+```sql
+CREATE TABLE stores (
+    id TEXT PRIMARY KEY,           -- Format: {chain_id}_{store_id}
+    chain_id TEXT NOT NULL,
+    store_id TEXT NOT NULL,
+    name TEXT NOT NULL,
+    street TEXT NOT NULL,
+    postal_code TEXT NOT NULL,
+    city TEXT NOT NULL,
+    country_code TEXT DEFAULT 'DE',
+    latitude REAL,
+    longitude REAL,
+    phone TEXT,
+    email TEXT,
+    website TEXT,
+    opening_hours JSON,            -- JSON structure
+    services JSON,                 -- JSON array
+    scraped_at DATETIME,
+    updated_at DATETIME,
+    is_active TEXT DEFAULT 'true'
+);
+```
 
-## 🤖 AI Assistant Guidelines
+---
 
-When working on this project:
+## Technology Stack
 
-1. **Always use feature branches** for new features (except small fixes)
-2. **Update documentation** before merging (README, chains.json, etc.)
-3. **Follow BaseScraper pattern** for new scrapers
-4. **Use logging**, not print statements
-5. **Test your changes** with pytest
-6. **Validate coordinates** with OSM
-7. **Ask before merging** to main branch
+| Component | Technology | Version |
+|-----------|-----------|---------|
+| Language | Python | 3.8+ |
+| Web Scraping | requests, lxml | 2.32.3, 5.3.0 |
+| Browser Automation | Playwright | 1.49.1 |
+| Database | SQLAlchemy (SQLite) | 2.0.36 |
+| API | Flask | 3.1.0 |
+| Frontend | Leaflet.js | 1.9.4 |
+| Testing | pytest | 8.3.4 |
 
-**Self-Check Questions:**
-- [ ] Am I on a feature branch?
-- [ ] Have I updated all relevant documentation?
-- [ ] Does my code follow the existing patterns?
-- [ ] Have I tested my changes?
-- [ ] Did I use logging instead of print?
+Full dependencies: [requirements.txt](requirements.txt)
 
-## 📄 License
+---
 
-This project is licensed under the MIT License.
+## Contributing
 
-## 👥 Contact
+Contributions welcome! Please:
 
-For questions or contributions, please open an issue or pull request.
+1. Create a feature branch (`git checkout -b feature/your-feature`)
+2. Write tests for your changes
+3. Ensure all tests pass (`pytest tests/ -v`)
+4. Update documentation
+5. Submit a pull request
+
+**Code Style:**
+- Use logging, not print statements
+- Follow [PEP 8](https://pep8.org/)
+- Type hints on public methods
+- Inherit from `BaseScraper` for scrapers
+
+---
+
+## Architecture Principles
+
+- **BaseScraper Pattern**: All scrapers inherit from abstract base class
+- **Config-Driven**: Chain configuration in `config/chains.json`
+- **Auto-Validation**: Coordinates validated with OpenStreetMap
+- **Upsert Strategy**: Database updates existing stores, inserts new ones
+- **No Hardcoding**: All chain data lives in configuration files
+
+For detailed architecture and AI assistant context: [.claude/AI_CONTEXT.md](.claude/AI_CONTEXT.md)
+
+---
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details
+
+---
+
+## Contact
+
+For questions or issues:
+- Open an [issue](https://github.com/Simsalagin/SOTO-store-finder/issues)
+- Submit a [pull request](https://github.com/Simsalagin/SOTO-store-finder/pulls)
 
 ---
 
