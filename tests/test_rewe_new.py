@@ -16,11 +16,8 @@ class TestREWEScraper:
 
     def test_scrape_returns_stores(self):
         """Test that scraper returns list of Store objects."""
-        scraper = REWEScraper()
-
         # Test with just 2 small states for speed
-        scraper.GERMAN_STATES = ["Bremen", "Hamburg"]
-
+        scraper = REWEScraper(states=["Bremen", "Hamburg"])
         stores = scraper.scrape()
 
         assert isinstance(stores, list)
@@ -29,8 +26,7 @@ class TestREWEScraper:
 
     def test_store_has_required_fields(self):
         """Test that stores have all required fields."""
-        scraper = REWEScraper()
-        scraper.GERMAN_STATES = ["Bremen"]
+        scraper = REWEScraper(states=["Bremen"])
         stores = scraper.scrape()
 
         # Test first store
@@ -45,8 +41,7 @@ class TestREWEScraper:
 
     def test_stores_have_coordinates(self):
         """Test that stores have valid coordinates."""
-        scraper = REWEScraper()
-        scraper.GERMAN_STATES = ["Bremen"]
+        scraper = REWEScraper(states=["Bremen"])
         stores = scraper.scrape()
 
         # Check first 5 stores
@@ -60,8 +55,7 @@ class TestREWEScraper:
 
     def test_stores_count_subset(self):
         """Test that we get a reasonable number of stores from subset."""
-        scraper = REWEScraper()
-        scraper.GERMAN_STATES = ["Bremen", "Hamburg"]
+        scraper = REWEScraper(states=["Bremen", "Hamburg"])
         stores = scraper.scrape()
 
         # Bremen + Hamburg should have at least 100 stores combined
@@ -69,8 +63,7 @@ class TestREWEScraper:
 
     def test_no_duplicate_stores(self):
         """Test that there are no duplicate stores."""
-        scraper = REWEScraper()
-        scraper.GERMAN_STATES = ["Bremen"]
+        scraper = REWEScraper(states=["Bremen"])
         stores = scraper.scrape()
 
         store_ids = [s.store_id for s in stores]
@@ -78,8 +71,7 @@ class TestREWEScraper:
 
     def test_all_stores_in_germany(self):
         """Test that all stores are in Germany."""
-        scraper = REWEScraper()
-        scraper.GERMAN_STATES = ["Bremen"]
+        scraper = REWEScraper(states=["Bremen"])
         stores = scraper.scrape()
 
         assert all(s.country_code == 'DE' for s in stores), "All stores should be in Germany"

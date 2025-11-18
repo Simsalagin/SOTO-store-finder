@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 
 try:
     from curl_cffi import requests
+    from curl_cffi.requests.exceptions import ConnectionError as CurlConnectionError
 except ImportError:
     logger.error("curl_cffi not installed. Run: pip install curl_cffi")
     raise
@@ -40,9 +41,16 @@ class REWEScraper(BaseScraper):
         "Thüringen",
     ]
 
-    def __init__(self):
-        """Initialize the REWE scraper."""
+    def __init__(self, states: Optional[List[str]] = None):
+        """
+        Initialize the REWE scraper.
+
+        Args:
+            states: Optional list of state names to scrape. If None, scrapes all states.
+                   Example: ["Bayern", "Baden-Württemberg"]
+        """
         super().__init__(chain_id="rewe", chain_name="REWE")
+        self.states_to_scrape = states if states is not None else self.GERMAN_STATES
 
     def scrape(self) -> List[Store]:
         """
@@ -70,7 +78,7 @@ class REWEScraper(BaseScraper):
         seen_ids = set()
 
         # Process each state
-        for state in self.GERMAN_STATES:
+        for state in self.states_to_scrape:
             logger.info(f"Processing state: {state}")
             state_stores = self._scrape_state(state, headers, seen_ids)
             stores.extend(state_stores)
@@ -78,14 +86,14 @@ class REWEScraper(BaseScraper):
             # Small delay between states to avoid rate limiting
             time.sleep(0.5)
 
-        logger.info(f"Successfully scraped {len(stores)} unique stores from {len(self.GERMAN_STATES)} states")
+        logger.info(f"Successfully scraped {len(stores)} unique stores from {len(self.states_to_scrape)} states")
 
         # Filter for German stores only
         return self.filter_country(stores, 'DE')
 
     def _scrape_state(self, state: str, headers: Dict, seen_ids: set) -> List[Store]:
         """
-        Scrape all stores for a specific German state.
+        Scrape all stores for a specific German state with retry logic.
 
         Args:
             state: Name of the German state (e.g., "Bayern")
@@ -100,71 +108,113 @@ class REWEScraper(BaseScraper):
         page_size = 100  # Get many stores per request
 
         while True:
-            try:
-                # Request stores for this state
-                payload = {
-                    "searchTerm": "",
-                    "page": page,
-                    "pageSize": page_size,
-                    "onlyPickup": False,
-                    "lat": None,
-                    "lon": None,
-                    "city": None,
-                    "state": state
-                }
+            # Retry logic for this page
+            success = False
+            retry_count = 0
+            max_retries = 3
 
-                response = requests.post(
-                    self.MARKET_SEARCH_URL,
-                    json=payload,
-                    headers=headers,
-                    impersonate='chrome120',
-                    timeout=30
-                )
+            while not success and retry_count < max_retries:
+                try:
+                    # Request stores for this state
+                    payload = {
+                        "searchTerm": "",
+                        "page": page,
+                        "pageSize": page_size,
+                        "onlyPickup": False,
+                        "lat": None,
+                        "lon": None,
+                        "city": None,
+                        "state": state
+                    }
 
-                if response.status_code != 200:
-                    logger.warning(f"Failed to fetch page {page} for {state}: HTTP {response.status_code}")
-                    break
+                    response = requests.post(
+                        self.MARKET_SEARCH_URL,
+                        json=payload,
+                        headers=headers,
+                        impersonate='chrome120',
+                        timeout=30
+                    )
 
-                data = response.json()
-                markets = data.get('markets', [])
-                total_hits = data.get('totalHits', 0)
+                    if response.status_code != 200:
+                        logger.warning(f"Failed to fetch page {page} for {state}: HTTP {response.status_code}")
+                        retry_count += 1
+                        if retry_count < max_retries:
+                            wait_time = 2 ** retry_count  # Exponential backoff: 2, 4, 8 seconds
+                            logger.info(f"  Retrying in {wait_time} seconds... (attempt {retry_count + 1}/{max_retries})")
+                            time.sleep(wait_time)
+                            continue
+                        else:
+                            break
 
-                if not markets:
-                    # No more stores on this page
-                    break
+                    data = response.json()
+                    markets = data.get('markets', [])
+                    total_hits = data.get('totalHits', 0)
 
-                logger.info(f"  Page {page}: {len(markets)} stores (total: {total_hits})")
+                    if not markets:
+                        # No more stores on this page
+                        success = True
+                        break
 
-                # Process each market
-                for market in markets:
-                    store_id = market.get('wwIdent')
+                    logger.info(f"  Page {page}: {len(markets)} stores (total: {total_hits})")
 
-                    # Skip duplicates
-                    if store_id in seen_ids:
-                        continue
+                    # Process each market
+                    for market in markets:
+                        store_id = market.get('wwIdent')
 
-                    seen_ids.add(store_id)
+                        # Skip duplicates
+                        if store_id in seen_ids:
+                            continue
 
-                    # Parse market data
-                    store = self._parse_market_search(market)
-                    if store:
-                        # Enrich with coordinates
-                        store = self._enrich_with_coordinates(store, headers)
-                        if self.validate_store(store):
-                            stores.append(store)
+                        seen_ids.add(store_id)
 
-                # Check if we've retrieved all stores
-                if len(markets) < page_size:
-                    # Last page
-                    break
+                        # Parse market data
+                        store = self._parse_market_search(market)
+                        if store:
+                            # Enrich with coordinates (with retry)
+                            store = self._enrich_with_coordinates_retry(store, headers)
+                            if self.validate_store(store):
+                                stores.append(store)
 
-                page += 1
+                    # Mark this page as successful
+                    success = True
 
-                # Small delay between pages
-                time.sleep(0.2)
+                    # Check if we've retrieved all stores (last page)
+                    is_last_page = len(markets) < page_size
 
-            except Exception as e:
-                logger.error(f"Error scraping page {page} for state {state}: {e}", exc_info=True)
+                    if not is_last_page:
+                        # Move to next page
+                        page += 1
+                        # Small delay between pages
+                        time.sleep(0.2)
+
+                except CurlConnectionError as e:
+                    retry_count += 1
+                    if retry_count < max_retries:
+                        wait_time = 2 ** retry_count  # Exponential backoff
+                        logger.warning(f"  Connection error on page {page}: {e}")
+                        logger.info(f"  Retrying in {wait_time} seconds... (attempt {retry_count + 1}/{max_retries})")
+                        time.sleep(wait_time)
+                    else:
+                        logger.error(f"  Max retries reached for page {page} of {state}")
+                        break
+
+                except Exception as e:
+                    logger.error(f"Error scraping page {page} for state {state}: {e}", exc_info=True)
+                    retry_count += 1
+                    if retry_count < max_retries:
+                        wait_time = 2 ** retry_count
+                        logger.info(f"  Retrying in {wait_time} seconds... (attempt {retry_count + 1}/{max_retries})")
+                        time.sleep(wait_time)
+                    else:
+                        break
+
+            # Check if we should stop pagination
+            if not success:
+                logger.warning(f"  Stopping pagination for {state} at page {page} due to errors")
+                break
+
+            # Check if this was the last page
+            if 'is_last_page' in locals() and is_last_page:
                 break
 
         logger.info(f"  Found {len(stores)} unique stores in {state}")
@@ -261,6 +311,35 @@ class REWEScraper(BaseScraper):
 
         except Exception as e:
             logger.debug(f"Failed to enrich coordinates for {store.name}: {e}")
+
+        return store
+
+    def _enrich_with_coordinates_retry(self, store: Store, headers: Dict, max_retries: int = 2) -> Store:
+        """
+        Enrich store data with coordinates using wksmarketsearch API with retry logic.
+
+        Args:
+            store: Store object without coordinates
+            headers: HTTP headers for requests
+            max_retries: Maximum number of retry attempts
+
+        Returns:
+            Store object with coordinates
+        """
+        for attempt in range(max_retries):
+            try:
+                return self._enrich_with_coordinates(store, headers)
+            except CurlConnectionError as e:
+                if attempt < max_retries - 1:
+                    wait_time = 0.5 * (2 ** attempt)  # 0.5, 1 second
+                    logger.debug(f"Connection error enriching {store.name}, retrying in {wait_time}s...")
+                    time.sleep(wait_time)
+                else:
+                    logger.debug(f"Failed to enrich coordinates for {store.name} after {max_retries} attempts")
+                    return store
+            except Exception as e:
+                logger.debug(f"Failed to enrich coordinates for {store.name}: {e}")
+                return store
 
         return store
 
