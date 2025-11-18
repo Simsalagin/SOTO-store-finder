@@ -1,0 +1,4 @@
+# REWE scraper test results
+rewe_soto_*.json
+rewe_hybrid_*.json
+investigation/
