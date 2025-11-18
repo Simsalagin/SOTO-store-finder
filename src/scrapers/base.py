@@ -27,6 +27,7 @@ class Store:
     website: Optional[str] = None
     opening_hours: Optional[Dict] = None
     services: Optional[List[str]] = None
+    has_soto_products: Optional[bool] = None  # True=has SOTO, False=no SOTO, None=unknown
     scraped_at: Optional[datetime] = None
 
     def __post_init__(self):

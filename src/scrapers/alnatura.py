@@ -160,6 +160,7 @@ class AlnaturaScraper(BaseScraper):
                             phone=None,  # Don't show phone numbers
                             website=url,
                             opening_hours={'text': opening_hours_text} if opening_hours_text else None,
+                has_soto_products=True,  # Alnatura carries SOTO products
                         )
                 except:
                     pass  # Fall through to alternative method
@@ -204,6 +205,7 @@ class AlnaturaScraper(BaseScraper):
                 phone=None,  # Don't show phone numbers
                 website=url,
                 opening_hours={'text': opening_hours_text} if opening_hours_text else None,
+                has_soto_products=True,  # Alnatura carries SOTO products
             )
 
             return store

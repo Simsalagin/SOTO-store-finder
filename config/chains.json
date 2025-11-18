@@ -52,10 +52,9 @@
       "id": "rewe",
       "name": "REWE",
       "website": "https://www.rewe.de",
-      "scraper_type": "product_check",
-      "brand": "SOTO",
-      "priority": 99,
-      "active": false
+      "scraper_type": "all_stores",
+      "priority": 7,
+      "active": true
     }
   ]
 }

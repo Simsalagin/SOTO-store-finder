@@ -186,6 +186,7 @@ class TegutScraper(BaseScraper):
                 longitude=longitude,
                 website=url,
                 opening_hours=opening_hours,
+                has_soto_products=True,  # Tegut carries SOTO products
             )
 
             return store

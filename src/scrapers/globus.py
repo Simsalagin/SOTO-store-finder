@@ -165,6 +165,7 @@ class GlobusScraper(BaseScraper):
                 latitude=None,  # Will be geocoded
                 longitude=None,
                 opening_hours={'raw': opening_hours_text} if opening_hours_text else None,
+                has_soto_products=True,  # Globus carries SOTO products
             )
 
             return store

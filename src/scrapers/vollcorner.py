@@ -193,6 +193,7 @@ class VollcornerScraper(BaseScraper):
                 phone=phone,
                 website=self.STORE_LIST_URL,  # Individual store URLs not readily available
                 opening_hours={'text': opening_hours_text} if opening_hours_text else None,
+                has_soto_products=True,  # Vollcorner carries SOTO products
             )
 
             return store
