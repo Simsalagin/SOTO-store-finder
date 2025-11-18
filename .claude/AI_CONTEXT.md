@@ -73,6 +73,7 @@ class Store:
     website: Optional[str] = None
     opening_hours: Optional[Dict] = None  # JSON-serializable dict
     services: Optional[List[str]] = None
+    has_soto_products: Optional[bool] = None  # None=unknown, True=has SOTO, False=no SOTO
     scraped_at: Optional[datetime] = None  # Auto-set by __post_init__
 
 class BaseScraper(ABC):
@@ -236,6 +237,33 @@ def get_scraper_for_chain(chain_id: str):
 - Confidence score: 0.0 - 1.0 (warns if < 0.8)
 
 **Triggered automatically by `validate_and_fix_coordinates()` in BaseScraper**
+
+### 6. SOTO Availability Tracking
+
+**All stores are filtered to only show those carrying SOTO products:**
+
+- **REWE stores**: Product availability checked via API
+  - Opt-in: `REWEScraper(check_soto_availability=True)`
+  - Uses exact search `"SOTO"` with Count API
+  - Sets `has_soto_products=True/False` based on results
+  - Includes retry logic with exponential backoff
+
+- **Other chains**: Assumed to carry SOTO
+  - All non-REWE scrapers set `has_soto_products=True`
+  - Chains: denn's, Alnatura, BioCompany, Tegut, Globus, VollCorner
+
+- **Frontend filtering**: GeoJSON export automatically filters
+  - Only exports stores where `has_soto_products=True`
+  - Frontend displays SOTO-carrying stores only
+
+**Implementation pattern for new scrapers:**
+```python
+store = Store(
+    chain_id=self.chain_id,
+    # ... other fields ...
+    has_soto_products=True,  # Set True for chains that carry SOTO
+)
+```
 
 ---
 

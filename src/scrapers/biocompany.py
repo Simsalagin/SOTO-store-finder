@@ -133,7 +133,8 @@ class BioCompanyScraper(BaseScraper):
                 longitude=longitude,
                 phone=phone,
                 opening_hours=opening_hours,
-                website=f"https://www.biocompany.de/bio-company-markt-finden/l/{city.lower()}/{street.lower().replace(' ', '-')}/{store_id}" if store_id else None
+                website=f"https://www.biocompany.de/bio-company-markt-finden/l/{city.lower()}/{street.lower().replace(' ', '-')}/{store_id}" if store_id else None,
+                has_soto_products=True  # BioCompany carries SOTO products
             )
 
             return store

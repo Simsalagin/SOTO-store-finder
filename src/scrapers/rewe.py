@@ -20,6 +20,8 @@ class REWEScraper(BaseScraper):
 
     MARKET_SEARCH_URL = "https://www.rewe.de/stationary-market-search-frontend/api/marketSearch"
     MARKET_DETAILS_URL = "https://www.rewe.de/api/wksmarketsearch"
+    MARKET_SELECTION_URL = "https://www.rewe.de/api/wksmarketselection/userselections"
+    PRODUCT_COUNT_URL = "https://www.rewe.de/api/stationary-product-search/products/count"
 
     # All 16 German states (Bundesländer)
     GERMAN_STATES = [
@@ -41,16 +43,19 @@ class REWEScraper(BaseScraper):
         "Thüringen",
     ]
 
-    def __init__(self, states: Optional[List[str]] = None):
+    def __init__(self, states: Optional[List[str]] = None, check_soto_availability: bool = False):
         """
         Initialize the REWE scraper.
 
         Args:
             states: Optional list of state names to scrape. If None, scrapes all states.
                    Example: ["Bayern", "Baden-Württemberg"]
+            check_soto_availability: Whether to check SOTO product availability for each store.
+                                    Adds significant time to scraping. Default: False.
         """
         super().__init__(chain_id="rewe", chain_name="REWE")
         self.states_to_scrape = states if states is not None else self.GERMAN_STATES
+        self.check_soto_availability = check_soto_availability
 
     def scrape(self) -> List[Store]:
         """
@@ -172,6 +177,11 @@ class REWEScraper(BaseScraper):
                         if store:
                             # Enrich with coordinates (with retry)
                             store = self._enrich_with_coordinates_retry(store, headers)
+
+                            # Enrich with SOTO availability if enabled
+                            if self.check_soto_availability:
+                                store = self._enrich_with_soto_retry(store, headers)
+
                             if self.validate_store(store):
                                 stores.append(store)
 
@@ -341,6 +351,134 @@ class REWEScraper(BaseScraper):
                 logger.debug(f"Failed to enrich coordinates for {store.name}: {e}")
                 return store
 
+        return store
+
+    def _select_market(self, ww_ident: str, headers: Dict) -> bool:
+        """
+        Select a REWE market for the session.
+
+        This is required before checking product availability.
+
+        Args:
+            ww_ident: Market identifier
+            headers: HTTP headers for requests
+
+        Returns:
+            True if selection successful, False otherwise
+        """
+        try:
+            payload = {
+                'selectedService': 'STATIONARY',
+                'customerZipCode': None,
+                'wwIdent': ww_ident
+            }
+
+            response = requests.post(
+                self.MARKET_SELECTION_URL,
+                json=payload,
+                headers=headers,
+                impersonate='chrome120',
+                timeout=30
+            )
+
+            return response.status_code == 201
+
+        except Exception as e:
+            logger.debug(f"Failed to select market {ww_ident}: {e}")
+            return False
+
+    def _check_soto_availability(self, headers: Dict) -> int:
+        """
+        Check SOTO product availability for the currently selected market.
+
+        Uses exact search with quotes to avoid false positives.
+
+        Args:
+            headers: HTTP headers for requests
+
+        Returns:
+            Number of SOTO products found (0 if none)
+
+        Raises:
+            Exception: If API request fails (for retry logic)
+        """
+        response = requests.get(
+            self.PRODUCT_COUNT_URL,
+            params={'query': '"SOTO"'},  # Exact search with quotes
+            headers=headers,
+            impersonate='chrome120',
+            timeout=30
+        )
+
+        if response.status_code == 200:
+            count_data = response.json()
+            return count_data.get('totalHits', 0)
+
+        # Raise exception for non-200 responses to trigger retry
+        raise Exception(f"API returned status {response.status_code}")
+
+    def _enrich_with_soto(self, store: Store, headers: Dict) -> Store:
+        """
+        Enrich store with SOTO product availability information.
+
+        Args:
+            store: Store object to enrich
+            headers: HTTP headers for requests
+
+        Returns:
+            Store object with has_soto_products field set
+
+        Raises:
+            Exception: If SOTO check fails (for retry logic)
+        """
+        # Select the market
+        if not self._select_market(store.store_id, headers):
+            logger.debug(f"Could not select market for {store.name}")
+            store.has_soto_products = None
+            return store
+
+        # Small delay to let selection propagate
+        time.sleep(0.5)
+
+        # Check SOTO availability (may raise exception)
+        product_count = self._check_soto_availability(headers)
+        store.has_soto_products = product_count > 0
+
+        logger.debug(
+            f"{store.name}: {'has' if store.has_soto_products else 'no'} "
+            f"SOTO products (count: {product_count})"
+        )
+
+        return store
+
+    def _enrich_with_soto_retry(self, store: Store, headers: Dict, max_retries: int = 2) -> Store:
+        """
+        Enrich store with SOTO availability with retry logic.
+
+        Args:
+            store: Store object to enrich
+            headers: HTTP headers for requests
+            max_retries: Maximum number of retry attempts
+
+        Returns:
+            Store object with has_soto_products field set
+        """
+        last_exception = None
+
+        for attempt in range(max_retries):
+            try:
+                return self._enrich_with_soto(store, headers)
+            except (CurlConnectionError, Exception) as e:
+                last_exception = e
+                if attempt < max_retries - 1:
+                    wait_time = 0.5 * (2 ** attempt)
+                    logger.debug(f"Error checking SOTO for {store.name}, retrying in {wait_time}s... ({e})")
+                    time.sleep(wait_time)
+                else:
+                    logger.debug(f"Failed to check SOTO for {store.name} after {max_retries} attempts: {e}")
+
+        # All retries failed
+        store.has_soto_products = None
         return store
 
     def _parse_opening_hours(self, opening_info: List[Dict]) -> Optional[Dict]:

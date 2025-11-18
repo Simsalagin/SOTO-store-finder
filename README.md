@@ -13,8 +13,9 @@ Find stores carrying SOTO brand products across German organic supermarket chain
 - 🔄 **Automated scraping** from 6 organic supermarket chains
 - 📍 **Coordinate validation** using OpenStreetMap
 - 🗺️ **Interactive map** with 1,191 stores
+- 🎯 **SOTO availability tracking** - Only shows stores carrying SOTO products
 - 🔌 **REST API** for dynamic data access
-- 🧪 **Comprehensive tests** with pytest
+- 🧪 **Comprehensive tests** with pytest (34 tests, 100% pass rate)
 
 ---
 
@@ -260,11 +261,17 @@ CREATE TABLE stores (
     website TEXT,
     opening_hours JSON,            -- JSON structure
     services JSON,                 -- JSON array
+    has_soto_products BOOLEAN,     -- NULL=unknown, TRUE=has SOTO, FALSE=no SOTO
     scraped_at DATETIME,
     updated_at DATETIME,
     is_active TEXT DEFAULT 'true'
 );
 ```
+
+**SOTO Availability:**
+- **REWE stores**: Checked via product search API (opt-in with `check_soto_availability=True`)
+- **Other chains**: Assumed to carry SOTO (`has_soto_products=True`)
+- **Frontend**: Only displays stores where `has_soto_products=True`
 
 ---
 

@@ -1,6 +1,6 @@
 """Database models and operations for store data."""
 
-from sqlalchemy import create_engine, Column, String, Float, DateTime, JSON, Index
+from sqlalchemy import create_engine, Column, String, Float, DateTime, JSON, Boolean, Index
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
@@ -39,6 +39,9 @@ class StoreModel(Base):
     # Additional data (JSON)
     opening_hours = Column(JSON, nullable=True)
     services = Column(JSON, nullable=True)
+
+    # Product availability
+    has_soto_products = Column(Boolean, nullable=True)  # True=has SOTO, False=no SOTO, None=unknown
 
     # Metadata
     scraped_at = Column(DateTime, nullable=False, default=datetime.now)
@@ -108,6 +111,7 @@ class Database:
                     existing.website = store.website
                     existing.opening_hours = store.opening_hours
                     existing.services = store.services
+                    existing.has_soto_products = store.has_soto_products
                     existing.updated_at = datetime.now()
                     existing.is_active = 'true'
                 else:
@@ -128,6 +132,7 @@ class Database:
                         website=store.website,
                         opening_hours=store.opening_hours,
                         services=store.services,
+                        has_soto_products=store.has_soto_products,
                         scraped_at=store.scraped_at,
                     )
                     session.add(store_model)

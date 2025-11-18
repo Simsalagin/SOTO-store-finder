@@ -80,6 +80,7 @@ class DennsScraper(BaseScraper):
                 website=address.get('googleProfileLink'),
                 opening_hours=opening_hours,
                 services=services,
+                has_soto_products=True,  # denn's carries SOTO products
             )
 
             return store

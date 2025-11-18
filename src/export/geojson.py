@@ -47,6 +47,8 @@ class GeoJSONExporter:
         """
         Create GeoJSON FeatureCollection from stores.
 
+        Only includes stores with SOTO products (has_soto_products=True).
+
         Args:
             stores: List of StoreModel objects
 
@@ -58,6 +60,10 @@ class GeoJSONExporter:
         for store in stores:
             # Skip stores without coordinates
             if store.latitude is None or store.longitude is None:
+                continue
+
+            # IMPORTANT: Only include stores with SOTO products
+            if store.has_soto_products is not True:
                 continue
 
             feature = {
