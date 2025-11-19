@@ -2,7 +2,7 @@
 
 Find stores carrying SOTO brand products across German organic supermarket chains. Automated scraping, validation, and interactive map visualization.
 
-![Status](https://img.shields.io/badge/stores-1191-brightgreen) ![Chains](https://img.shields.io/badge/chains-6-blue) ![Python](https://img.shields.io/badge/python-3.8+-blue)
+![Status](https://img.shields.io/badge/stores-1191-brightgreen) ![Chains](https://img.shields.io/badge/chains-7-blue) ![Python](https://img.shields.io/badge/python-3.8+-blue) ![Tests](https://img.shields.io/badge/tests-87-success)
 
 **[Live Map](https://simsalagin.github.io/SOTO-store-finder/)** | **[AI Assistant Context](.claude/AI_CONTEXT.md)**
 
@@ -10,12 +10,15 @@ Find stores carrying SOTO brand products across German organic supermarket chain
 
 ## Features
 
-- 🔄 **Automated scraping** from 6 organic supermarket chains
+- 🔄 **Automated scraping** from 7 organic/mainstream supermarket chains
 - 📍 **Coordinate validation** using OpenStreetMap
 - 🗺️ **Interactive map** with 1,191 stores
 - 🎯 **SOTO availability tracking** - Only shows stores carrying SOTO products
 - 🔌 **REST API** for dynamic data access
-- 🧪 **Comprehensive tests** with pytest (34 tests, 100% pass rate)
+- 🧪 **Comprehensive tests** with pytest (87 tests, 100% pass rate)
+- ⚡ **Batch processing** with checkpoints - recover from failures
+- 📊 **Structured logging** with JSON output and correlation IDs
+- 🚀 **Fast testing** - test scraping in seconds instead of hours
 
 ---
 
@@ -50,8 +53,11 @@ cd frontend && python -m http.server 8000
 | Globus | 61 | Playwright | ✅ |
 | Bio Company | 59 | Uberall API | ✅ |
 | VollCorner | 18 | BeautifulSoup | ✅ |
+| REWE | 0* | curl_cffi + API | ✅ |
 
 **Total: 1,191 stores** | **Live Map:** [simsalagin.github.io/SOTO-store-finder](https://simsalagin.github.io/SOTO-store-finder/)
+
+*REWE scraper implemented with SOTO product availability checking via API (opt-in)
 
 ---
 
@@ -61,13 +67,21 @@ cd frontend && python -m http.server 8000
 SOTO-store-finder/
 ├── src/
 │   ├── scrapers/          # Store scrapers
-│   │   ├── base.py        # BaseScraper abstract class
+│   │   ├── base.py        # BaseScraper (with batch processing)
+│   │   ├── rewe.py        # REWE scraper
 │   │   ├── denns.py       # denn's scraper
 │   │   ├── alnatura.py    # Alnatura scraper
 │   │   ├── tegut.py       # tegut scraper
 │   │   ├── biocompany.py  # Bio Company scraper
 │   │   ├── vollcorner.py  # VollCorner scraper
 │   │   └── globus.py      # Globus scraper
+│   ├── batch/             # Batch processing (NEW)
+│   │   ├── checkpoint_manager.py  # Checkpoint system
+│   │   └── batch_processor.py     # Batch iteration engine
+│   ├── logging/           # Structured logging (NEW)
+│   │   ├── config.py      # Logger configuration
+│   │   ├── correlation.py # Correlation context
+│   │   └── progress.py    # Progress tracking
 │   ├── storage/           # Database models
 │   │   └── database.py    # SQLAlchemy models
 │   └── geocoding/         # Coordinate validation
@@ -84,8 +98,9 @@ SOTO-store-finder/
 ├── config/
 │   └── chains.json        # Chain configuration
 ├── data/
-│   └── stores.db          # SQLite database
-└── tests/                 # Test suite
+│   ├── stores.db          # SQLite database
+│   └── checkpoints.db     # Batch processing checkpoints (NEW)
+└── tests/                 # Test suite (87 tests)
 ```
 
 ---
@@ -107,12 +122,11 @@ python scripts/update_stores.py --chain denns
 ```bash
 cd api
 python server.py
-# Access at http://localhost:5000
+# Access at http://localhost:8001
 
-# Example endpoints:
-# GET /api/stores
-# GET /api/stores?chain_id=denns
-# GET /api/stores?city=Berlin
+# Available endpoints:
+# GET /api/stores - JSON array of all stores
+# GET /api/stores/geojson - GeoJSON format for mapping
 ```
 
 ### Export GeoJSON
@@ -133,6 +147,70 @@ pytest tests/test_denns.py -v
 
 # With coverage
 pytest --cov=src tests/
+```
+
+### Batch Processing & Fast Testing (NEW)
+
+**Fast testing with limit parameter:**
+```python
+from src.scrapers.rewe import REWEScraper
+
+# Test with just 10 stores instead of all ~3000
+scraper = REWEScraper(states=["Berlin"], check_soto_availability=False)
+stores = scraper.scrape(limit=10)  # Takes ~5 seconds instead of 60 minutes
+```
+
+**Batch processing with checkpoints:**
+```python
+# Process with automatic checkpointing (recovers from crashes)
+result = scraper.scrape_with_batches(
+    batch_size=100,              # Checkpoint every 100 stores
+    limit=50,                    # Limit for testing
+    checkpoint_db="data/checkpoints.db",
+    progress_callback=lambda p: print(f"{p['percentage']:.1f}% complete")
+)
+
+# Result:
+# {
+#     'run_id': 'rewe_20250119_160530',
+#     'processed': 50,
+#     'failed': 0,
+#     'status': 'completed'
+# }
+```
+
+**Resume from checkpoint after failure:**
+```python
+from src.batch import BatchProcessor
+
+processor = BatchProcessor(db_path="data/checkpoints.db")
+processor.resume(items=all_stores, process_callback=process_fn)
+```
+
+**Structured logging with correlation:**
+```python
+from src.logging import LoggerConfig, CorrelationContext
+import structlog
+
+# Setup structured logging
+config = LoggerConfig(log_dir="logs")
+logger = config.setup(json_output=True, level="INFO")
+
+# Use correlation context for request tracing
+with CorrelationContext(run_id="scrape_001", chain_id="rewe"):
+    logger.info("scraping_started", total_stores=100)
+    # All logs in this block will have run_id and chain_id
+```
+
+**Progress tracking:**
+```python
+from src.logging import ProgressTracker
+
+with ProgressTracker(total=1000, description="Scraping stores") as tracker:
+    for i in range(1000):
+        # ... process store ...
+        tracker.increment()
+        # Output: [Scraping stores] ████████░░ 40% (400/1000)
 ```
 
 ---
@@ -158,16 +236,25 @@ pytest --cov=src tests/
 ```python
 # src/scrapers/newchain.py
 from .base import BaseScraper, Store
+from typing import List, Optional
 import requests
 
 class NewChainScraper(BaseScraper):
     def __init__(self):
         super().__init__(chain_id="newchain", chain_name="New Chain")
 
-    def scrape(self) -> List[Store]:
+    def scrape(self, limit: Optional[int] = None) -> List[Store]:
         # Your scraping logic
+        stores = fetch_all_stores()  # Your implementation
+
+        # Apply limit for testing
+        if limit:
+            stores = stores[:limit]
+
         return stores
 ```
+
+**Note:** All scrapers automatically inherit `scrape_with_batches()` from BaseScraper!
 
 3. **Register in orchestrator:**
 ```python
@@ -280,10 +367,11 @@ CREATE TABLE stores (
 | Component | Technology | Version |
 |-----------|-----------|---------|
 | Language | Python | 3.8+ |
-| Web Scraping | requests, lxml | 2.32.3, 5.3.0 |
-| Browser Automation | Playwright | 1.49.1 |
+| Web Scraping | requests, lxml, curl_cffi | 2.32.3, 5.3.0, latest |
+| Browser Automation | Playwright | 1.55.0 |
 | Database | SQLAlchemy (SQLite) | 2.0.36 |
-| API | Flask | 3.1.0 |
+| Logging | structlog | 24.4.0 |
+| API | http.server (stdlib) | - |
 | Frontend | Leaflet.js | 1.9.4 |
 | Testing | pytest | 8.3.4 |
 
@@ -311,10 +399,13 @@ Contributions welcome! Please:
 
 ## Architecture Principles
 
-- **BaseScraper Pattern**: All scrapers inherit from abstract base class
+- **BaseScraper Pattern**: All scrapers inherit from abstract base class with built-in batch processing
+- **Batch Processing**: Checkpoint every N stores - recover from failures without data loss
+- **Structured Logging**: JSON logs with correlation IDs for request tracing
 - **Config-Driven**: Chain configuration in `config/chains.json`
 - **Auto-Validation**: Coordinates validated with OpenStreetMap
 - **Upsert Strategy**: Database updates existing stores, inserts new ones
+- **Fast Testing**: `limit` parameter enables testing with small datasets (seconds vs hours)
 - **No Hardcoding**: All chain data lives in configuration files
 
 For detailed architecture and AI assistant context: [.claude/AI_CONTEXT.md](.claude/AI_CONTEXT.md)
@@ -335,4 +426,4 @@ For questions or issues:
 
 ---
 
-**Last Updated:** January 2025 | **Total Stores:** 1,191 | **Active Chains:** 6
+**Last Updated:** January 2025 | **Total Stores:** 1,191 | **Active Chains:** 7 | **Tests:** 87

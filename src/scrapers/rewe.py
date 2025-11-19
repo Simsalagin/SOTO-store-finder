@@ -57,7 +57,11 @@ class REWEScraper(BaseScraper):
         self.states_to_scrape = states if states is not None else self.GERMAN_STATES
         self.check_soto_availability = check_soto_availability
 
-    def scrape(self) -> List[Store]:
+        # Create a session to maintain cookies across requests
+        # This is critical for SOTO availability checks which require market selection
+        self.session = requests.Session()
+
+    def scrape(self, limit: Optional[int] = None) -> List[Store]:
         """
         Scrape all REWE stores using state-based marketSearch API.
 
@@ -66,10 +70,15 @@ class REWEScraper(BaseScraper):
         2. For each state, paginates through all stores
         3. Enriches store data with coordinates from wksmarketsearch API
 
+        Args:
+            limit: Optional limit on total stores to scrape (for testing)
+
         Returns:
             List of Store objects
         """
         logger.info(f"Scraping {self.chain_name} stores using state-based search...")
+        if limit:
+            logger.info(f"  Limiting to {limit} stores for testing")
 
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -84,9 +93,20 @@ class REWEScraper(BaseScraper):
 
         # Process each state
         for state in self.states_to_scrape:
+            # Check if we've reached the limit
+            if limit and len(stores) >= limit:
+                logger.info(f"  Reached limit of {limit} stores, stopping")
+                break
+
             logger.info(f"Processing state: {state}")
-            state_stores = self._scrape_state(state, headers, seen_ids)
+            remaining = (limit - len(stores)) if limit else None
+            state_stores = self._scrape_state(state, headers, seen_ids, remaining)
             stores.extend(state_stores)
+
+            # Check again after adding state stores
+            if limit and len(stores) >= limit:
+                logger.info(f"  Reached limit of {limit} stores after processing {state}")
+                break
 
             # Small delay between states to avoid rate limiting
             time.sleep(0.5)
@@ -94,9 +114,15 @@ class REWEScraper(BaseScraper):
         logger.info(f"Successfully scraped {len(stores)} unique stores from {len(self.states_to_scrape)} states")
 
         # Filter for German stores only
-        return self.filter_country(stores, 'DE')
+        result = self.filter_country(stores, 'DE')
 
-    def _scrape_state(self, state: str, headers: Dict, seen_ids: set) -> List[Store]:
+        # Apply limit to final result if needed
+        if limit and len(result) > limit:
+            result = result[:limit]
+
+        return result
+
+    def _scrape_state(self, state: str, headers: Dict, seen_ids: set, limit: Optional[int] = None) -> List[Store]:
         """
         Scrape all stores for a specific German state with retry logic.
 
@@ -104,6 +130,7 @@ class REWEScraper(BaseScraper):
             state: Name of the German state (e.g., "Bayern")
             headers: HTTP headers for requests
             seen_ids: Set of already-seen store IDs for deduplication
+            limit: Optional limit on stores to scrape from this state
 
         Returns:
             List of Store objects for this state
@@ -113,6 +140,10 @@ class REWEScraper(BaseScraper):
         page_size = 100  # Get many stores per request
 
         while True:
+            # Check if we've reached the limit for this state
+            if limit and len(stores) >= limit:
+                logger.info(f"    Reached limit of {limit} stores for {state}")
+                break
             # Retry logic for this page
             success = False
             retry_count = 0
@@ -132,7 +163,7 @@ class REWEScraper(BaseScraper):
                         "state": state
                     }
 
-                    response = requests.post(
+                    response = self.session.post(
                         self.MARKET_SEARCH_URL,
                         json=payload,
                         headers=headers,
@@ -285,7 +316,7 @@ class REWEScraper(BaseScraper):
         """
         try:
             # Search by postal code to get detailed market info with coordinates
-            response = requests.get(
+            response = self.session.get(
                 self.MARKET_DETAILS_URL,
                 params={'searchTerm': store.postal_code},
                 headers=headers,
@@ -359,6 +390,11 @@ class REWEScraper(BaseScraper):
 
         This is required before checking product availability.
 
+        IMPORTANT: This method sets a session cookie (wksMarketsCookie) that identifies
+        the selected market. This cookie MUST be preserved in subsequent requests to
+        _check_soto_availability() for market-specific product searches. Without the
+        session, product searches will be global instead of market-specific.
+
         Args:
             ww_ident: Market identifier
             headers: HTTP headers for requests
@@ -373,7 +409,7 @@ class REWEScraper(BaseScraper):
                 'wwIdent': ww_ident
             }
 
-            response = requests.post(
+            response = self.session.post(
                 self.MARKET_SELECTION_URL,
                 json=payload,
                 headers=headers,
@@ -402,20 +438,30 @@ class REWEScraper(BaseScraper):
         Raises:
             Exception: If API request fails (for retry logic)
         """
-        response = requests.get(
-            self.PRODUCT_COUNT_URL,
-            params={'query': '"SOTO"'},  # Exact search with quotes
-            headers=headers,
-            impersonate='chrome120',
-            timeout=30
-        )
+        try:
+            response = self.session.get(
+                self.PRODUCT_COUNT_URL,
+                params={'query': '"SOTO"'},  # Exact search with quotes
+                headers=headers,
+                impersonate='chrome120',
+                timeout=30
+            )
 
-        if response.status_code == 200:
-            count_data = response.json()
-            return count_data.get('totalHits', 0)
+            if response.status_code == 200:
+                try:
+                    count_data = response.json()
+                    return count_data.get('totalHits', 0)
+                except Exception as e:
+                    raise Exception(f"Failed to parse API response JSON: {e}")
 
-        # Raise exception for non-200 responses to trigger retry
-        raise Exception(f"API returned status {response.status_code}")
+            # Raise exception for non-200 responses to trigger retry
+            raise Exception(f"API returned status {response.status_code}")
+
+        except Exception as e:
+            # Re-raise with context
+            if "API returned" in str(e) or "Failed to parse" in str(e):
+                raise
+            raise Exception(f"SOTO availability check failed: {e}")
 
     def _enrich_with_soto(self, store: Store, headers: Dict) -> Store:
         """
@@ -431,11 +477,19 @@ class REWEScraper(BaseScraper):
         Raises:
             Exception: If SOTO check fails (for retry logic)
         """
-        # Select the market
-        if not self._select_market(store.store_id, headers):
-            logger.debug(f"Could not select market for {store.name}")
-            store.has_soto_products = None
-            return store
+        # Select the market with retry
+        market_selected = False
+        for attempt in range(2):  # Try market selection twice
+            if self._select_market(store.store_id, headers):
+                market_selected = True
+                break
+            if attempt < 1:
+                time.sleep(0.5)
+                logger.debug(f"Retrying market selection for {store.name}...")
+
+        if not market_selected:
+            logger.debug(f"Could not select market for {store.name} after retries")
+            raise Exception(f"Market selection failed for store {store.store_id}")
 
         # Small delay to let selection propagate
         time.sleep(0.5)
@@ -451,14 +505,14 @@ class REWEScraper(BaseScraper):
 
         return store
 
-    def _enrich_with_soto_retry(self, store: Store, headers: Dict, max_retries: int = 2) -> Store:
+    def _enrich_with_soto_retry(self, store: Store, headers: Dict, max_retries: int = 3) -> Store:
         """
         Enrich store with SOTO availability with retry logic.
 
         Args:
             store: Store object to enrich
             headers: HTTP headers for requests
-            max_retries: Maximum number of retry attempts
+            max_retries: Maximum number of retry attempts (default: 3)
 
         Returns:
             Store object with has_soto_products field set
@@ -468,14 +522,34 @@ class REWEScraper(BaseScraper):
         for attempt in range(max_retries):
             try:
                 return self._enrich_with_soto(store, headers)
-            except (CurlConnectionError, Exception) as e:
+            except CurlConnectionError as e:
+                # Network/connection errors - always retry
                 last_exception = e
                 if attempt < max_retries - 1:
-                    wait_time = 0.5 * (2 ** attempt)
-                    logger.debug(f"Error checking SOTO for {store.name}, retrying in {wait_time}s... ({e})")
+                    wait_time = 1.0 * (2 ** attempt)  # 1s, 2s, 4s
+                    logger.debug(f"Connection error for {store.name}, retrying in {wait_time}s... (attempt {attempt + 1}/{max_retries})")
                     time.sleep(wait_time)
                 else:
-                    logger.debug(f"Failed to check SOTO for {store.name} after {max_retries} attempts: {e}")
+                    logger.warning(f"Failed to check SOTO for {store.name} after {max_retries} connection attempts: {e}")
+            except Exception as e:
+                # API errors or other exceptions
+                error_msg = str(e)
+                last_exception = e
+
+                # Check if it's a retryable error (5xx, timeout, rate limit)
+                is_retryable = any(x in error_msg.lower() for x in ['50', '503', '502', '504', 'timeout', 'rate limit'])
+
+                if is_retryable and attempt < max_retries - 1:
+                    wait_time = 1.0 * (2 ** attempt)
+                    logger.debug(f"API error for {store.name}, retrying in {wait_time}s... ({error_msg[:50]})")
+                    time.sleep(wait_time)
+                else:
+                    # Non-retryable error or max retries reached
+                    if is_retryable:
+                        logger.warning(f"Failed to check SOTO for {store.name} after {max_retries} attempts: {error_msg[:100]}")
+                    else:
+                        logger.debug(f"Non-retryable error for {store.name}: {error_msg[:100]}")
+                    break
 
         # All retries failed
         store.has_soto_products = None
@@ -506,3 +580,156 @@ class REWEScraper(BaseScraper):
                 opening_hours[days] = hours
 
         return opening_hours if opening_hours else None
+
+    def _generate_batches(self, batch_size: int = 100, limit: Optional[int] = None):
+        """
+        Generate batches of stores incrementally during scraping.
+
+        Yields one state page at a time (~100 stores per batch).
+        Each batch is fully enriched (coordinates + SOTO if enabled).
+
+        Args:
+            batch_size: Target batch size (REWE yields by page ~100 stores)
+            limit: Optional limit on total stores to scrape
+
+        Yields:
+            List[Store]: Batch of fully enriched stores
+        """
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'application/json, text/plain, */*',
+            'Accept-Language': 'de-DE,de;q=0.9,en;q=0.8',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Content-Type': 'application/json',
+        }
+
+        total_scraped = 0
+        seen_ids = set()
+
+        for state in self.states_to_scrape:
+            if limit and total_scraped >= limit:
+                logger.info(f"  Reached limit of {limit} stores, stopping")
+                return
+
+            logger.info(f"[REWE] Scraping state: {state}")
+            page = 0
+            while True:
+                # Check limit before fetching page
+                if limit and total_scraped >= limit:
+                    logger.info(f"  Reached limit of {limit} stores")
+                    return
+
+                # Request stores for this state page with retry logic
+                max_retries = 3
+                retry_delays = [2, 8, 16]  # Custom backoff: 2s, 8s, 16s
+                retry_count = 0
+                response = None
+
+                while retry_count <= max_retries:
+                    try:
+                        payload = {
+                            "searchTerm": "",
+                            "page": page,
+                            "pageSize": 100,  # REWE API page size
+                            "onlyPickup": False,
+                            "lat": None,
+                            "lon": None,
+                            "city": None,
+                            "state": state
+                        }
+
+                        response = self.session.post(
+                            self.MARKET_SEARCH_URL,
+                            json=payload,
+                            headers=headers,
+                            impersonate='chrome120',
+                            timeout=45
+                        )
+                        break  # Success
+
+                    except Exception as e:
+                        if retry_count >= max_retries:
+                            logger.error(f"Failed after {max_retries} retries for page {page} of {state}: {e}")
+                            break
+
+                        wait_time = retry_delays[retry_count]
+                        logger.warning(f"Error on page {page} for {state}, retry {retry_count + 1}/{max_retries} in {wait_time}s: {e}")
+                        time.sleep(wait_time)
+                        retry_count += 1
+
+                # If request failed after all retries, skip to next page
+                if response is None:
+                    logger.warning(f"Skipping page {page} for {state} after all retries failed")
+                    page += 1
+                    continue
+
+                try:
+                    if response.status_code != 200:
+                        logger.warning(f"Failed to fetch page {page} for {state}: HTTP {response.status_code}")
+                        break
+
+                    data = response.json()
+                    markets = data.get('markets', [])
+
+                    if not markets:
+                        # No more stores on this page
+                        break
+
+                    # Process batch
+                    batch = []
+                    soto_checked = 0
+                    for market in markets:
+                        # Check limit
+                        if limit and total_scraped >= limit:
+                            break
+
+                        store_id = market.get('wwIdent')
+                        if store_id in seen_ids:
+                            continue
+
+                        seen_ids.add(store_id)
+
+                        # Parse store
+                        store = self._parse_market_search(market)
+                        if not store:
+                            continue
+
+                        # Enrich with coordinates
+                        store = self._enrich_with_coordinates_retry(store, headers)
+
+                        # Enrich with SOTO if enabled
+                        if self.check_soto_availability:
+                            store = self._enrich_with_soto_retry(store, headers)
+                            soto_checked += 1
+
+                        batch.append(store)
+                        total_scraped += 1
+
+                        # Check limit after adding store
+                        if limit and total_scraped >= limit:
+                            break
+
+                    # Yield batch if not empty
+                    if batch:
+                        logger.info(f"[REWE] {state} page {page}: Scraped {len(batch)} stores" +
+                                   (f" (SOTO checked: {soto_checked})" if self.check_soto_availability else ""))
+                        yield batch
+
+                    # Check if we've reached limit or last page
+                    if limit and total_scraped >= limit:
+                        return
+
+                    is_last_page = len(markets) < 100
+                    if is_last_page:
+                        break
+
+                    page += 1
+                    time.sleep(0.2)
+
+                except Exception as e:
+                    logger.error(f"Error processing page {page} for state {state}: {e}", exc_info=True)
+                    page += 1
+                    continue
+
+            # Small delay between states
+            time.sleep(0.5)

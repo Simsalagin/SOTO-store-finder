@@ -1,10 +1,11 @@
 """Base scraper class for all store chain scrapers."""
 
 from abc import ABC, abstractmethod
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Callable, Any, Tuple
 from dataclasses import dataclass
 from datetime import datetime
 import logging
+from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
@@ -54,9 +55,12 @@ class BaseScraper(ABC):
         self._validator = None
 
     @abstractmethod
-    def scrape(self) -> List[Store]:
+    def scrape(self, limit: Optional[int] = None) -> List[Store]:
         """
         Scrape all stores for this chain.
+
+        Args:
+            limit: Optional limit on number of stores to scrape (for testing)
 
         Returns:
             List of Store objects
@@ -174,3 +178,111 @@ class BaseScraper(ABC):
             logger.error(f"Failed to geocode {store.name}")
 
         return store
+
+    def get_batch_processor(self, checkpoint_db: Optional[str] = None):
+        """
+        Get a configured batch processor for this scraper.
+
+        Args:
+            checkpoint_db: Path to checkpoint database (default: data/checkpoints.db)
+
+        Returns:
+            Configured BatchProcessor instance
+        """
+        from ..batch import BatchProcessor
+
+        if checkpoint_db is None:
+            # Ensure data directory exists
+            Path("data").mkdir(exist_ok=True)
+            checkpoint_db = "data/checkpoints.db"
+
+        return BatchProcessor(db_path=checkpoint_db)
+
+    def scrape_with_batches(
+        self,
+        batch_size: int = 100,
+        checkpoint_db: Optional[str] = None,
+        progress_callback: Optional[Callable[[Dict], None]] = None,
+        limit: Optional[int] = None
+    ) -> Dict[str, Any]:
+        """
+        Scrape stores with batch processing, checkpointing, and progress tracking.
+
+        This method provides:
+        - Automatic checkpointing every N stores (prevents data loss)
+        - Resume capability after failures
+        - Progress tracking with ETA
+        - Correlation IDs for log tracing
+
+        Args:
+            batch_size: Number of stores to process per batch (default: 100)
+            checkpoint_db: Path to checkpoint database
+            progress_callback: Optional callback for progress updates
+            limit: Optional limit on total stores (for testing)
+
+        Returns:
+            Dictionary with run_id, processed count, failed count, status
+
+        Raises:
+            ValueError: If batch_size is invalid
+        """
+        from ..batch import BatchProcessor
+        from ..logging import CorrelationContext, ProgressTracker
+        import structlog
+
+        # Validate batch_size
+        if batch_size <= 0:
+            raise ValueError(f"batch_size must be positive, got {batch_size}")
+
+        # Get all stores from traditional scrape method
+        logger.info(f"Starting batch scrape for {self.chain_name}")
+        stores = self.scrape(limit=limit)
+        logger.info(f"Retrieved {len(stores)} stores from {self.chain_name}")
+
+        # Setup batch processor
+        processor = self.get_batch_processor(checkpoint_db)
+
+        # Process stores in batches with correlation context
+        with CorrelationContext(chain_id=self.chain_id) as ctx:
+            struct_logger = structlog.get_logger()
+
+            struct_logger.info(
+                "batch_scrape_started",
+                chain=self.chain_name,
+                total_stores=len(stores),
+                batch_size=batch_size
+            )
+
+            # Define batch processing callback
+            def process_batch(batch: List[Store]) -> Tuple[int, int]:
+                """Process a batch of stores (validate and count)."""
+                processed = 0
+                failed = 0
+
+                for store in batch:
+                    # Validate store
+                    if self.validate_store(store):
+                        processed += 1
+                    else:
+                        failed += 1
+                        logger.warning(
+                            f"Invalid store: {store.name} - missing required fields"
+                        )
+
+                return processed, failed
+
+            # Execute batch processing
+            result = processor.process(
+                items=stores,
+                chain_id=self.chain_id,
+                batch_size=batch_size,
+                process_callback=process_batch,
+                progress_callback=progress_callback
+            )
+
+            struct_logger.info(
+                "batch_scrape_complete",
+                **result
+            )
+
+            return result
