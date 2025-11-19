@@ -51,6 +51,8 @@
             box-shadow: 0 4px 12px rgba(107, 159, 62, 0.15);
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
         }
 
         .header::before {
@@ -67,10 +69,19 @@
         .header h1 {
             font-size: 32px;
             font-weight: 700;
-            margin-bottom: 6px;
             letter-spacing: -0.5px;
             position: relative;
             z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-logo {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
 
         .header p {
@@ -81,43 +92,153 @@
             z-index: 1;
         }
 
+        /* Main content wrapper */
+        .content-wrapper {
+            display: flex;
+            height: calc(100vh - 94px);
+        }
+
         .stats {
             background: white;
-            padding: 18px 32px;
+            width: 240px;
+            flex-shrink: 0;
+            box-shadow: 2px 0 6px rgba(0,0,0,0.06);
+            border-right: 2px solid var(--soto-cream);
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .stats-container {
             display: flex;
-            gap: 40px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-            border-bottom: 2px solid var(--soto-cream);
+            flex-direction: column;
+            gap: 12px;
+            padding: 16px;
+        }
+
+        .stats-section {
+            border-bottom: 1px solid var(--soto-cream);
+            padding-bottom: 16px;
+            margin-bottom: 4px;
+        }
+
+        .stats-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .stats-section-title {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--soto-text-light);
+            margin-bottom: 12px;
         }
 
         .stat {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .stat:hover {
+            background: var(--soto-cream);
+        }
+
+        /* Filter functionality for chain stats */
+        .stat.filterable {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .stat.filterable:hover {
+            cursor: pointer;
+        }
+
+        .stat.filterable.active {
+            background: linear-gradient(135deg, rgba(107, 159, 62, 0.08) 0%, rgba(138, 184, 96, 0.05) 100%);
+            cursor: pointer;
+        }
+
+        .stat.filterable.active:hover {
+            cursor: pointer;
+        }
+
+        .stat.filterable.inactive {
+            opacity: 0.4;
+            cursor: pointer;
+        }
+
+        .stat.filterable.inactive:hover {
+            opacity: 0.6;
+            cursor: pointer;
+        }
+
+        .filter-indicator {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .stat.filterable.active .filter-indicator {
+            color: var(--soto-green-primary);
+        }
+
+        .stat.filterable.inactive .filter-indicator {
+            opacity: 0.3;
         }
 
         .stat-icon {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             background: linear-gradient(135deg, var(--soto-green-primary) 0%, var(--soto-green-light) 100%);
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 22px;
+            font-size: 20px;
             box-shadow: 0 2px 8px rgba(107, 159, 62, 0.2);
+            flex-shrink: 0;
+        }
+
+        .chain-logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 2px solid var(--soto-cream);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            flex-shrink: 0;
+        }
+
+        .chain-logo img {
+            max-width: 34px;
+            max-height: 34px;
+            object-fit: contain;
         }
 
         .stat-info h3 {
-            font-size: 28px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--soto-green-dark);
             letter-spacing: -0.5px;
+            margin: 0;
         }
 
         .stat-info p {
-            font-size: 13px;
+            font-size: 10px;
             color: var(--soto-text-light);
             margin-top: 2px;
             font-weight: 500;
@@ -125,8 +246,165 @@
             letter-spacing: 0.3px;
         }
 
+        /* Map container with search */
+        .map-container {
+            position: relative;
+            flex: 1;
+            height: 100%;
+        }
+
+        /* Centered Google-style search bar */
+        .search-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            width: 90%;
+            max-width: 580px;
+        }
+
+        .search-box {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12), 0 8px 24px rgba(107, 159, 62, 0.08);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .search-box:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15), 0 12px 32px rgba(107, 159, 62, 0.12);
+        }
+
+        .search-box.focused {
+            border-color: var(--soto-green-primary);
+            box-shadow: 0 4px 16px rgba(107, 159, 62, 0.2), 0 12px 40px rgba(107, 159, 62, 0.15);
+        }
+
+        .search-input-wrapper {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            gap: 14px;
+        }
+
+        .search-icon {
+            color: var(--soto-text-light);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .search-box.focused .search-icon {
+            color: var(--soto-green-primary);
+        }
+
+        #search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--soto-text-dark);
+            background: transparent;
+            padding: 6px 0;
+        }
+
+        #search-input::placeholder {
+            color: var(--soto-text-light);
+        }
+
+        .search-clear {
+            cursor: pointer;
+            color: var(--soto-text-light);
+            font-size: 18px;
+            padding: 4px 8px;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            display: none;
+            flex-shrink: 0;
+        }
+
+        .search-clear:hover {
+            background: var(--soto-cream);
+            color: var(--soto-text-dark);
+        }
+
+        .search-clear.visible {
+            display: block;
+        }
+
+        /* Search suggestions dropdown */
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 8px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15), 0 8px 32px rgba(107, 159, 62, 0.1);
+            max-height: 400px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .search-suggestions.visible {
+            display: block;
+        }
+
+        .search-suggestion-item {
+            padding: 14px 20px;
+            cursor: pointer;
+            border-bottom: 1px solid var(--soto-cream);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .search-suggestion-item:first-child {
+            border-radius: 20px 20px 0 0;
+        }
+
+        .search-suggestion-item:last-child {
+            border-radius: 0 0 20px 20px;
+            border-bottom: none;
+        }
+
+        .search-suggestion-item:hover,
+        .search-suggestion-item.selected {
+            background: var(--soto-cream);
+            color: var(--soto-green-dark);
+        }
+
+        .suggestion-icon {
+            color: var(--soto-text-light);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .search-suggestion-item:hover .suggestion-icon,
+        .search-suggestion-item.selected .suggestion-icon {
+            color: var(--soto-green-primary);
+        }
+
+        .suggestion-text {
+            flex: 1;
+            font-size: 14px;
+            color: var(--soto-text-dark);
+        }
+
+        .suggestion-type {
+            font-size: 11px;
+            color: var(--soto-text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
         #map {
-            height: calc(100vh - 180px);
+            height: 100%;
             width: 100%;
         }
 
@@ -332,28 +610,122 @@
 </head>
 <body>
     <div class="header">
-        <h1>🌿 SOTO Store Finder</h1>
-        <p>Natürlich. Einfach. Bio. – Finde SOTO Produkte in deiner Nähe</p>
-    </div>
-
-    <div class="stats">
-        <div class="stat">
-            <div class="stat-icon">🏪</div>
-            <div class="stat-info">
-                <h3 id="store-count">-</h3>
-                <p>Filialen</p>
+        <h1><img src="images/logos/soto.png" alt="SOTO" class="header-logo"> Store Finder</h1>
+        <!-- Centered Google-style search -->
+        <div class="search-overlay">
+            <div class="search-box" id="search-box">
+                <div class="search-input-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="SOTO Produkte finden - PLZ oder Stadt eingeben..."
+                        autocomplete="off"
+                    >
+                    <span class="search-clear" id="search-clear">✕</span>
+                </div>
+                <div class="search-suggestions" id="search-suggestions"></div>
             </div>
         </div>
-        <div class="stat">
-            <div class="stat-icon">📍</div>
-            <div class="stat-info">
-                <h3 id="city-count">-</h3>
-                <p>Städte</p>
-            </div>
-        </div>
     </div>
 
-    <div id="map"></div>
+    <div class="content-wrapper">
+        <div class="stats">
+            <div class="stats-container">
+                <!-- Total Stats Section -->
+                <div class="stats-section">
+                    <div class="stats-section-title">Übersicht</div>
+                    <div class="stat">
+                        <div class="stat-icon">🏪</div>
+                        <div class="stat-info">
+                            <h3 id="store-count">-</h3>
+                            <p>Filialen Gesamt</p>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon">📍</div>
+                        <div class="stat-info">
+                            <h3 id="city-count">-</h3>
+                            <p>Städte</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chain-Specific Stats Section -->
+                <div class="stats-section">
+                    <div class="stats-section-title">Märkte (Filter)</div>
+                    <div class="stat filterable active" data-chain="rewe">
+                        <div class="chain-logo">
+                            <img src="images/logos/rewe.png" alt="REWE">
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="rewe-count">-</h3>
+                            <p>REWE</p>
+                        </div>
+                    </div>
+                    <div class="stat filterable active" data-chain="denns">
+                        <div class="chain-logo">
+                            <img src="images/logos/denns.png" alt="Denns">
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="denns-count">-</h3>
+                            <p>Denns</p>
+                        </div>
+                    </div>
+                    <div class="stat filterable active" data-chain="tegut">
+                        <div class="chain-logo">
+                            <img src="images/logos/tegut.svg" alt="Tegut">
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="tegut-count">-</h3>
+                            <p>Tegut</p>
+                        </div>
+                    </div>
+                    <div class="stat filterable active" data-chain="alnatura">
+                        <div class="chain-logo">
+                            <img src="images/logos/alnatura.png" alt="Alnatura">
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="alnatura-count">-</h3>
+                            <p>Alnatura</p>
+                        </div>
+                    </div>
+                    <div class="stat filterable active" data-chain="globus">
+                        <div class="chain-logo">
+                            <img src="images/logos/globus.svg" alt="Globus">
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="globus-count">-</h3>
+                            <p>Globus</p>
+                        </div>
+                    </div>
+                    <div class="stat filterable active" data-chain="biocompany">
+                        <div class="chain-logo">
+                            <img src="images/logos/biocompany.png" alt="BioCompany">
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="biocompany-count">-</h3>
+                            <p>BioCompany</p>
+                        </div>
+                    </div>
+                    <div class="stat filterable active" data-chain="vollcorner">
+                        <div class="chain-logo">
+                            <img src="images/logos/vollcorner.jpg" alt="VollCorner">
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="vollcorner-count">-</h3>
+                            <p>VollCorner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <!-- Leaflet Map -->
+            <div id="map"></div>
+        </div>
+    </div>
 
     <!-- Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
@@ -470,56 +842,6 @@
         // Start geolocation attempt immediately
         tryGeolocation();
 
-        // Add search/geocoder control
-        const geocoder = L.Control.Geocoder.nominatim({
-            geocodingQueryParams: {
-                countrycodes: 'de',  // Limit search to Germany
-                addressdetails: 1,
-                limit: 5
-            }
-        });
-
-        const geocoderControl = L.Control.geocoder({
-            geocoder: geocoder,
-            defaultMarkGeocode: false,  // Don't add default marker
-            placeholder: 'Adresse oder PLZ suchen...',
-            errorMessage: 'Keine Ergebnisse gefunden',
-            collapsed: false,  // Keep search box expanded
-            position: 'topright'
-        }).addTo(map);
-
-        // Handle geocoding results
-        geocoderControl.on('markgeocode', function(e) {
-            const latlng = e.geocode.center;
-            const bbox = e.geocode.bbox;
-
-            console.log('Search result:', e.geocode.name);
-
-            // Remove previous search marker if exists
-            if (window.searchMarker) {
-                map.removeLayer(window.searchMarker);
-            }
-
-            // Add green marker for searched location
-            window.searchMarker = L.circleMarker(latlng, {
-                radius: 8,
-                fillColor: '#6B9F3E',  // SOTO green
-                color: '#ffffff',
-                weight: 2,
-                opacity: 1,
-                fillOpacity: 0.8
-            }).addTo(map);
-
-            window.searchMarker.bindPopup('🔍 ' + e.geocode.name).openPopup();
-
-            // Zoom to the result
-            if (bbox) {
-                map.fitBounds(bbox, { padding: [50, 50], maxZoom: 14 });
-            } else {
-                map.setView(latlng, 13);
-            }
-        });
-
         // Create custom HTML-based icon with store logo
         function createStoreIcon(logoUrl, chainId) {
             // Define which chains have round logos vs square logos
@@ -563,15 +885,51 @@
             zoomToBoundsOnClick: true
         });
 
+        // Create separate layer groups for each chain
+        const chainLayers = {
+            rewe: L.layerGroup(),
+            denns: L.layerGroup(),
+            tegut: L.layerGroup(),
+            alnatura: L.layerGroup(),
+            globus: L.layerGroup(),
+            biocompany: L.layerGroup(),
+            vollcorner: L.layerGroup()
+        };
+
+        // Track active filters (all active by default)
+        const activeFilters = {
+            rewe: true,
+            denns: true,
+            tegut: true,
+            alnatura: true,
+            globus: true,
+            biocompany: true,
+            vollcorner: true
+        };
+
         // Load and display GeoJSON data
         fetch('stores.geojson')
             .then(response => response.json())
             .then(data => {
                 const cities = new Set();
+                const chainCounts = {
+                    rewe: 0,
+                    denns: 0,
+                    tegut: 0,
+                    alnatura: 0,
+                    globus: 0,
+                    biocompany: 0,
+                    vollcorner: 0
+                };
 
                 data.features.forEach(feature => {
                     const props = feature.properties;
                     cities.add(props.city);
+
+                    // Count stores per chain
+                    if (chainCounts.hasOwnProperty(props.chain_id)) {
+                        chainCounts[props.chain_id]++;
+                    }
 
                     // Create popup content
                     let popupContent = `
@@ -694,6 +1052,12 @@
                         { icon: chainIcon }
                     ).bindPopup(popupContent);
 
+                    // Add to chain-specific layer
+                    if (chainLayers[props.chain_id]) {
+                        chainLayers[props.chain_id].addLayer(marker);
+                    }
+
+                    // Add to cluster group
                     markers.addLayer(marker);
                 });
 
@@ -704,6 +1068,15 @@
                 document.getElementById('store-count').textContent = data.features.length;
                 document.getElementById('city-count').textContent = cities.size;
 
+                // Update chain-specific counts
+                document.getElementById('rewe-count').textContent = chainCounts.rewe;
+                document.getElementById('denns-count').textContent = chainCounts.denns;
+                document.getElementById('tegut-count').textContent = chainCounts.tegut;
+                document.getElementById('alnatura-count').textContent = chainCounts.alnatura;
+                document.getElementById('globus-count').textContent = chainCounts.globus;
+                document.getElementById('biocompany-count').textContent = chainCounts.biocompany;
+                document.getElementById('vollcorner-count').textContent = chainCounts.vollcorner;
+
                 // Only fit bounds to all markers if user location was not found
                 // This prevents overriding the user's location zoom
                 if (data.features.length > 0 && !userLocationFound) {
@@ -713,6 +1086,232 @@
             .catch(error => {
                 console.error('Error loading stores:', error);
             });
+
+        // ===== CUSTOM SEARCH FUNCTIONALITY =====
+        const searchInput = document.getElementById('search-input');
+        const searchBox = document.getElementById('search-box');
+        const searchClear = document.getElementById('search-clear');
+        const searchSuggestions = document.getElementById('search-suggestions');
+
+        let searchTimeout;
+        let selectedSuggestionIndex = -1;
+        let currentSuggestions = [];
+
+        // Search input focus/blur handlers
+        searchInput.addEventListener('focus', () => {
+            searchBox.classList.add('focused');
+        });
+
+        searchInput.addEventListener('blur', () => {
+            // Delay to allow click on suggestions
+            setTimeout(() => {
+                searchBox.classList.remove('focused');
+                searchSuggestions.classList.remove('visible');
+            }, 200);
+        });
+
+        // Show/hide clear button
+        searchInput.addEventListener('input', (e) => {
+            const value = e.target.value.trim();
+
+            if (value.length > 0) {
+                searchClear.classList.add('visible');
+            } else {
+                searchClear.classList.remove('visible');
+                searchSuggestions.classList.remove('visible');
+                currentSuggestions = [];
+                return;
+            }
+
+            // Debounce search
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                performSearch(value);
+            }, 300);
+        });
+
+        // Clear button handler
+        searchClear.addEventListener('click', () => {
+            searchInput.value = '';
+            searchClear.classList.remove('visible');
+            searchSuggestions.classList.remove('visible');
+            currentSuggestions = [];
+            searchInput.focus();
+        });
+
+        // Keyboard navigation
+        searchInput.addEventListener('keydown', (e) => {
+            const suggestionItems = searchSuggestions.querySelectorAll('.search-suggestion-item');
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                selectedSuggestionIndex = Math.min(selectedSuggestionIndex + 1, suggestionItems.length - 1);
+                updateSelectedSuggestion(suggestionItems);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                selectedSuggestionIndex = Math.max(selectedSuggestionIndex - 1, -1);
+                updateSelectedSuggestion(suggestionItems);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (selectedSuggestionIndex >= 0 && currentSuggestions[selectedSuggestionIndex]) {
+                    selectLocation(currentSuggestions[selectedSuggestionIndex]);
+                } else if (currentSuggestions.length > 0) {
+                    selectLocation(currentSuggestions[0]);
+                }
+            } else if (e.key === 'Escape') {
+                searchSuggestions.classList.remove('visible');
+                selectedSuggestionIndex = -1;
+            }
+        });
+
+        function updateSelectedSuggestion(items) {
+            items.forEach((item, index) => {
+                if (index === selectedSuggestionIndex) {
+                    item.classList.add('selected');
+                    item.scrollIntoView({ block: 'nearest' });
+                } else {
+                    item.classList.remove('selected');
+                }
+            });
+        }
+
+        // Perform geocoding search
+        function performSearch(query) {
+            const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=de&addressdetails=1&limit=5`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(results => {
+                    currentSuggestions = results;
+                    displaySuggestions(results);
+                })
+                .catch(error => {
+                    console.error('Search error:', error);
+                });
+        }
+
+        // Display search suggestions
+        function displaySuggestions(results) {
+            searchSuggestions.innerHTML = '';
+            selectedSuggestionIndex = -1;
+
+            if (results.length === 0) {
+                searchSuggestions.innerHTML = '<div class="search-suggestion-item" style="cursor: default;"><span class="suggestion-text" style="color: var(--soto-text-light); font-style: italic;">Keine Ergebnisse gefunden</span></div>';
+                searchSuggestions.classList.add('visible');
+                return;
+            }
+
+            results.forEach((result, index) => {
+                const item = document.createElement('div');
+                item.className = 'search-suggestion-item';
+
+                // Determine result type
+                let type = 'Ort';
+                if (result.type === 'postcode') type = 'PLZ';
+                else if (result.type === 'city' || result.type === 'town' || result.type === 'village') type = 'Stadt';
+                else if (result.type === 'administrative') type = 'Region';
+
+                item.innerHTML = `
+                    <span class="suggestion-icon">📍</span>
+                    <span class="suggestion-text">${result.display_name}</span>
+                    <span class="suggestion-type">${type}</span>
+                `;
+
+                item.addEventListener('click', () => {
+                    selectLocation(result);
+                });
+
+                searchSuggestions.appendChild(item);
+            });
+
+            searchSuggestions.classList.add('visible');
+        }
+
+        // Select and navigate to location
+        function selectLocation(result) {
+            const lat = parseFloat(result.lat);
+            const lon = parseFloat(result.lon);
+            const latlng = L.latLng(lat, lon);
+
+            console.log('Selected location:', result.display_name);
+
+            // Remove previous search marker if exists
+            if (window.searchMarker) {
+                map.removeLayer(window.searchMarker);
+            }
+
+            // Add green marker for searched location
+            window.searchMarker = L.circleMarker(latlng, {
+                radius: 8,
+                fillColor: '#6B9F3E',  // SOTO green
+                color: '#ffffff',
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.8
+            }).addTo(map);
+
+            window.searchMarker.bindPopup('🔍 ' + result.display_name).openPopup();
+
+            // Zoom to the result
+            if (result.boundingbox) {
+                const bounds = L.latLngBounds(
+                    [result.boundingbox[0], result.boundingbox[2]],
+                    [result.boundingbox[1], result.boundingbox[3]]
+                );
+                map.fitBounds(bounds, { padding: [50, 50], maxZoom: 14 });
+            } else {
+                map.setView(latlng, 13);
+            }
+
+            // Hide suggestions and update input
+            searchSuggestions.classList.remove('visible');
+            searchInput.value = result.display_name.split(',')[0];
+        }
+
+        // ===== CHAIN FILTER FUNCTIONALITY =====
+        function toggleChainFilter(chainId) {
+            const filterButton = document.querySelector(`.stat.filterable[data-chain="${chainId}"]`);
+            if (!filterButton) return;
+
+            // Toggle active state
+            activeFilters[chainId] = !activeFilters[chainId];
+
+            // Update UI
+            if (activeFilters[chainId]) {
+                filterButton.classList.remove('inactive');
+                filterButton.classList.add('active');
+            } else {
+                filterButton.classList.remove('active');
+                filterButton.classList.add('inactive');
+            }
+
+            // Update map markers
+            updateMapMarkers();
+        }
+
+        function updateMapMarkers() {
+            // Clear cluster group
+            markers.clearLayers();
+
+            // Re-add markers from active chains
+            Object.keys(chainLayers).forEach(chainId => {
+                if (activeFilters[chainId]) {
+                    chainLayers[chainId].eachLayer(marker => {
+                        markers.addLayer(marker);
+                    });
+                }
+            });
+        }
+
+        // Add click handlers to all filterable chain items
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.stat.filterable').forEach(filterButton => {
+                const chainId = filterButton.getAttribute('data-chain');
+                filterButton.addEventListener('click', () => {
+                    toggleChainFilter(chainId);
+                });
+            });
+        });
     </script>
 </body>
 </html>
