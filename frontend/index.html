@@ -53,6 +53,7 @@
             overflow: hidden;
             display: flex;
             align-items: center;
+            flex-shrink: 0;
         }
 
         .header::before {
@@ -606,6 +607,291 @@
             object-fit: contain;
             transform: rotate(45deg);
         }
+
+        /* Mobile Toggle Button */
+        .mobile-stats-toggle {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1001;
+            background: linear-gradient(135deg, var(--soto-green-primary) 0%, var(--soto-green-dark) 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 24px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(107, 159, 62, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .mobile-stats-toggle:hover {
+            transform: translateX(-50%) scale(1.05);
+            box-shadow: 0 6px 20px rgba(107, 159, 62, 0.5);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+
+        /* Tablet: 768px - 1024px */
+        @media (max-width: 1024px) {
+            .stats {
+                width: 200px;
+            }
+
+            .header {
+                padding: 20px 24px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .header-logo {
+                height: 36px;
+            }
+
+            .search-overlay {
+                max-width: 480px;
+            }
+        }
+
+        /* Mobile: up to 768px */
+        @media (max-width: 768px) {
+            .header {
+                padding: 16px 20px;
+                flex-direction: column;
+                gap: 12px;
+                align-items: stretch;
+            }
+
+            .header h1 {
+                font-size: 24px;
+                justify-content: center;
+            }
+
+            .header-logo {
+                height: 32px;
+            }
+
+            .header p {
+                font-size: 13px;
+                text-align: center;
+            }
+
+            .content-wrapper {
+                flex-direction: column;
+                height: calc(100vh - 120px);
+            }
+
+            /* Hide desktop search in header on mobile */
+            .header .search-overlay {
+                display: none;
+            }
+
+            /* Mobile: Sidebar becomes bottom panel */
+            .stats {
+                width: 100%;
+                height: auto;
+                max-height: 50vh;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                border-right: none;
+                border-top: 2px solid var(--soto-cream);
+                box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+                transform: translateY(100%);
+                transition: transform 0.3s ease;
+            }
+
+            .stats.mobile-open {
+                transform: translateY(0);
+            }
+
+            .stats-container {
+                padding: 20px;
+                overflow-x: auto;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .stats-section {
+                margin-bottom: 16px;
+            }
+
+            /* Make chain filters horizontal scrollable on mobile */
+            .stats-section:last-child .stat {
+                display: inline-flex;
+                margin-right: 12px;
+                min-width: 140px;
+            }
+
+            .map-container {
+                height: 100%;
+                width: 100%;
+            }
+
+            /* Mobile toggle button visible */
+            .mobile-stats-toggle {
+                display: block;
+            }
+
+            .mobile-stats-toggle.hidden {
+                display: none;
+            }
+
+            /* Search overlay for mobile - positioned at top of map */
+            .search-overlay {
+                position: fixed;
+                top: 16px;
+                left: 16px;
+                right: 16px;
+                width: auto;
+                max-width: none;
+                transform: none;
+                z-index: 999;
+            }
+
+            .search-box {
+                border-radius: 24px;
+            }
+
+            .search-input-wrapper {
+                padding: 10px 16px;
+            }
+
+            #search-input {
+                font-size: 15px;
+            }
+
+            .search-suggestions {
+                max-height: 300px;
+            }
+
+            /* Optimize popup for mobile */
+            .popup-content {
+                min-width: 240px;
+                max-width: 280px;
+            }
+
+            .popup-header {
+                font-size: 16px;
+            }
+
+            /* Larger touch targets for filters */
+            .stat.filterable {
+                padding: 12px;
+                min-height: 60px;
+            }
+
+            .chain-logo {
+                width: 48px;
+                height: 48px;
+            }
+
+            .chain-logo img {
+                max-width: 38px;
+                max-height: 38px;
+            }
+
+            .stat-icon {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        /* Small Mobile: up to 480px */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 20px;
+                gap: 8px;
+            }
+
+            .header-logo {
+                height: 28px;
+            }
+
+            .header p {
+                font-size: 12px;
+            }
+
+            .search-overlay {
+                top: 12px;
+                left: 12px;
+                right: 12px;
+            }
+
+            .search-input-wrapper {
+                padding: 8px 14px;
+                gap: 10px;
+            }
+
+            #search-input {
+                font-size: 14px;
+            }
+
+            .search-icon {
+                font-size: 18px;
+            }
+
+            .mobile-stats-toggle {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            .stats {
+                max-height: 60vh;
+            }
+
+            .stats-container {
+                padding: 16px;
+            }
+
+            .stat-info h3 {
+                font-size: 20px;
+            }
+
+            .stat-info p {
+                font-size: 9px;
+            }
+
+            .popup-content {
+                min-width: 200px;
+                max-width: 240px;
+            }
+
+            .popup-header {
+                font-size: 15px;
+            }
+
+            .popup-section p {
+                font-size: 13px;
+            }
+        }
+
+        /* Landscape Mobile */
+        @media (max-width: 896px) and (orientation: landscape) {
+            .stats {
+                max-height: 70vh;
+            }
+
+            .header {
+                padding: 12px 16px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .content-wrapper {
+                height: calc(100vh - 80px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -726,6 +1012,11 @@
             <div id="map"></div>
         </div>
     </div>
+
+    <!-- Mobile Stats Toggle Button -->
+    <button class="mobile-stats-toggle" id="mobile-stats-toggle">
+        <span id="toggle-text">Filter & Statistiken anzeigen</span>
+    </button>
 
     <!-- Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
@@ -1311,6 +1602,42 @@
                     toggleChainFilter(chainId);
                 });
             });
+        });
+
+        // ===== MOBILE STATS PANEL TOGGLE =====
+        const mobileToggle = document.getElementById('mobile-stats-toggle');
+        const toggleText = document.getElementById('toggle-text');
+        const statsPanel = document.querySelector('.stats');
+        let isPanelOpen = false;
+
+        mobileToggle.addEventListener('click', () => {
+            isPanelOpen = !isPanelOpen;
+
+            if (isPanelOpen) {
+                statsPanel.classList.add('mobile-open');
+                toggleText.textContent = 'Filter & Statistiken schließen';
+            } else {
+                statsPanel.classList.remove('mobile-open');
+                toggleText.textContent = 'Filter & Statistiken anzeigen';
+            }
+        });
+
+        // Close panel when clicking on map (mobile only)
+        map.on('click', () => {
+            if (window.innerWidth <= 768 && isPanelOpen) {
+                isPanelOpen = false;
+                statsPanel.classList.remove('mobile-open');
+                toggleText.textContent = 'Filter & Statistiken anzeigen';
+            }
+        });
+
+        // Handle window resize - reset panel state
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                statsPanel.classList.remove('mobile-open');
+                isPanelOpen = false;
+                toggleText.textContent = 'Filter & Statistiken anzeigen';
+            }
         });
     </script>
 </body>
