@@ -724,8 +724,8 @@
                 margin-bottom: 16px;
             }
 
-            /* Make chain filters horizontal scrollable on mobile */
-            .stats-section:last-child .stat {
+            /* Make all stats horizontal scrollable on mobile */
+            .stats-section .stat {
                 display: inline-flex;
                 margin-right: 12px;
                 min-width: 140px;
@@ -1015,7 +1015,7 @@
 
     <!-- Mobile Stats Toggle Button -->
     <button class="mobile-stats-toggle" id="mobile-stats-toggle">
-        <span id="toggle-text">Filter & Statistiken anzeigen</span>
+        <span id="toggle-text">Filter & Statistiken</span>
     </button>
 
     <!-- Leaflet JavaScript -->
@@ -1251,6 +1251,59 @@
                                     </span>
                                 </div>
                             `;
+                        }
+                        // Check for abbreviated day format (REWE/BioCompany style)
+                        // e.g., {"Mo-Sa": "07:00 - 22:00 Uhr"} or {"Mo": "08:00-20:00", "Di": "08:00-20:00", ...}
+                        else if (props.opening_hours['Mo-Sa'] || props.opening_hours['Mo-Fr'] || props.opening_hours['Mo'] || props.opening_hours['Di']) {
+                            // Parse abbreviated day format
+                            const dayAbbrev = {
+                                'Mo': 'Montag', 'Di': 'Dienstag', 'Mi': 'Mittwoch',
+                                'Do': 'Donnerstag', 'Fr': 'Freitag', 'Sa': 'Samstag', 'So': 'Sonntag'
+                            };
+
+                            // Build a map of which days have which hours
+                            const dayHours = {};
+
+                            // Process ranges first, then individual days (so individual days can override ranges)
+                            const keys = Object.keys(props.opening_hours);
+                            const rangeKeys = keys.filter(k => k.includes('-') && k.length <= 5);
+                            const singleDayKeys = keys.filter(k => dayAbbrev[k]);
+
+                            // First, process day ranges (e.g., "Mo-Sa", "Mo-Fr")
+                            rangeKeys.forEach(key => {
+                                const value = props.opening_hours[key];
+                                const [start, end] = key.split('-');
+                                const startIdx = Object.keys(dayAbbrev).indexOf(start);
+                                const endIdx = Object.keys(dayAbbrev).indexOf(end);
+
+                                if (startIdx >= 0 && endIdx >= 0) {
+                                    for (let i = startIdx; i <= endIdx; i++) {
+                                        const dayKey = Object.keys(dayAbbrev)[i];
+                                        const fullDay = dayAbbrev[dayKey];
+                                        dayHours[fullDay] = value === 'closed' ? 'geschlossen' : value;
+                                    }
+                                }
+                            });
+
+                            // Then, process individual days (these override ranges if present)
+                            singleDayKeys.forEach(key => {
+                                const value = props.opening_hours[key];
+                                dayHours[dayAbbrev[key]] = value === 'closed' ? 'geschlossen' : value;
+                            });
+
+                            // Display all days
+                            days.forEach(day => {
+                                const isToday = day === today;
+                                const todayClass = isToday ? 'today' : '';
+                                const timeText = dayHours[day] || 'geschlossen';
+
+                                hoursHtml += `
+                                    <div class="popup-hours-item ${todayClass}">
+                                        <span class="popup-hours-day">${day}</span>
+                                        <span class="popup-hours-time">${timeText}</span>
+                                    </div>
+                                `;
+                            });
                         }
                         // Check if it's text format (Alnatura) - parse and convert to structured display
                         else if (props.opening_hours.text) {
@@ -1615,10 +1668,10 @@
 
             if (isPanelOpen) {
                 statsPanel.classList.add('mobile-open');
-                toggleText.textContent = 'Filter & Statistiken schließen';
+                toggleText.textContent = 'Filter & Statistiken';
             } else {
                 statsPanel.classList.remove('mobile-open');
-                toggleText.textContent = 'Filter & Statistiken anzeigen';
+                toggleText.textContent = 'Filter & Statistiken';
             }
         });
 
@@ -1627,7 +1680,7 @@
             if (window.innerWidth <= 768 && isPanelOpen) {
                 isPanelOpen = false;
                 statsPanel.classList.remove('mobile-open');
-                toggleText.textContent = 'Filter & Statistiken anzeigen';
+                toggleText.textContent = 'Filter & Statistiken';
             }
         });
 
@@ -1636,7 +1689,7 @@
             if (window.innerWidth > 768) {
                 statsPanel.classList.remove('mobile-open');
                 isPanelOpen = false;
-                toggleText.textContent = 'Filter & Statistiken anzeigen';
+                toggleText.textContent = 'Filter & Statistiken';
             }
         });
     </script>
